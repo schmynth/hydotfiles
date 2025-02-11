@@ -145,13 +145,13 @@ width = 20
 range = 7
 standby = "🎶"
 
-[cava.waybar]
-# 'cava.sh waybar' configuration
-max_instances = 1 # Maximum number of cava instances // fix and workaround when waybar won't kill 'cava ' process
-bar = "▁▂▃▄▅▆▇█"
-width = 20
-range = 7
-standby = "🎶"
+#[cava.waybar]
+## 'cava.sh waybar' configuration
+#max_instances = 1 # Maximum number of cava instances // fix and workaround when waybar won't kill 'cava ' process
+#bar = "▁▂▃▄▅▆▇█"
+#width = 20
+#range = 7
+#standby = "🎶"
 
 
 [hypr.config]

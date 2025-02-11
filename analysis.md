@@ -16,8 +16,7 @@ Configs
             hyde/ [$scrPath]
                 amdgpu.py   # OK
                 animations.sh # OK
-                keyboardswitch.sh
-                screenshot.sh
+                keyboardswitch.sh # OK
                 volumecontrol.sh # OK
                 globalcontrol.sh # OK, contains env variables for scripts
                 lockscreen.sh
@@ -35,7 +34,7 @@ Configs
                 wallbash.qt.sh
                 gpuinfo.sh	
                 notifications.py   
-                swwwallkon.sh     
+                swwwallkon.sh # 
                 wallbash.sh
                 cliphist.sh	      
                 grimblast		
@@ -71,6 +70,13 @@ Configs
                 rofiselect.sh	   
                 themeswitch.sh
         share/
+            dolphin/ # OK
+            hyde/
+            icons/
+            kio/ 
+                servicemenus/
+                    hydewallpaper.desktop # runs swwwwallkon.sh, sets wallpaper from context menu
+            kxmlgui5/ # OK
         state/
     .config/
         hypr/
@@ -82,5 +88,5 @@ Configs
                 theme.conf # OK, takes wallbash variables 
             hyprlock.conf # sources ~/.local/share/hyde/hyprlock.conf and 
                           # ~/.config/hypr/hyprlock/theme.conf
-           userprefs.conf # OK, hyprland preferences for user, default empty 
+            userprefs.conf # OK, hyprland preferences for user, default empty 
             
