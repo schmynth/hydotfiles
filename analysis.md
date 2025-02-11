@@ -8,20 +8,18 @@ Hyde Structure:
 Configs
     .local/
         state/
-            hyde/
-                dolphinstaterc
+            dolphinstaterc
         bin/
             hyde-shell      # script, checkt, ob HyDE installiert ist. Ruft interactive_shell.
                             # hyde_reload, zoom und wallbash auf, je nach Argument.
         lib/
-            hyde/
+            hyde/ [$scrPath]
                 amdgpu.py   # OK
-                animations.sh #
-                gamemode.sh 
+                animations.sh # OK
                 keyboardswitch.sh
                 screenshot.sh
-                volumecontrol.sh
-                globalcontrol.sh
+                volumecontrol.sh # OK
+                globalcontrol.sh # OK, contains env variables for scripts
                 lockscreen.sh
                 sensorsinfo.py
                 wallbash.hypr.sh
@@ -84,5 +82,5 @@ Configs
                 theme.conf # OK, takes wallbash variables 
             hyprlock.conf # sources ~/.local/share/hyde/hyprlock.conf and 
                           # ~/.config/hypr/hyprlock/theme.conf
-            
+           userprefs.conf # OK, hyprland preferences for user, default empty 
             
