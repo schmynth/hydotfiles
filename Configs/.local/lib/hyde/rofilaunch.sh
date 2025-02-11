@@ -38,12 +38,17 @@ r | --run)
     r_mode="run"
     rofi_config="${ROFI_LAUNCH_RUN_STYLE:-$rofi_config}"
     ;;
+p | power)
+	r_mode="power"
+    rofi_config="${ROFI_LAUNCH_POWER_STYLE:-$rofi_config}"
+	;;
 h | --help)
     echo -e "$(basename "${0}") [action]"
     echo "d :  drun mode"
     echo "w :  window mode"
     echo "f :  filebrowser mode,"
     echo "r :  run mode"
+	echo "p :  power mode"
     exit 0
     ;;
 *)
