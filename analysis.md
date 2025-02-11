@@ -7,6 +7,9 @@ Hyde Structure:
 
 Configs
     .local/
+        state/
+            hyde/
+                dolphinstaterc
         bin/
             hyde-shell      # script, checkt, ob HyDE installiert ist. Ruft interactive_shell.
                             # hyde_reload, zoom und wallbash auf, je nach Argument.
