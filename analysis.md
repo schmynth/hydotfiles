@@ -18,6 +18,8 @@ Scripts/
     install_pre.sh # grub stuff, pacman stuff ??????????????
     install_pst.sh # installiert sddm, vlt ungewollt ??????????????
     install.sh #
+    pkg_core.lst # OK, packages to install from arch core repo
+    pkg_extra.lst # OK, packages to install from extra repo or AUR
     restore_shl.sh # OK
     
 Configs

@@ -16,3 +16,5 @@
 - [ ] back and forward with mouse buttons in dolphin, works on baremetal...
 - [ ] add my .zshrc config to repo
 - [ ] analyze install.sh script
+
+- [ ] final test in fresh VM

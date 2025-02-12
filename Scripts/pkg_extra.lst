@@ -1,10 +1,10 @@
 # --------------------------------------------------- // System
 # downgrade                                            # downgrade packages
 # trash-cli-git                                        # cli to manage trash files
-# libinput-gestures                                    # actions touchpad gestures using libinput
-# gestures                                             # gui for libinput-gestures
-wttrbar                                                # for weather
-python-requests|wttrbar                                # script dependency
+libinput-gestures                                    # actions touchpad gestures using libinput
+gestures                                             # gui for libinput-gestures
+# wttrbar                                                # for weather
+# python-requests|wttrbar                                # script dependency
 ddccui                                                 # GUI to control brightness for external monitors
 # hyprgui-bin                                          # GUI for hyprland configuration // might mess your userprefs but convenient // Just disappeared
 # swappy                                               # screenshot editor, DEPRECATED in favor for satty
