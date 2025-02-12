@@ -13,3 +13,4 @@
 - [X] Style lockscreen
 - [ ] back and forward with mouse buttons in dolphin, works on baremetal...
 - [ ] add my .zshrc config to repo
+- [ ] analyze install.sh script
