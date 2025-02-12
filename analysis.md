@@ -51,7 +51,7 @@ Configs
                 keybinds.hint.py # OK	
                 keybinds_hint.sh # OK	
                 lockscreen.sh # OK, runs hyprlock
-                logoutlaunch.sh    
+                logoutlaunch.sh # runs wlogout, should be replaced by rofi power 
                 mediaplayer.py	   
                 notifications.py   
                 parse.json.py	   
@@ -160,7 +160,7 @@ Configs
         spotify-flags # OK
         vscodium-flags
     .gtkrc-2.0 # OK
-    .hyde.zshrc # OK
+    .hyde.zshrc # OK, zsh config, f.e. pokego
     .p10k.zsh
     .zshenv
     .zshrc # OK, use for zsh override config
