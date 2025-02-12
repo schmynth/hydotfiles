@@ -43,13 +43,13 @@ Configs
                 glyph-picker.sh # OK
                 gnome-terminal # OK	
                 gpuinfo.sh # OK
-                hyde-launch.sh	
-                hyprlock.sh	
-                hyprsunset.sh	
-                hypr.unbind.sh	
+                hyde-launch.sh # OK, IG, launches mime type apps	
+                hyprlock.sh # OK	
+                hyprsunset.sh # OK	
+                hypr.unbind.sh # OK
                 keyboardswitch.sh # OK
-                keybinds.hint.py	
-                keybinds_hint.sh	
+                keybinds.hint.py # OK	
+                keybinds_hint.sh # OK	
                 lockscreen.sh # OK, runs hyprlock
                 logoutlaunch.sh    
                 mediaplayer.py	   
