@@ -2,7 +2,8 @@
 
 - [X] add power menu to rofi (power mode)
     - [X] get the actions from Configs/.config/wlogout
-    - [ ] get power menu to show with keybind
+    - [X] get power menu to show with keybind
+    - [ ] add to all styles
 - [X] remove waybar blur, make it fully transparent
 - [ ] Choose packages (not) to install
     - [ ] in Scripts/custom_flat.lst
