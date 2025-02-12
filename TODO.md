@@ -9,7 +9,7 @@
     - [ ] in Scripts/custom_flat.lst
 - [ ] remove any grub related interference
 - [X] fix alt gr not working (?)
-- [ ] show language in waybar
+- [X] show language in waybar
 - [X] Style lockscreen
 - [ ] back and forward with mouse buttons in dolphin, works on baremetal...
 - [ ] add my .zshrc config to repo
