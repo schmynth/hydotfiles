@@ -2,6 +2,11 @@ dunst: notification daemon
 
 what is hyde-shell? $HOME/.local/bin/hyde-shell
 
+Config files:
+
+.local/share/hyde/
+    config.toml # general hyde config
+    hyprland.conf # env variables
 
 Hyde Structure:
 
@@ -17,7 +22,7 @@ Scripts/
 Configs
     .local/
         state/
-            dolphinstaterc
+            dolphinstaterc # OK
         bin/
             hyde-shell      # script, checkt, ob HyDE installiert ist. Ruft interactive_shell.
                             # hyde_reload, zoom und wallbash auf, je nach Argument.
@@ -28,7 +33,7 @@ Configs
                 keyboardswitch.sh # OK
                 volumecontrol.sh # OK
                 globalcontrol.sh # OK, contains env variables for scripts
-                lockscreen.sh
+                lockscreen.sh # OK, runs hyprlock
                 sensorsinfo.py
                 wallbash.hypr.sh
                 batterynotify.sh # OK

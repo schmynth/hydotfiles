@@ -44,7 +44,10 @@ Multi-language KEYBINDINGS support
 
 <!-- # <a id=hyde-keybindings>HyDE Keybindings</a> -->
 <!-- # <a id=hyde-keybindings></a><img src="https://readme-typing-svg.herokuapp.com?font=Lexend+Giga&size=25&pause=1000&color=CCA9DD&width=435&lines=HyDE%20Keybindings" width="450"/> -->
-Here are all HyDE specific keybindings listed.
+Here are my keybindings listed.
+
+>[!CAUTION]
+> These keybindings are NOT the original HyDE ones!
 
 >[!TIP]
 > <kbd>Super</kbd> + <kbd>/</kbd> shows the keybindings.
@@ -54,12 +57,11 @@ Here are all HyDE specific keybindings listed.
 
 | Keys                                                 | Action                          |
 | :--------------------------------------------------- | :------------------------------ |
-| <kbd>CTRL</kbd> + <kbd>Q</kbd>                       | close focused window            |
-| <kbd>ALT</kbd> + <kbd>F4</kbd>                       | close focused window            |
+| <kbd>SUPER</kbd> + <kbd>Q</kbd>                       | close focused window            |
 | <kbd>SUPER</kbd> + <kbd>Delete</kbd>                 | kill hyprland session           |
-| <kbd>SUPER</kbd> + <kbd>W</kbd>                      | toggle float                    |
+| <kbd>SUPER</kbd> + <kbd>V</kbd>                      | toggle float                    |
 | <kbd>SUPER</kbd> + <kbd>G</kbd>                      | toggle group                    |
-| <kbd>Shift</kbd> + <kbd>F11</kbd>                    | toggle fullscreen               |
+| <kbd>SUPER</kbd> + <kbd>F</kbd>                    | toggle fullscreen               |
 | <kbd>SUPER</kbd> + <kbd>L</kbd>                      | lock screen                     |
 | <kbd>SUPER</kbd> + <kbd>SHIFT</kbd> + <kbd>F</kbd>   | toggle pin on focused window    |
 | <kbd>ALT</kbd> + <kbd>CTRL</kbd> + <kbd>Delete</kbd> | logout menu                     |
@@ -67,6 +69,7 @@ Here are all HyDE specific keybindings listed.
 | <kbd>SUPER</kbd> + <kbd>J</kbd>                      | toggle split                    |
 
 ### Group Navigation
+(deactivated)
 
 | Keys                                              | Action                        |
 | :------------------------------------------------ | :---------------------------- |
@@ -128,6 +131,7 @@ Here are all HyDE specific keybindings listed.
 | Keys                                               | Action               |
 | :------------------------------------------------- | :------------------- |
 | <kbd>ALT</kbd> + <kbd>space</kbd>                  | application finder   |
+| <kbd>SUPER</kbd> + <kbd>P</kbd>                    | power menu           |
 | <kbd>SUPER</kbd> + <kbd>TAB</kbd>                  | window switcher      |
 | <kbd>SUPER</kbd> + <kbd>SHIFT</kbd> + <kbd>E</kbd> | file finder          |
 | <kbd>SUPER</kbd> + <kbd>slash</kbd>                | keybindings hint     |

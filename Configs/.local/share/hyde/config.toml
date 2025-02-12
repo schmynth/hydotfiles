@@ -12,7 +12,7 @@ custom_paths = [
 
 [wallpaper.swww]
 # swwwallselect.sh configuration
-framerate = 60 # transition framerate
+framerate = 240 # transition framerate
 duration = 1   # transition duration
 # Transition type [ none | simple | fade | left | right | top | bottom | wipe | wave | grow | center | any | outer | random ]
 transition_next = "grow"    # transition type for next wallpaper
@@ -129,21 +129,21 @@ scale=30                                # total scaling
 [waybar.weather]
 loc = true # Show location in bar // accepts true or false or location/coordinates string
 
-[cava.stdout]
-# 'cava.sh stdout' configuration
-max_instances = 1 # Maximum number of cava instances // fix and workaround when a process won't kill 'cava ' process
-bar = "▁▂▃▄▅▆▇█"
-width = 20
-range = 7         # Number of (bars -1)
-standby = "🎶"
-
-[cava.hyprlock]
-# 'cava.sh hyprlock' configuration
-max_instances = 1 # Maximum number of cava instances // fix and workaround when a process won't kill 'cava ' process
-bar = "🌑🌒🌓🌔🌕🌖🌗🌘"
-width = 20
-range = 7
-standby = "🎶"
+#[cava.stdout]
+## 'cava.sh stdout' configuration
+#max_instances = 1 # Maximum number of cava instances // fix and workaround when a process won't kill 'cava ' process
+#bar = "▁▂▃▄▅▆▇█"
+#width = 20
+#range = 7         # Number of (bars -1)
+#standby = "🎶"
+#
+#[cava.hyprlock]
+## 'cava.sh hyprlock' configuration
+#max_instances = 1 # Maximum number of cava instances // fix and workaround when a process won't kill 'cava ' process
+#bar = "🌑🌒🌓🌔🌕🌖🌗🌘"
+#width = 20
+#range = 7
+#standby = "🎶"
 
 #[cava.waybar]
 ## 'cava.sh waybar' configuration
