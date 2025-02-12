@@ -78,7 +78,7 @@ Configs
                 wallbash.sh
                 wallbashtoggle.sh
                 wallpaper.sh # OK, i guess
-                wbarconfgen.sh
+                wbarconfgen.sh # OK, generates waybar config
                 wbarstylegen.sh
                 weather.py
         share/
@@ -146,8 +146,9 @@ Configs
         VSCodium/ # OK, aber vlt unnötig
         waybar/
             modules/ # OK, wenn alle scripts ok sind!!!!!
-            config.ctl # OK
-            config.jsonc # OK
+            config.ctl # OK, templates for layouts, edit this for changes
+                        # important: spaces before and after () needed!
+            config.jsonc # OK, generated, do not edit
             style.css # OK
             theme.css # OK
         wlogout/ # OK
