@@ -3,13 +3,13 @@
 - [X] add power menu to rofi (power mode)
     - [X] get the actions from Configs/.config/wlogout
     - [X] get power menu to show with keybind
-    - [ ] add to all styles
+    - [X] add to all styles
 - [X] remove waybar blur, make it fully transparent
 - [ ] Choose packages (not) to install
     - [ ] in Scripts/custom_flat.lst
 - [ ] remove any grub related interference
-- [ ] fix alt gr not working
+- [X] fix alt gr not working (?)
 - [ ] show language in waybar
-- [ ] Style lockscreen
-- [ ] back and forward with mouse buttons in dolphin
+- [X] Style lockscreen
+- [ ] back and forward with mouse buttons in dolphin, works on baremetal...
 - [ ] add my .zshrc config to repo
