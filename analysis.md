@@ -59,7 +59,7 @@ Configs
                 quickapps.sh	   
                 resetxdgportal.sh # OK
                 rofilaunch.sh	   
-                rofiselect.sh	   
+                rofiselect.sh # seems to select style
                 sensorsinfo.py
                 swwwallbash.sh    
                 sysmonlaunch.sh   

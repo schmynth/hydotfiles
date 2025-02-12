@@ -11,7 +11,7 @@
 
 // Config //
 configuration {
-    modi:                        "drun,filebrowser,window,run";
+    modi:                        "drun,filebrowser,window,run,rofi-power-menu";
     show-icons:                  true;
     display-drun:                " ";
     display-run:                 " ";
