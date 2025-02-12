@@ -30,59 +30,57 @@ Configs
             hyde/ [$scrPath]
                 amdgpu.py   # OK
                 animations.sh # OK
-                keyboardswitch.sh # OK
-                volumecontrol.sh # OK
-                globalcontrol.sh # OK, contains env variables for scripts
-                lockscreen.sh # OK, runs hyprlock
-                sensorsinfo.py
-                wallbash.hypr.sh
                 batterynotify.sh # OK
-                glyph-picker.sh	
-                logoutlaunch.sh    
-                swwwallbash.sh    
-                wallbash.print.colors.sh
-                brightnesscontrol.sh  
-                gnome-terminal	
-                mediaplayer.py	   
-                swwwallcache.sh   
-                wallbash.qt.sh
-                gpuinfo.sh	
-                notifications.py   
-                swwwallkon.sh # 
-                wallbash.sh
-                cliphist.sh	      
-                grimblast		
-                parse.config.py    
-                swwwallpaper.sh # OK, only runs wallpaper.sh
-                wallbashtoggle.sh
-                cpuinfo.sh	      
-                hyde-launch.sh	
-                parse.json.py	   
-                swwwallselect.sh  
-                wallpaper.sh # OK, i guess
+                brightnesscontrol.sh # OK
+                cliphist.sh	# OK      
+                cpuinfo.sh # OK  
                 dontkillsteam.sh # OK
-                hyprlock.sh	
-                polkitkdeauth.sh # where is /usr/lib/polkit-gnome/ ?
-                sysmonlaunch.sh   
-                wbarconfgen.sh
-                emoji-picker.sh       
-                hyprsunset.sh	
-                quickapps.sh	   
-                systemupdate.sh   
-                wbarstylegen.sh
-                fastfetch.sh	      
-                hypr.unbind.sh	
-                resetxdgportal.sh # OK
-                testrunner.sh     
-                weather.py
+                emoji-picker.sh # OK
+                fastfetch.sh # OK
                 font.sh	# Resolves, downloads and installs fonts
-                keybinds.hint.py	
-                rofilaunch.sh	   
-                themeselect.sh    
                 gamelauncher.sh       
+                globalcontrol.sh # OK, contains env variables for scripts
+                glyph-picker.sh # OK
+                gnome-terminal # OK	
+                gpuinfo.sh # OK
+                hyde-launch.sh	
+                hyprlock.sh	
+                hyprsunset.sh	
+                hypr.unbind.sh	
+                keyboardswitch.sh # OK
+                keybinds.hint.py	
                 keybinds_hint.sh	
+                lockscreen.sh # OK, runs hyprlock
+                logoutlaunch.sh    
+                mediaplayer.py	   
+                notifications.py   
+                parse.json.py	   
+                polkitkdeauth.sh # where is /usr/lib/polkit-gnome/ ?
+                quickapps.sh	   
+                resetxdgportal.sh # OK
+                rofilaunch.sh	   
                 rofiselect.sh	   
+                sensorsinfo.py
+                swwwallbash.sh    
+                sysmonlaunch.sh   
+                swwwallcache.sh   
+                swwwallkon.sh # 
+                swwwallpaper.sh # OK, only runs wallpaper.sh
+                swwwallselect.sh  
+                systemupdate.sh   
+                testrunner.sh     
+                themeselect.sh    
                 themeswitch.sh
+                volumecontrol.sh # OK
+                wallbash.hypr.sh
+                wallbash.print.colors.sh
+                wallbash.qt.sh
+                wallbash.sh
+                wallbashtoggle.sh
+                wallpaper.sh # OK, i guess
+                wbarconfgen.sh
+                wbarstylegen.sh
+                weather.py
         share/
             dolphin/ # OK
             hyde/
