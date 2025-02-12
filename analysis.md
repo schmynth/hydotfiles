@@ -15,7 +15,7 @@ Scripts/
     global_fn.sh # OK, utility functions
     install_aur.sh # OK, installs selected AUR helper
     install_pkg.sh # OK, installs pacman packages
-    install_pre.sh # OK, macht aber GRUB Sachen, vlt unerwünscht
+    install_pre.sh # grub stuff, pacman stuff ??????????????
     install_pst.sh # installiert sddm, vlt ungewollt ??????????????
     restore_shl.sh # OK
     
