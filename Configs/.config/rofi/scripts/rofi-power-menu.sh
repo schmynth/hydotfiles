@@ -19,7 +19,7 @@ all=(shutdown reboot suspend hibernate logout lockscreen)
 show=("${all[@]}")
 
 declare -A texts
-texts[lockscreen]="lock screen"
+texts[lockscreen]="why lock screen"
 texts[switchuser]="switch user"
 texts[logout]="log out"
 texts[suspend]="suspend"

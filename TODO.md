@@ -11,3 +11,5 @@
 - [ ] fix alt gr not working
 - [ ] show language in waybar
 - [ ] Style lockscreen
+- [ ] back and forward with mouse buttons in dolphin
+- [ ] add my .zshrc config to repo
