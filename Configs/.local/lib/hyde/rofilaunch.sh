@@ -39,7 +39,7 @@ r | --run)
     rofi_config="${ROFI_LAUNCH_RUN_STYLE:-$rofi_config}"
     ;;
 p | power)
-	r_mode="power"
+	r_mode="rofi-power-menu"
     rofi_config="${ROFI_LAUNCH_POWER_STYLE:-$rofi_config}"
 	;;
 h | --help)

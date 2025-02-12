@@ -58,7 +58,7 @@ Configs
                 polkitkdeauth.sh # where is /usr/lib/polkit-gnome/ ?
                 quickapps.sh	   
                 resetxdgportal.sh # OK
-                rofilaunch.sh	   
+                rofilaunch.sh # OK, launches rofi in different modes, added rofi-power-menu
                 rofiselect.sh # seems to select style
                 sensorsinfo.py
                 swwwallbash.sh    
