@@ -13,6 +13,8 @@ Hyde Structure:
 
 Scripts/
     extra/
+        custom_flat.lst # OK, contains flatpak packages to install, updated
+        restore_app.sh # OK, updated, removed firefox extension installation
     global_fn.sh # OK, utility functions
     install_aur.sh # OK, installs selected AUR helper
     install_pkg.sh # OK, installs pacman packages
