@@ -12,9 +12,20 @@ Wallpapers are stored in .config/hyde/themes/[theme name]/wallpapers on a per th
 
 The themes are sourced from project HyDE github repo.
 
+### Cursor
+
+Change the cursor in ~/.local/share/hyde/hyprland.conf under CURSOR
+You should combine a XCURSOR and HYPRCURSOR theme by taking the xcursor theme and copying the hyprcursor/ folder from the HYPRCURSOR theme into it, so that the theme folder has the following structure:
+    themename/
+        cursors/ # xcursor
+        hyprcursors/ # hyprcursor
+        cursor.theme
+        index.theme
+
 ## Hyprland
 
 General override config files are located in ~/.config/hypr/ as usual. These override the boilerplate files in ~/.local/share/hyde/ 
+More info in ~/.config/hypr/hyprland.conf
 
 ### Hyprlock
 
@@ -29,9 +40,11 @@ Put your zsh aliases and keybinds in ~/.zshrc
 
 # Questions
 
-where does oh-my-zsh come from?
+where are zsh keybinds stored?
+where does oh-my-zsh come from? -> it is installed by Scripts/restore_shl.sh
 what is hyde-shell? $HOME/.local/bin/hyde-shell
-where do the themes, fonts and wallpapers come from?
+where do the themes, fonts and wallpapers come from? -> they come from HyDE/themes repo
+    as in Scripts/themepatcher.lst
 
 Config files:
 
