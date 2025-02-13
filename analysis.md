@@ -1,5 +1,35 @@
-dunst: notification daemon
+# My fork of HyDE
 
+This is my fork of the HyDE dotfiles for hyprland. In this file I try to analyze what HyDE does and if it is safe to use. Also this file serves as a guide to customize HyDE to my/your liking.
+
+# Config Guide
+
+## Wallpapers
+
+Wallpapers are stored in .config/hyde/themes/[theme name]/wallpapers on a per theme basis. Drop your wallpapers where you think fit.
+
+## Themes
+
+The themes are sourced from project HyDE github repo.
+
+## Hyprland
+
+General override config files are located in ~/.config/hypr/ as usual. These override the boilerplate files in ~/.local/share/hyde/ 
+
+### Hyprlock
+
+Make your own hyprlock layout and put it in
+
+    ~/.config/hypr/hyprlock/
+
+## zsh
+
+Put your zsh aliases and keybinds in ~/.zshrc
+
+
+# Questions
+
+where does oh-my-zsh come from?
 what is hyde-shell? $HOME/.local/bin/hyde-shell
 where do the themes, fonts and wallpapers come from?
 
@@ -9,12 +39,14 @@ Config files:
     config.toml # general hyde config
     hyprland.conf # env variables
 
-Hyde Structure:
+# Hyde file structure:
 
 Scripts/
     extra/
         custom_flat.lst # OK, contains flatpak packages to install, updated
         restore_app.sh # OK, updated, removed firefox extension installation
+        install_fpk.sh # OK
+        restore_lnk.sh
     global_fn.sh # OK, utility functions
     install_aur.sh # OK, installs selected AUR helper
     install_pkg.sh # OK, installs pacman packages
@@ -24,6 +56,8 @@ Scripts/
     pkg_core.lst # OK, packages to install from arch core repo
     pkg_extra.lst # OK, packages to install from extra repo or AUR
     restore_shl.sh # OK
+    systemctl.lst # OK, just NetworkManager, bluetooth, sddm
+    themepatcher.lst # contains links to themes
     
 Configs
     .local/
