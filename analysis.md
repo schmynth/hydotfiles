@@ -40,11 +40,12 @@ Put your zsh aliases and keybinds in ~/.zshrc
 
 # Questions
 
-where are zsh keybinds stored?
-where does oh-my-zsh come from? -> it is installed by Scripts/restore_shl.sh
-what is hyde-shell? $HOME/.local/bin/hyde-shell
-where do the themes, fonts and wallpapers come from? -> they come from HyDE/themes repo
-    as in Scripts/themepatcher.lst
+[X] where are preconfigured zsh keybinds stored? -> they are part of oh-my-zsh
+[X] where does oh-my-zsh come from? -> it is installed by Scripts/restore_shl.sh
+[X] what is hyde-shell? $HOME/.local/bin/hyde-shell
+[ ] where do the themes and wallpapers come from? -> they come from HyDE/themes repo as in Scripts/themepatcher.lst
+[ ] how is stuff from Source/arcs (.tar.gz) installed?
+
 
 Config files:
 
