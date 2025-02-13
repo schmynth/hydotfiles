@@ -8,13 +8,14 @@
     # problem: in .config/hypr/themes/theme.conf blur is always reset with new theme
     # temporary fix: unset layerrule in ~/.config/hypr/windowrules.conf
 - [ ] Choose packages (not) to install
-    - [ ] in Scripts/custom_flat.lst
-- [ ] remove any grub related interference
+    - [ ] add package list from own dotfiles
+- [X] remove any grub related interference
 - [X] fix alt gr not working (?)
 - [X] show language in waybar
 - [X] Style lockscreen
 - [ ] back and forward with mouse buttons in dolphin, works on baremetal...
 - [ ] add my .zshrc config to repo
-- [ ] analyze install.sh script
+- [X] analyze install.sh script
+    - script is safe
 
 - [ ] final test in fresh VM

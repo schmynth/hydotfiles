@@ -51,12 +51,12 @@ Scripts/
     install_aur.sh # OK, installs selected AUR helper
     install_pkg.sh # OK, installs pacman packages
     install_pre.sh # OK
-    install_pst.sh # installiert sddm, runs restore_shl.sh, sddm vlt ungewollt ??????????????
-    install.sh # OK, if install_pst.sh is ok
+    install_pst.sh # installiert sddm, runs restore_shl.sh, sddm vlt ungewollt ??????????
+    install.sh # OK
     pkg_core.lst # OK, packages to install from arch core repo
     pkg_extra.lst # OK, packages to install from extra repo or AUR
     restore_shl.sh # OK
-    systemctl.lst # OK, just NetworkManager, bluetooth, sddm
+    systemctl.lst # OK
     themepatcher.lst # contains links to themes
     
 Configs
