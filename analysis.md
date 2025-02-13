@@ -15,7 +15,7 @@ Scripts/
     global_fn.sh # OK, utility functions
     install_aur.sh # OK, installs selected AUR helper
     install_pkg.sh # OK, installs pacman packages
-    install_pre.sh # grub stuff, pacman stuff ??????????????
+    install_pre.sh # OK
     install_pst.sh # installiert sddm, vlt ungewollt ??????????????
     install.sh #
     pkg_core.lst # OK, packages to install from arch core repo
