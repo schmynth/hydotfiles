@@ -1,6 +1,7 @@
 dunst: notification daemon
 
 what is hyde-shell? $HOME/.local/bin/hyde-shell
+where do the themes, fonts and wallpapers come from?
 
 Config files:
 
@@ -16,8 +17,8 @@ Scripts/
     install_aur.sh # OK, installs selected AUR helper
     install_pkg.sh # OK, installs pacman packages
     install_pre.sh # OK
-    install_pst.sh # installiert sddm, vlt ungewollt ??????????????
-    install.sh #
+    install_pst.sh # installiert sddm, runs restore_shl.sh, sddm vlt ungewollt ??????????????
+    install.sh # OK, if install_pst.sh is ok
     pkg_core.lst # OK, packages to install from arch core repo
     pkg_extra.lst # OK, packages to install from extra repo or AUR
     restore_shl.sh # OK
