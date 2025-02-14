@@ -15,6 +15,7 @@
 - [X] Style lockscreen
 - [ ] back and forward with mouse buttons in dolphin, works on baremetal...
 - [ ] add my .zshrc config to repo
+- [ ] fix waybar blurred background when changing wallpaper
 - [X] analyze install.sh script
     - script is safe
 
