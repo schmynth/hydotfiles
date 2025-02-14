@@ -13,6 +13,10 @@ ddccui                                                 # GUI to control brightne
 # oh-my-zsh-git|zsh                                      # Optional plugin manager for zsh // already installed locally
 
 
+# --------------------------------------------------- // Productivity
+bitwig-studio
+anki
+
 # --------------------------------------------------- // Misc
 xdg-desktop-portal-gtk                                 # xdg desktop portal using gtk
 # emote                                                # emoji picker gtk3
