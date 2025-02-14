@@ -97,7 +97,7 @@ Configs
                 emoji-picker.sh # OK
                 fastfetch.sh # OK
                 font.sh	# Resolves, downloads and installs fonts
-                gamelauncher.sh       
+                gamelauncher.sh # OK
                 globalcontrol.sh # OK, contains env variables for scripts
                 glyph-picker.sh # OK
                 gnome-terminal # OK	
