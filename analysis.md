@@ -43,8 +43,13 @@ Put your zsh aliases and keybinds in ~/.zshrc
 [X] where are preconfigured zsh keybinds stored? -> they are part of oh-my-zsh
 [X] where does oh-my-zsh come from? -> it is installed by Scripts/restore_shl.sh
 [X] what is hyde-shell? $HOME/.local/bin/hyde-shell
+[ ] how do i install different cursor theme? -> set in restore_fnt.lst
 [ ] where do the themes and wallpapers come from? -> they come from HyDE/themes repo as in Scripts/themepatcher.lst
 [ ] how is stuff from Source/arcs (.tar.gz) installed?
+[X] how do the dotfiles get installed? By Scripts/restore_cfg.sh
+    - The config files are listed in restore_cfg.psv (restore_cfg.lst is deprecated and can be deleted seems like)
+[ ] how to set user avatar for sddm?
+
 
 
 Config files:

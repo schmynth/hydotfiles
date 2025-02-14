@@ -9,5 +9,7 @@ Font_NotoSansCJK|$HOME/.local/share/fonts
 Font_NotoSansCJK|/usr/local/share/fonts
 Cursor_BibataIce|/usr/local/share/icons
 Cursor_BibataIce|$HOME/.local/share/icons
+Cursor_RosePine|/usr/local/share/icons
+Cursor_RosePine|$HOME/.local/share/themes
 Gtk_Wallbash|$HOME/.local/share/themes
 Icon_Wallbash|$HOME/.local/share/icons
