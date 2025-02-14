@@ -9,13 +9,14 @@
     # temporary fix: unset layerrule in ~/.config/hypr/windowrules.conf
 - [ ] Choose packages (not) to install
     - [ ] add package list from own dotfiles
+- [ ] replace wlogout in waybar power menu with rofi power mode
 - [X] remove any grub related interference
 - [X] fix alt gr not working (?)
 - [X] show language in waybar
 - [X] Style lockscreen
 - [ ] back and forward with mouse buttons in dolphin, works on baremetal...
 - [ ] add my .zshrc config to repo
-- [ ] fix waybar blurred background when changing wallpaper
+- [X] fix waybar blurred background when changing wallpaper
 - [X] analyze install.sh script
     - script is safe
 
