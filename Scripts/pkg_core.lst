@@ -91,7 +91,7 @@ coolercontrol
 coolercontrold
 cpupower
 cpupower-gui
-ddccui                                                 # GUI to control brightness for external monitors
+ddcui                                                 # GUI to control brightness for external monitors
 deja-dup
 libinput-gestures                                    # actions touchpad gestures using libinput
 ncdu
