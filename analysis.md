@@ -74,6 +74,7 @@ Scripts/
     install.sh # OK
     pkg_core.lst # OK, packages to install from arch core repo
     pkg_extra.lst # OK, packages to install from extra repo or AUR
+    restore_fnt.lst # OK, list of tarballs and targets to extract to
     restore_shl.sh # OK
     systemctl.lst # OK
     themepatcher.lst # contains links to themes

@@ -1,21 +1,38 @@
 # --------------------------------------------------- // System
 # downgrade                                            # downgrade packages
 # trash-cli-git                                        # cli to manage trash files
+bitwarden
+coolercontrol
+coolercontrold
+cpupower
+cpupower-gui
+ddccui                                                 # GUI to control brightness for external monitors
+deja-dup
 libinput-gestures                                    # actions touchpad gestures using libinput
+ncdu
 gestures                                             # gui for libinput-gestures
+opencl-amd
+realtime-privileges
+reflector
 # wttrbar                                                # for weather
 # python-requests|wttrbar                                # script dependency
-ddccui                                                 # GUI to control brightness for external monitors
 # hyprgui-bin                                          # GUI for hyprland configuration // might mess your userprefs but convenient // Just disappeared
-# swappy                                               # screenshot editor, DEPRECATED in favor for satty
 
 # --------------------------------------------------- // Shell
 # oh-my-zsh-git|zsh                                      # Optional plugin manager for zsh // already installed locally
 
 
 # --------------------------------------------------- // Productivity
-bitwig-studio
 anki
+bitwig-studio
+blender
+darktable
+gimp
+kicad
+newsflash
+onlyoffice-bin
+renoise
+sfizz
 
 # --------------------------------------------------- // Misc
 xdg-desktop-portal-gtk                                 # xdg desktop portal using gtk
@@ -24,9 +41,16 @@ xdg-desktop-portal-gtk                                 # xdg desktop portal usin
 # --------------------------------------------------- // Gaming
 steam                                                  # gaming platform
 gamemode                                               # daemon and library for game optimizations
-mangohud                                               # system performance overlay
 gamescope                                            # micro-compositor for gaming
+gamemode
+lib32-gamemode
+lib32-mesa
+lib32-vulkan-radeon
 lutris                                               # Lutris is an open source gaming platform for Linux
+mangohud                                               # system performance overlay
+wine-staging
+wine-tricks
+yabridge
 
 # --------------------------------------------------- // Music
 # cava                                                   # audio visualizer
