@@ -134,7 +134,7 @@ lib32-vulkan-radeon
 lutris                                               # Lutris is an open source gaming platform for Linux
 mangohud                                               # system performance overlay
 wine-staging
-wine-tricks
+winetricks
 yabridge
 
 # --------------------------------------------------- // Music
