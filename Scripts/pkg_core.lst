@@ -83,3 +83,83 @@ fastfetch                                              # system information fetc
 # --------------------------------------------------- // HyDE
 # hyde-cli-git                                           # cli tool to manage hyde \\ Deprecated for HyDE
 hypridle                                               # idle daemon
+# --------------------------------------------------- // System
+# downgrade                                            # downgrade packages
+# trash-cli-git                                        # cli to manage trash files
+bitwarden
+coolercontrol
+coolercontrold
+cpupower
+cpupower-gui
+ddccui                                                 # GUI to control brightness for external monitors
+deja-dup
+libinput-gestures                                    # actions touchpad gestures using libinput
+ncdu
+gestures                                             # gui for libinput-gestures
+opencl-amd
+realtime-privileges
+reflector
+# wttrbar                                                # for weather
+# python-requests|wttrbar                                # script dependency
+# hyprgui-bin                                          # GUI for hyprland configuration // might mess your userprefs but convenient // Just disappeared
+
+# --------------------------------------------------- // Shell
+# oh-my-zsh-git|zsh                                      # Optional plugin manager for zsh // already installed locally
+
+
+# --------------------------------------------------- // Productivity
+anki
+bitwig-studio
+blender
+darktable
+gimp
+kicad
+newsflash
+onlyoffice-bin
+renoise
+sfizz
+
+# --------------------------------------------------- // Misc
+xdg-desktop-portal-gtk                                 # xdg desktop portal using gtk
+# emote                                                # emoji picker gtk3
+
+# --------------------------------------------------- // Gaming
+steam                                                  # gaming platform
+gamemode                                               # daemon and library for game optimizations
+gamescope                                            # micro-compositor for gaming
+gamemode
+lib32-gamemode
+lib32-mesa
+lib32-vulkan-radeon
+lutris                                               # Lutris is an open source gaming platform for Linux
+mangohud                                               # system performance overlay
+wine-staging
+wine-tricks
+yabridge
+
+# --------------------------------------------------- // Music
+# cava                                                   # audio visualizer
+spotify                                                # proprietary music streaming service
+spicetify-cli                                          # cli to customize spotify client
+
+# --------------------------------------------------- // Apps
+# neovim                                               # vim based text editor
+
+# --------------------------------------------------- // Shell
+# oh-my-zsh-git|zsh                                      # Optional plugin manager for zsh
+# pokemon-colorscripts-git|zsh                           # display pokemon sprites (optional)
+
+# --------------------------------------------------- // Editor
+# vscodium                                              # Full oss text editor
+# vscodium-marketplace|vscodium                         # VSCodium marketplace
+# code-marketplace|code                                 # Code-Oss marketplace
+visual-studio-code-bin                                # MS  text editor
+
+# --------------------------------------------------- // Backends
+#electron                                              # electron backend
+
+# --------------------------------------------------- // Lockscreen
+#swaylock-effects-git                                   # swaylock with effects // very minimal lockscreen
+
+# --------------------------------------------------- // OSD
+swayosd-git                                             #A GTK based on screen display for keyboard shortcuts like caps-lock and volume
