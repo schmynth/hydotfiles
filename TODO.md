@@ -19,7 +19,7 @@
 - [X] fix waybar blurred background when changing wallpaper
 - [X] analyze install.sh script
     - script is safe
-- [ ] find out how to read the log
+- [X] find out how to read the log -> in ~/.cache/hyde
     - [ ] do an install and resolve errors and warnings
 
 - [ ] final test in fresh VM

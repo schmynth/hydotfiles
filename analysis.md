@@ -48,6 +48,7 @@ Put your zsh aliases and keybinds in ~/.zshrc
 [X] how is stuff from Source/arcs (.tar.gz) installed? -> by the restore_... scripts
 [X] how do the dotfiles get installed? By Scripts/restore_cfg.sh
     - The config files are listed in restore_cfg.psv (restore_cfg.lst is deprecated and can be deleted seems like)
+[X] Where are the logs stored? -> in ~/.cache/hyde
 [ ] how to set user avatar for sddm?
 
 

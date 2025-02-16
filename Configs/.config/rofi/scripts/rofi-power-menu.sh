@@ -19,13 +19,13 @@ all=(shutdown reboot suspend hibernate logout lockscreen)
 show=("${all[@]}")
 
 declare -A texts
-texts[lockscreen]="why lock screen"
-texts[switchuser]="switch user"
-texts[logout]="log out"
-texts[suspend]="suspend"
-texts[hibernate]="hibernate"
-texts[reboot]="reboot"
-texts[shutdown]="shut down"
+texts[lockscreen]="  lock screen"
+texts[switchuser]="  switch user"
+texts[logout]="  log out"
+texts[suspend]="  suspend"
+texts[hibernate]="  hibernate"
+texts[reboot]="  reboot"
+texts[shutdown]="  shut down"
 
 declare -A icons
 icons[lockscreen]="\Uf033e"
