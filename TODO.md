@@ -21,5 +21,6 @@
     - script is safe
 - [X] find out how to read the log -> in ~/.cache/hyde
     - [ ] do an install and resolve errors and warnings
+- [ ] merge package list branch
 
 - [ ] final test in fresh VM
