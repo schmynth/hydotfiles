@@ -12,3 +12,6 @@
 
 #  This is your file 
 # Add your configurations here
+
+# enable VIM mode in terminal:
+bindkey -v
