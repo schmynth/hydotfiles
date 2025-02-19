@@ -35,8 +35,34 @@ grub-mkconfig -o /boot/grub/grub.cfg
 EOF
 }
 
-apply_optimizations () {
+group_exists () {
+		if grep -q $1 /etc/group
+		then
+			print_message info "System" "Group $1 exists"
+		else
+			print_message info "System" "Group $1 does not exist. Create group $1"
+sudo -i -u root bash <<EOF
+groupadd $1
+EOF
+		fi
+}
 
+
+user_in_realtime_group () {
+	if id -nG "$USER" | grep -qw realtime; then
+		print_message info "System" "User already in realtime group"	
+	else
+		print_message info "System" "User not in realtime group. Add user to it"
+sudo -i -u root bash <<EOF
+usermod -a -G realtime $USER
+EOF
+	fi
+
+}
+
+apply_optimizations () {
+	group_exists realtime
+	user_in_realtime_group
 	print_message info Package "installing realtime-privileges"
 	sudo pacman -S realtime-privileges --needed
 	
@@ -60,7 +86,6 @@ EOF
 	add_kernel_parameter "threadirqs"
 	print_message info GRUB "update GRUB"
 	update_grub
-
 }
 # apply_optimization end
 
