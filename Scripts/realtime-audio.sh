@@ -64,7 +64,7 @@ apply_optimizations () {
 	group_exists realtime
 	user_in_realtime_group
 	print_message info Package "installing realtime-privileges"
-	sudo pacman -S realtime-privileges --needed
+	sudo pacman -S realtime-privileges --needed || print_message error Package "installation of realtime-privileges failed."
 	
 	print_message info "Config" "setting max-user-freq to 2048"
 	sudo -i -u root bash <<-EOF
