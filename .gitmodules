@@ -1,3 +1,6 @@
 [submodule "Wiki"]
 	path = Wiki
 	url = https://github.com/HyDE-Project/HyDE.wiki.git
+[submodule "hydotfiles.wiki"]
+	path = hydotfiles.wiki
+	url = https://github.com/schmynth/hydotfiles.wiki.git
