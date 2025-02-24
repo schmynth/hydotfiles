@@ -108,7 +108,7 @@ reflector
 
 
 # --------------------------------------------------- // Productivity
-anki
+# anki
 bitwig-studio
 blender
 darktable
@@ -116,7 +116,7 @@ gimp
 kicad
 newsflash
 onlyoffice-bin
-renoise
+# renoise
 sfizz
 
 # --------------------------------------------------- // Misc
