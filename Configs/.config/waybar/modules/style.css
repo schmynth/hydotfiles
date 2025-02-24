@@ -104,6 +104,7 @@ ${modules_ls}
     color: @main-fg;
     background: @main-bg;
     opacity: 0.7;
+	border-style: solid;
 	border-top-width: ${waybar_border_width}px;
 	border-bottom-width: ${waybar_border_width}px;
 	border-color: @main-fg;
