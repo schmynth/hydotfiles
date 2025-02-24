@@ -13,6 +13,9 @@ in_file="$waybar_dir/modules/style.css"
 out_file="$waybar_dir/style.css"
 src_file="${confDir}/hypr/themes/theme.conf"
 
+# define waybar border width:
+export waybar_border_width=2
+
 # calculate height from control file or monitor res
 
 b_height=${WAYBAR_SCALE:-$(grep '^1|' "$conf_ctl" | cut -d '|' -f 2)}

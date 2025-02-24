@@ -103,10 +103,14 @@ ${modules_ls}
 #custom-rr_end {
     color: @main-fg;
     background: @main-bg;
-    opacity: 1;
+    opacity: 0.7;
+	border-top-width: ${waybar_border_width}px;
+	border-bottom-width: ${waybar_border_width}px;
+	border-color: @main-fg;
     margin: ${x1g_margin}px ${x2g_margin}px ${x3g_margin}px ${x4g_margin}px;
     padding-${x3}: ${g_paddin}px;
     padding-${x4}: ${g_paddin}px;
+
 }
 
 #workspaces,
@@ -115,12 +119,16 @@ ${modules_ls}
 }
 
 #custom-r_end {
+		border-left-width: 0px;
+		border-right-width: ${waybar_border_width}px;
     border-radius: ${x1rb_radius}px ${x2rb_radius}px ${x3rb_radius}px ${x4rb_radius}px;
     margin-${x4}: ${e_margin}px;
     padding-${x4}: ${e_paddin}px;
 }
 
 #custom-l_end {
+		border-left-width: ${waybar_border_width}px;
+		border-right-width: 0px;
     border-radius: ${x1lb_radius}px ${x2lb_radius}px ${x3lb_radius}px ${x4lb_radius}px;
     margin-${x3}: ${e_margin}px;
     padding-${x3}: ${e_paddin}px;
