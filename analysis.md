@@ -135,7 +135,7 @@ Configs
                 swwwallkon.sh # 
                 swwwallpaper.sh # OK, only runs wallpaper.sh
                 swwwallselect.sh  
-                systemupdate.sh   
+                systemupdate.sh # OK
                 testrunner.sh     
                 themeselect.sh    
                 themeswitch.sh
