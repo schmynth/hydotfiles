@@ -22,6 +22,7 @@
         "class<Alacritty>": "",
         "class<kitty>": "",
         "class<org.kde.konsole>": "",
+		"title<.*.ods>": "",
         "code": "",
         "title<.*darktable.*>": "", // Windows whose titles contain "darktable"
         "title<.*steam.*>": "", // Windows whose titles contain "steam"
