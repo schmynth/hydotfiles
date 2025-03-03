@@ -9,6 +9,7 @@
 
 #  Aliases 
 # Add aliases here
+alias maintain="maintain.sh"
 
 #  This is your file 
 # Add your configurations here
