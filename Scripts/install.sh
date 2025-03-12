@@ -330,6 +330,17 @@ EOF
     done <"${scrDir}/system_ctl.lst"
 fi
 
+cat <<"EOF"
+
+┌─┐┬  ┬ ┬┌─┐┬┌┐┌┌─┐
+├─┘│  │ ││ ┬││││└─┐
+┴  ┴─┘└─┘└─┘┴┘└┘└─┘
+
+EOF
+	"${scrDir}/install_plugins.sh"
+
+
+
 if [ $flg_Install -eq 1 ]; then
     print_log -stat "\nInstallation" "completed"
 fi
