@@ -4,7 +4,6 @@
 #|-/ /--| Prasanth Rangan                      |-/ /--|#
 #|/ /---+--------------------------------------+/ /---|#
 
-hyprspaceRepo="https://github.com/KZDKM/Hyprspace"
 
 scrDir=$(dirname "$(realpath "$0")")
 # shellcheck disable=SC1091
@@ -80,16 +79,3 @@ else
     print_log -y "[FLATPAK]" -b " :: " "flatpak is already installed"
 fi
 
-# Hyprspace overview plugin
-print_log -g "[Hyprspace]" -b "install :: " "Hyprspace Overview"
-# git clone $hyprspaceRepo $cloneDir/Hyprspace
-# cd $cloneDir/Hyprspace
-# make all
-# mv Hyprspace.so /home/$USER/.local/lib/hyde/
-# rm -rf $cloneDir/Hyprspace
-print_log -g "[Hyprpm]" -b "install :: " "dependencies"
-sudo pacman -S --needed cmake meson pkg-config cpio
-hyprpm update
-hyprpm add https://github.com/KZDKM/Hyprspace
-hyprpm enable Hyprspace
-hyprpm -v update
