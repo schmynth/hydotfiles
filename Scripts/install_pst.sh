@@ -4,6 +4,8 @@
 #|-/ /--| Prasanth Rangan                      |-/ /--|#
 #|/ /---+--------------------------------------+/ /---|#
 
+hyprspaceRepo="https://github.com/KZDKM/Hyprspace"
+
 scrDir=$(dirname "$(realpath "$0")")
 # shellcheck disable=SC1091
 if ! source "${scrDir}/global_fn.sh"; then
@@ -77,3 +79,11 @@ if ! pkg_installed flatpak; then
 else
     print_log -y "[FLATPAK]" -b " :: " "flatpak is already installed"
 fi
+
+# Hyprspace overview plugin
+print_log -g "[Hyprspace]" -b "install :: " "Hyprspace Overview"
+git clone $hyprspaceRepo $cloneDir/Hyprspace
+cd $cloneDir/Hyprspace
+make all
+mv Hyprspace.so /home/$USER/.local/lib/hyde/
+rm -rf $cloneDir/Hyprspace
