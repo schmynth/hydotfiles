@@ -82,8 +82,10 @@ fi
 
 # Hyprspace overview plugin
 print_log -g "[Hyprspace]" -b "install :: " "Hyprspace Overview"
-git clone $hyprspaceRepo $cloneDir/Hyprspace
-cd $cloneDir/Hyprspace
-make all
-mv Hyprspace.so /home/$USER/.local/lib/hyde/
-rm -rf $cloneDir/Hyprspace
+# git clone $hyprspaceRepo $cloneDir/Hyprspace
+# cd $cloneDir/Hyprspace
+# make all
+# mv Hyprspace.so /home/$USER/.local/lib/hyde/
+# rm -rf $cloneDir/Hyprspace
+hyprpm add https://github.com/KZDKM/Hyprspace
+hyprpm enable Hyprspace
