@@ -87,5 +87,8 @@ print_log -g "[Hyprspace]" -b "install :: " "Hyprspace Overview"
 # make all
 # mv Hyprspace.so /home/$USER/.local/lib/hyde/
 # rm -rf $cloneDir/Hyprspace
+print_log -g "[Hyprpm]" -b "install :: " "dependencies"
+sudo pacman -S --needed cmake meson pkf-config cpio
+hyprpm update
 hyprpm add https://github.com/KZDKM/Hyprspace
 hyprpm enable Hyprspace
