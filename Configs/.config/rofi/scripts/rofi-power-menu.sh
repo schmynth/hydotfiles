@@ -40,7 +40,7 @@ icons[cancel]="\Uf0156 "
 declare -A actions
 actions[lockscreen]="hyprlock"
 #actions[switchuser]="???"
-actions[logout]="loginctl terminate-session ${XDG_SESSION_ID-}"
+actions[logout]="kill -9 -1"
 actions[suspend]="systemctl suspend"
 actions[hibernate]="systemctl hibernate"
 actions[reboot]="systemctl reboot"
