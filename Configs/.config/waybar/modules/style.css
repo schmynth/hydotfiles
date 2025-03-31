@@ -53,6 +53,39 @@ tooltip {
     transition: all 0.3s cubic-bezier(.55,-0.68,.48,1.682);
 }
 
+#pulseaudio-slider {
+		min-height: ${s_fontpx}px;
+		margin: ${w_margin};
+		padding: ${w_margin};
+}
+
+#pulseaudio-slider slider {
+		min-height: 2px;
+		min-width: 0px;
+		opacity: 0;
+		border: none;
+		box-shadow: none;
+		background-color: transparent;
+		margin: ${w_margin};
+		padding: ${w_margin};
+}
+
+#pulseaudio-slider trough {
+		min-height: 2px;
+		min-width: 70px;
+		border-radius: 4px;
+		background-color: black;
+		margin: ${w_margin};
+		padding: ${w_margin};
+}
+
+#pulseaudio-slider highlight {
+		min-width: 8px;
+		min-height: 3px;
+		border-radius: 4px;
+		background-color: @wb-hvr-color;
+}
+
 #taskbar button {
     box-shadow: none;
 	text-shadow: none;
@@ -95,6 +128,7 @@ tooltip {
 }
 
 ${modules_ls}
+#pulseaudio-slider,
 #custom-l_end,
 #custom-r_end,
 #custom-sl_end,
