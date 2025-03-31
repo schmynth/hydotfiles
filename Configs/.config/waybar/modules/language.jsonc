@@ -2,7 +2,7 @@
         "format": "{}",
 		"format-en": "🇺🇸",
 		"format-de": "🇩🇪",
-		"format-ru": "🇷🇺"
+		"format-ru": "🇷🇺",
         "rotate": ${r_deg},
         "on-click": "keyboardswitch.sh",
     },
