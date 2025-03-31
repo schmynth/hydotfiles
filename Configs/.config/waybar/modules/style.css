@@ -4,7 +4,7 @@
     font-family: "${font_name}","JetBrainsMono Nerd Font";
     font-weight: bold;
     font-size: ${s_fontpx}px;
-    min-height: 10px;
+    min-height: 18px;
 }
 
 @import "theme.css";
@@ -55,8 +55,8 @@ tooltip {
 
 #pulseaudio-slider {
 		min-height: ${s_fontpx}px;
-		margin: ${w_margin};
-		padding: ${w_margin};
+		margin: 0px;
+		padding: 0px;
 }
 
 #pulseaudio-slider slider {
@@ -66,15 +66,15 @@ tooltip {
 		border: none;
 		box-shadow: none;
 		background-color: transparent;
-		margin: ${w_margin};
-		padding: ${w_margin};
+		margin: 0px;
+		padding: 0px;
 }
 
 #pulseaudio-slider trough {
-		min-height: 2px;
+		min-height: 4px;
 		min-width: 70px;
-		border-radius: 4px;
-		background-color: black;
+		border-radius: 6px;
+		background-color: @main-fg;
 		margin: ${w_margin};
 		padding: ${w_margin};
 }
@@ -83,7 +83,7 @@ tooltip {
 		min-width: 8px;
 		min-height: 3px;
 		border-radius: 4px;
-		background-color: @wb-hvr-color;
+		background-color: @main-bg;
 }
 
 #taskbar button {
