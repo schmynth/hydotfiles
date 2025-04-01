@@ -74,7 +74,7 @@ tooltip {
 		min-height: 4px;
 		min-width: 70px;
 		border-radius: 6px;
-		background-color: @main-fg;
+		background: @main-fg;
 		margin: ${w_margin};
 		padding: ${w_margin};
 }
@@ -83,7 +83,7 @@ tooltip {
 		min-width: 8px;
 		min-height: 3px;
 		border-radius: 4px;
-		background-color: @main-bg;
+		background: @main-bg;
 }
 
 #taskbar button {
