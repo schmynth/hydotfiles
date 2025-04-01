@@ -72,7 +72,7 @@ tooltip {
 
 #pulseaudio-slider trough {
 		min-height: 4px;
-		min-width: 70px;
+		min-width: 50px;
 		border-radius: 6px;
 		background: @main-fg;
 		margin: ${w_margin};
