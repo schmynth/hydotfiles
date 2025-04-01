@@ -80,10 +80,12 @@ tooltip {
 }
 
 #pulseaudio-slider highlight {
-		min-width: 8px;
-		min-height: 3px;
+		min-width: 0px;
+		min-height: 0px;
 		border-radius: 4px;
 		background: @main-bg;
+		margin: 0px;
+		padding: 0px;
 }
 
 #taskbar button {
