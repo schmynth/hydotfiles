@@ -13,13 +13,18 @@ out_file="${dockDir}/style.css"
 
 # define dock style related variables
 export border_radius="10px"
+export border_width="2px"
 
 margin_bottom=4
 icon_size=32
 position="bottom"
 
 envsubst <"$in_file" >"$out_file"
-kill -SIGKILL $(ps -C nwg-dock-hyprland)
+pid="$(ps -C nwg-look-hyprland | sed '1d')"
+if [[ -n $pid ]]; then
+		kill -SIGKILL $pid
+fi
+
 regenerate
 nohup nwg-dock-hyprland -r -x -i $icon_size -mb $margin_bottom -p $position &
 

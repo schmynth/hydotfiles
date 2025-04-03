@@ -41,6 +41,7 @@ slurp                                                  # region select for scree
 satty                                                  # Modern Screenshot Annotation
 cliphist                                               # clipboard manager
 hyprsunset                                             # blue light filter
+nwg-dock-hyprland
 
 # --------------------------------------------------- // Dependencies
 polkit-gnome                                           # authentication agent
