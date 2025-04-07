@@ -57,6 +57,7 @@ P|${HOME}/.config/VSCodium/User|settings.json|vscodium
  Bar 
 P|${HOME}/.config/waybar|config.ctl|waybar
 S|${HOME}/.config/waybar|modules config.jsonc theme.css style.css|waybar
+S|${HOME}/.config/nwg-dock-hyprland|theme theme.css style.css|nwg-dock-hyprland
 
  Terminal 
 S|${HOME}/.config|fastfetch|fastfetch
