@@ -133,13 +133,13 @@ case "$1" in
         ROFI_THEME_STYLE="selector"
         ;;
     1 | "square") # default to style 1
-        elm_width=$(((23 + 12 + 1) * font_scale * 2))
+        elm_width=$(((12 + 3) * font_scale * 2))
         max_avail=$((mon_x_res - (4 * font_scale)))
         col_count=$((max_avail / elm_width))
         r_override="window{width:100%;} 
                             listview{columns:${col_count};} 
                             element{border-radius:${elem_border}px;padding:0.5em;} 
-                            element-icon{size:23em;border-radius:${icon_border}px;}"
+                            element-icon{size:5em;border-radius:${icon_border}px;}"
         thmbExtn="sqre"
         ROFI_THEME_STYLE="selector"
         ;;
