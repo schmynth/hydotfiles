@@ -31,9 +31,9 @@ B = Backup - Backup the target
  Hyde core files 
 P|${HOME}/.config/hyde|config.toml|hyprland
 P|${HOME}/.config/hypr|hyde.conf animations.conf windowrules.conf keybindings.conf userprefs.conf monitors.conf|hyprland
-P|${HOME}/.config/hypr|nvidia.conf|hyprland nvidia-utils
 P|${HOME}/.config/hypr/themes|theme.conf wallbash.conf colors.conf|hyprland
 P|${HOME}/.local/state|hyde|hyprland
+# P|${HOME}/.config/hypr|nvidia.conf|hyprland nvidia-utils
 
 S|${HOME}/.config/hypr|hyprland.conf|hyprland
 S|${HOME}/.local|bin|hyprland
@@ -52,7 +52,7 @@ O|${HOME}/.local/lib|hyde|hyprland
 
  Editor 
 P|${HOME}/.config/Code/User|settings.json|visual-studio-code-bin
-P|${HOME}/.config/VSCodium/User|settings.json|vscodium
+# P|${HOME}/.config/VSCodium/User|settings.json|vscodium
 
  Bar 
 P|${HOME}/.config/waybar|config.ctl|waybar
@@ -85,8 +85,8 @@ P|${HOME}/.config|libinput-gestures.conf|libinput-gestures
 P|${HOME}/.config|spotify-flags.conf|spotify
 P|${HOME}/.config|code-flags.conf|code
 P|${HOME}/.config|code-flags.conf|visual-studio-code-bin
-P|${HOME}/.config|vscodium-flags.conf|vscodium
-P|${HOME}/.config|electron-flags.conf|electron
+# P|${HOME}/.config|vscodium-flags.conf|vscodium
+# P|${HOME}/.config|electron-flags.conf|electron
 
  Notifications 
 S|${HOME}/.config|dunst|dunst
@@ -99,9 +99,9 @@ P|${HOME}/.config|rofi|rofi
 S|${HOME}/.config|wlogout|wlogout
 
  Lock Screen 
-S|${HOME}/.config|swaylock|swaylock-effects
 P|${HOME}/.config/hypr|hyprlock.conf|hyprlock
 S|${HOME}/.config/hypr|hyprlock|hyprlock
+# S|${HOME}/.config|swaylock|swaylock-effects
 
  Idle daemon 
 P|${HOME}/.config/hypr|hypridle.conf|hypridle
