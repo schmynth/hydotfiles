@@ -65,6 +65,7 @@ S|${HOME}/.config/nwg-dock-hyprland|theme theme.css style.css|nwg-dock-hyprland
 S|${HOME}/.config|fastfetch|fastfetch
 S|${HOME}/.config/kitty|hyde.conf theme.conf|kitty
 P|${HOME}/.config/kitty|kitty.conf|kitty
+P|${HOME}/.config/ranger|rc.conf|ranger
 
  Shell 
 P|${HOME}|.zshrc .hyde.zshrc .p10k.zsh|zsh zsh-theme-powerlevel10k pokego-bin
