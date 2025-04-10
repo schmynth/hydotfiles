@@ -181,7 +181,7 @@ fi
 [ -f "${scrDir}/${USER}-restore_cfg.psv" ] && defaultLst="$USER-restore_cfg.psv"
 
 CfgLst="${1:-"${scrDir}/${defaultLst}"}"
-CfgDir="${2:-${cloneDir}/Configs}"
+CfgDir="${2:-${cloneDir}/dotfiles}"
 ThemeOverride="${3:-}"
 
 if [ ! -f "${CfgLst}" ] || [ ! -d "${CfgDir}" ]; then
