@@ -18,4 +18,4 @@ hyprpm update
 hyprpm add https://github.com/KZDKM/Hyprspace
 hyprpm enable Hyprspace
 hyprpm -v update
-hyprom reload -nn
+hyprpm reload -nn
