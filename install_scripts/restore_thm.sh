@@ -1,6 +1,7 @@
 #!/usr/bin/env bash
 
 scrDir="$(dirname "$(realpath "$0")")"
+lstDir="${scrDir}/lists"
 # shellcheck disable=SC1091
 if ! source "${scrDir}/global_fn.sh"; then
     echo "Error: unable to source global_fn.sh..."
@@ -8,7 +9,7 @@ if ! source "${scrDir}/global_fn.sh"; then
 fi
 
 THEME_IMPORT_ASYNC=${THEME_IMPORT_ASYNC:-0}
-THEME_IMPORT_FILE="${1:-${scrDir}/themepatcher.lst}"
+THEME_IMPORT_FILE="${1:-${lstDir}/themepatcher.lst}"
 confDir=${confDir:-"$HOME/.config"}
 flg_ThemeInstall=${flg_ThemeInstall:-1}
 flg_DryRun=${flg_DryRun:-0}
