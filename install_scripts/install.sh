@@ -26,6 +26,7 @@ EOF
 # import variables and functions #
 #--------------------------------#
 scrDir="$(dirname "$(realpath "$0")")"
+lstDir="${scrDir}/lists"
 # shellcheck disable=SC1091
 if ! source "${scrDir}/global_fn.sh"; then
     echo "Error: unable to source global_fn.sh..."
@@ -132,22 +133,22 @@ EOF
     #----------------------#
     shift $((OPTIND - 1))
     custom_pkg=$1
-    cp "${scrDir}/packages.lst" "${scrDir}/install_pkg.lst"
-    trap 'mv "${scrDir}/install_pkg.lst" "${cacheDir}/logs/${HYDE_LOG}/install_pkg.lst"' EXIT
+    cp "${lstDir}/packages.lst" "${lstDir}/install_pkg.lst"
+    trap 'mv "${lstDir}/install_pkg.lst" "${cacheDir}/logs/${HYDE_LOG}/install_pkg.lst"' EXIT
 
     if [ -f "${custom_pkg}" ] && [ -n "${custom_pkg}" ]; then
-        cat "${custom_pkg}" >>"${scrDir}/install_pkg.lst"
+        cat "${custom_pkg}" >>"${lstDir}/install_pkg.lst"
     fi
-    echo -e "\n#user packages" >>"${scrDir}/install_pkg.lst" # Add a marker for user packages
+    echo -e "\n#user packages" >>"${lstDir}/install_pkg.lst" # Add a marker for user packages
     #--------------------------------#
     # add nvidia drivers to the list #
     #--------------------------------#
     if nvidia_detect; then
         if [ ${flg_Nvidia} -eq 1 ]; then
             cat /usr/lib/modules/*/pkgbase | while read -r kernel; do
-                echo "${kernel}-headers" >>"${scrDir}/install_pkg.lst"
+                echo "${kernel}-headers" >>"${lstDir}/install_pkg.lst"
             done
-            nvidia_detect --drivers >>"${scrDir}/install_pkg.lst"
+            nvidia_detect --drivers >>"${lstDir}/install_pkg.lst"
         else
             print_log -warn "Nvidia" " :: " "Nvidia GPU detected but ignored..."
         fi
@@ -208,7 +209,7 @@ EOF
             ;;
         esac
         print_log -sec "shell" -stat "Added as shell" "${myShell}"
-        echo "${myShell}" >>"${scrDir}/install_pkg.lst"
+        echo "${myShell}" >>"${lstDir}/install_pkg.lst"
 
         if [[ -z "$myShell" ]]; then
             print_log -sec "shell" -crit "No shell found..." "Log file at ${cacheDir}/logs/${HYDE_LOG}"
@@ -218,7 +219,7 @@ EOF
         fi
     fi
 
-    if ! grep -q "^#user packages" "${scrDir}/install_pkg.lst"; then
+    if ! grep -q "^#user packages" "${lstDir}/install_pkg.lst"; then
         print_log -sec "pkg" -crit "No user packages found..." "Log file at ${cacheDir}/logs/${HYDE_LOG}/install.sh"
         exit 1
     fi
@@ -226,7 +227,7 @@ EOF
     #--------------------------------#
     # install packages from the list #
     #--------------------------------#
-    [ ${flg_DryRun} -eq 1 ] || "${scrDir}/install_pkg.sh" "${scrDir}/install_pkg.lst"
+    [ ${flg_DryRun} -eq 1 ] || "${scrDir}/install_pkg.sh" "${lstDir}/install_pkg.lst"
 fi
 
 #---------------------------#
@@ -320,7 +321,7 @@ EOF
             fi
         fi
 
-    done <"${scrDir}/system_ctl.lst"
+    done <"${lstDir}/system_ctl.lst"
 fi
 
 cat <<"EOF"

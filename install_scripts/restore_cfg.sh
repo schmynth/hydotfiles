@@ -6,6 +6,7 @@
 #|-/ /--| Prasanth Rangan                |-/ /--|#
 #|/ /---+--------------------------------+/ /---|#
 
+
 deploy_list() {
 
     while read -r lst; do
@@ -170,17 +171,19 @@ log_section="deploy"
 flg_DryRun=${flg_DryRun:-0}
 
 scrDir=$(dirname "$(realpath "$0")")
+lstDir="${scrDir}/lists"
+
 if ! source "${scrDir}/global_fn.sh"; then
     echo "Error: unable to source global_fn.sh..."
     exit 1
 fi
 
-[ -f "${scrDir}/restore_cfg.lst" ] && defaultLst="restore_cfg.lst"
-[ -f "${scrDir}/restore_cfg.psv" ] && defaultLst="restore_cfg.psv"
-[ -f "${scrDir}/restore_cfg.json" ] && defaultLst="restore_cfg.json"
+[ -f "${lstDir}/restore_cfg.lst" ] && defaultLst="restore_cfg.lst"
+[ -f "${lstDir}/restore_cfg.psv" ] && defaultLst="restore_cfg.psv"
+[ -f "${lstDir}/restore_cfg.json" ] && defaultLst="restore_cfg.json"
 [ -f "${scrDir}/${USER}-restore_cfg.psv" ] && defaultLst="$USER-restore_cfg.psv"
 
-CfgLst="${1:-"${scrDir}/${defaultLst}"}"
+CfgLst="${1:-"${lstDir}/${defaultLst}"}"
 CfgDir="${2:-${cloneDir}/dotfiles}"
 ThemeOverride="${3:-}"
 

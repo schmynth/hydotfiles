@@ -8,6 +8,8 @@
 flg_DryRun=${flg_DryRun:-0}
 
 scrDir=$(dirname "$(realpath "$0")")
+lstDir="${scrDir}/lists"
+
 export log_section="extract"
 # shellcheck disable=SC1091
 if ! source "${scrDir}/global_fn.sh"; then
@@ -56,7 +58,7 @@ while read -r lst; do
     fi
     print_log "${fnt}.tar.gz" -r " --> " "${tgt}... "
 
-done <"${scrDir}/restore_fnt.lst"
+done <"${lstDir}/restore_fnt.lst"
 echo ""
 print_log -stat "rebuild" "font cache"
 [ "${flg_DryRun}" -eq 1 ] || fc-cache -f
