@@ -5,6 +5,7 @@
 #|/ /---+---------------------------+/ /---|#
 
 scrDir=$(dirname "$(realpath "$0")")
+lstDir="${srcDir}/lists
 # shellcheck disable=SC1091
 if ! source "${scrDir}/global_fn.sh"; then
     echo "Error: unable to source global_fn.sh..."
@@ -67,7 +68,7 @@ if pkg_installed zsh; then
             else
                 [ -z "${z_plugin}" ] || w_plugin+=" ${z_plugin}"
             fi
-        done < <(cut -d '#' -f 1 "${scrDir}/restore_zsh.lst" | sed 's/ //g')
+        done < <(cut -d '#' -f 1 "${lstDir}/restore_zsh.lst" | sed 's/ //g')
 
         # update plugin array in zshrc
         print_log -sec "SHELL" -stat "installing" "plugins (${w_plugin} )"
