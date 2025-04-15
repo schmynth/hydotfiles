@@ -78,6 +78,7 @@ EOF
 add_interrupt_service () {
 	sudo cp "${scrDir}/extra/interrupt_freq.service" /etc/systemd/system/
 	sudo cp "${scrDir}/extra/interrupt_freq.sh" /usr/bin/
+	sudo systemctl enable interrupt_freq.service
 }
 
 apply_optimizations () {

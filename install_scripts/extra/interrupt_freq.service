@@ -5,4 +5,4 @@ Description=sets interrupt frequency to 2048 at boot
 ExecStart=/usr/bin/interrupt_freq.sh
 
 [Install]
-WantedNy=multi-user.target
+WantedBy=multi-user.target
