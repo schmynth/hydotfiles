@@ -75,18 +75,19 @@ echo "$USER ALL=(ALL:ALL) NOPASSWD: /usr/bin/cpupower" > /etc/sudoers.d/20-cpupo
 EOF
 }
 
+add_interrupt_service () {
+	sudo cp "${scrDir}/extra/interrupt_freq.service" /etc/systemd/system/
+	sudo cp "${scrDir}/extra/interrupt_freq.sh" /usr/bin/
+}
+
 apply_optimizations () {
 	group_exists realtime
 	user_in_realtime_group
 	print_message info Package "installing realtime-privileges"
 	sudo pacman -S realtime-privileges --needed || print_message error Package "installation of realtime-privileges failed."
 	
-	print_message info "Config" "setting max-user-freq to 2048"
-	sudo -i -u root bash <<-EOF
-	echo 2048 > /sys/class/rtc/rtc0/max_user_freq
-	echo 2048 > /proc/sys/dev/hpet/max-user-freq
-	EOF
-	
+	print_message info "Service" "setting max-user-freq to 2048 at boot"
+	add_interrupt_service	
 	cpupower_user_auth
 	print_message info "Config" "setting max_user_watches.conf to 600000"
 	
@@ -102,6 +103,7 @@ EOF
 	add_kernel_parameter "threadirqs"
 	print_message info GRUB "update GRUB"
 	update_grub
+	print_message info "System" "Be sure to reboot after applying these optimizations."
 }
 # apply_optimization end
 
