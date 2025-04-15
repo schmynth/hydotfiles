@@ -67,6 +67,14 @@ EOF
 
 }
 
+cpupower_user_auth () {
+	print_message info "System" "authorize $USER to run sudo cpupower without password to launch DAW"
+	print_message info "System" "echo \"$USER ALL=(ALL:ALL) NOPASSWD: /usr/bin/cpupower\" > /etc/sudoers.d/20-cpupower"
+	sudo -i -u root bash <<EOF
+echo "$USER ALL=(ALL:ALL) NOPASSWD: /usr/bin/cpupower" > /etc/sudoers.d/20-cpupower
+EOF
+}
+
 apply_optimizations () {
 	group_exists realtime
 	user_in_realtime_group
