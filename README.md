@@ -7,6 +7,7 @@ As the name suggests, this is my fork of the great [HyDE](https://github.com/HyD
 
 > [!CAUTION]
 > These dotfiles are heavily personalized. Do **not** install them on your system unless you [know](hydotfiles.wiki/Guide.md) what you are doing.
+> You have been warned.
 
 ## why is it public
 
@@ -23,7 +24,9 @@ Because I was fascinated by the Project HyDE dotfiles I decided to analyse their
 
 ## what does this repo have that upstream does not
 
-I added a few convenience scripts that help me. For example, there is a ```realtime_audio.sh``` script in ```install_scripts``` that tweaks the OS for professional audio as suggested in the [Arch Wiki](https://wiki.archlinux.org/title/Professional_audio)
+I added a few convenience scripts that help me. For example, there is a ```realtime_audio.sh``` script in ```install_scripts``` that tweaks the OS for professional audio as suggested in the [Arch Wiki](https://wiki.archlinux.org/title/Professional_audio).
+I added a .desktop file for Bitwig Studio that points to a script that sets the cpu frequency governor to performance when starting and powersave when exiting Bitwig automatically.
+This could easily be edited to work with any daw.
 
 ## who might be interested
 
