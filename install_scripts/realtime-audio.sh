@@ -87,6 +87,7 @@ apply_optimizations () {
 	echo 2048 > /proc/sys/dev/hpet/max-user-freq
 	EOF
 	
+	cpupower_user_auth
 	print_message info "Config" "setting max_user_watches.conf to 600000"
 	
 sudo -i -u root bash << EOF
