@@ -20,3 +20,11 @@ Because I was fascinated by the Project HyDE dotfiles I decided to analyse their
 - understand how they work
 - understand how I can tweak them to make them my own
 - check if they are safe to install and use
+
+## what does this repo have that upstream does not
+
+I added a few convenience scripts that help me. For example, there is a ```realtime_audio.sh``` script in ```install_scripts``` that tweaks the OS for professional audio as suggested in the [Arch Wiki](https://wiki.archlinux.org/title/Professional_audio)
+
+## who might be interested
+
+If you, like me, are using Bitwig to make music on Arch Linux and like Project HyDE dotfiles, this repo might be for you.

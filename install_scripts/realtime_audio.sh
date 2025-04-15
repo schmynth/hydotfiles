@@ -81,20 +81,33 @@ add_interrupt_service () {
 	sudo systemctl enable interrupt_freq.service
 }
 
+max_user_watches () {
+	print_message info "Config" "setting max_user_watches.conf to 600000"
+	
+sudo -i -u root bash << EOF
+echo "fs.inotify.max_user_watches = 600000" > /etc/sysctl.d/90-max_user_watches.conf
+EOF
+}
+
+swappiness () {
+	print_message info "Config" "setting swappiness to 10"
+	
+sudo -i -u root bash << EOF
+echo "vm.swappiness = 10" > /etc/sysctl.d/90-swappiness.conf
+EOF
+}
+
 apply_optimizations () {
 	group_exists realtime
 	user_in_realtime_group
 	print_message info Package "installing realtime-privileges"
 	sudo pacman -S realtime-privileges --needed || print_message error Package "installation of realtime-privileges failed."
 	
+	max_user_watches	
+	swappiness
 	print_message info "Service" "setting max-user-freq to 2048 at boot"
 	add_interrupt_service	
 	cpupower_user_auth
-	print_message info "Config" "setting max_user_watches.conf to 600000"
-	
-sudo -i -u root bash << EOF
-echo "fs.inotify.max_user_watches = 600000" > /etc/sysctl.d/90-max_user_watches.conf
-EOF
 	
 	
 	kernel_parameters_list=($(get_kernel_parameters /etc/default/grub))
