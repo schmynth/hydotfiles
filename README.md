@@ -12,7 +12,7 @@ As the name suggests, this is my fork of the great [HyDE](https://github.com/HyD
 
 
 > [!TIP]
-> If you don't know what you're doing, the [wiki](hydotfiles.wiki/Home) of this repo might help. 
+> If you don't know what you're doing, the [wiki](https://github.com/schmynth/hydotfiles/wiki) of this repo might help. 
 > It is a work in progress but does try to explain, how these and by extension the HyDE dotfiles work.
 
 Because I was fascinated by the Project HyDE dotfiles I decided to analyse their inner workings in order to:
