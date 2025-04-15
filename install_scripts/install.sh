@@ -290,7 +290,7 @@ cat <<"EOF"
 
 
 EOF
-	   "${scrDir}/realtime-audio.sh"
+	   "${scrDir}/realtime_audio.sh"
 
 #------------------------#
 # enable system services #

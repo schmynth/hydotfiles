@@ -107,7 +107,7 @@ EOF
 
 print_message info General "This script optimizes the system for realtime audio processing as proposed in the Arch Linux Wiki."
 print_message warning General "This script is meant for Arch Linux. Do NOT run this on any other distro!"
-print_message warning General "\e[31mTHIS SCRIPT WILL MODIFY SYSTEM FILES AS ROOT! MAKE SURE YOU READ THE SCRIPT BEFORE EXECUTING IT!\e[0m"
+print_message warning General "\e[31mTHIS SCRIPT WILL MODIFY SYSTEM FILES AS ROOT! MAKE SURE YOU READ THE SCRIPT BEFORE EXECUTING IT! (install_scripts/realtime_audio.sh)\e[0m"
 
 read -p "Are you sure you want to apply these realtime optimizations? (yY)" -n 1 -r
 echo 
