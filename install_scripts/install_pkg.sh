@@ -59,7 +59,7 @@ while read -r pkg deps; do
     if pkg_installed "${pkg}"; then
         print_log -y "[skip] " "${pkg}"
     elif pkg_available "${pkg}"; then
-        repo=$(pacman -Si "${pkg}" | awk -F ': ' '/Repository / {print $2}')
+        repo=$(pacman -Si --noconfirm "${pkg}" | awk -F ': ' '/Repository / {print $2}')
         print_log -b "[queue] " -g "${repo}" -b "::" "${pkg}"
         archPkg+=("${pkg}")
     elif aur_available "${pkg}"; then
@@ -75,11 +75,11 @@ IFS=${ofs}
 if [ "${flg_DryRun}" -ne 1 ]; then
     if [[ ${#archPkg[@]} -gt 0 ]]; then
         print_log -b "[install] " "arch packages..."
-        sudo pacman ${use_default:+"$use_default"} -S "${archPkg[@]}"
+        sudo pacman ${use_default:+"$use_default"} -S --noconfirm "${archPkg[@]}"
     fi
 
     if [[ ${#aurhPkg[@]} -gt 0 ]]; then
         print_log -b "[install] " "aur packages..."
-        "${aurhlpr}" ${use_default:+"$use_default"} -S "${aurhPkg[@]}"
+        "${aurhlpr}" ${use_default:+"$use_default"} -S --save --answerdiff None --answerclean None --removemake "${aurhPkg[@]}"
     fi
 fi
