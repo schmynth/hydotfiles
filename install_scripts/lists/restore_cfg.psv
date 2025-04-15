@@ -94,6 +94,9 @@ P|${HOME}/.config|code-flags.conf|visual-studio-code-bin
  Notifications 
 S|${HOME}/.config|dunst|dunst
 
+ Productivity 
+P|${HOME}/.local/share/applications|com.bitwig.BitwigStudio.desktop|bitwig-studio
+
  Gaming 
 S|${HOME}/.config|MangoHud|mangohud
 
