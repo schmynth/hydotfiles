@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 #|---/ /+--------------------------------------+---/ /|#
 #|--/ /-| Script to apply post install configs |--/ /-|#
-#|-/ /--| Prasanth Rangan                      |-/ /--|#
+#|-/ /--| schmynth (based on Prasanth Rangan)  |-/ /--|#
 #|/ /---+--------------------------------------+/ /---|#
 
 
@@ -80,10 +80,5 @@ else
     print_log -y "[FLATPAK]" -b " :: " "flatpak is already installed"
 fi
 
-# sddm-astronaut-theme
-print_log -y "[DISPLAYMANAGER " -b " :: " "installing sddm-astronaut-theme"
-sudo mkdir -p /usr/share/sddm/themes/sddm/themes/sddm-astronaut-theme
-sudo cp -r "${cloneDir}/themes/sddm/sddm-astronaut-theme/*" /usr/share/sddm/themes/sddm-astronaut-theme
-sudo cp -r /usr/share/sddm/themes/sddm/themes/sddm-astronaut-theme/Fonts/* /usr/share/fonts
-echo "[Theme]
-Current=sddm-astronaut-theme" | sudo tee /etc/sddm.conf
+# install sddm and astronaut theme
+"${scrDir}/sddm_theme.sh"
