@@ -46,11 +46,11 @@ while read -r lst; do
 
     if [ -w "${tgt}" ]; then
         # shellcheck disable=SC2154
-        [ "${flg_DryRun}" -eq 1 ] || tar -xzf "${cloneDir}/Source/arcs/${fnt}.tar.gz" -C "${tgt}/"
+        [ "${flg_DryRun}" -eq 1 ] || tar -xzf "${cloneDir}/fonts/${fnt}.tar.gz" -C "${tgt}/"
     else
         print_log -warn "not writable" "Extracting as root: ${tgt} "
         if [ "${flg_DryRun}" -ne 1 ]; then
-            if ! sudo tar -xzf "${cloneDir}/Source/arcs/${fnt}.tar.gz" -C "${tgt}/" 2>/dev/null; then
+            if ! sudo tar -xzf "${cloneDir}/fonts/${fnt}.tar.gz" -C "${tgt}/" 2>/dev/null; then
                 print_log -err "extraction by root FAILED" " giving up..."
                 print_log "The above error can be ignored if the '${tgt}' is not writable..."
             fi
