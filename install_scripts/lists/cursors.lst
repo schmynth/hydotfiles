@@ -1,0 +1,6 @@
+# Tarball list to be extracted to target directory
+
+Cursor_BibataIce|/usr/local/share/icons
+Cursor_BibataIce|$HOME/.local/share/icons
+Cursor_RosePine|/usr/local/share/icons
+Cursor_RosePine|$HOME/.local/share/icons
