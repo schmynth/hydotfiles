@@ -6,7 +6,7 @@
 As the name suggests, this is my fork of the great [HyDE](https://github.com/HyDE-Project) Project dotfiles.
 
 > [!CAUTION]
-> These dotfiles are heavily personalized. Do **not** install them on your system unless you [know](hydotfiles.wiki/Guide.md) what you are doing.
+> These dotfiles are heavily personalized. Do **not** install them on your system unless you [know what you are doing.](hydotfiles.wiki/Guide.md)
 > You have been warned.
 
 ## why is it public
