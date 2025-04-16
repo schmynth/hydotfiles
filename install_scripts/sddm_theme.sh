@@ -47,7 +47,7 @@ select_sddm_theme(){
 }
 
 print_log -y "[DISPLAYMANAGER] " -b " :: " "installing sddm-astronaut-theme"
-sudo mkdir -p /usr/share/sddm/themes/sddm/themes/sddm-astronaut-theme
+sudo mkdir -p /usr/share/sddm/themes/sddm-astronaut-theme
 sudo cp -r "${cloneDir}"/themes/sddm/sddm-astronaut-theme/* /usr/share/sddm/themes/sddm-astronaut-theme
 sudo cp -r /usr/share/sddm/themes/sddm/themes/sddm-astronaut-theme/Fonts/* /usr/share/fonts
 echo "[Theme]
