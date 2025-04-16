@@ -9,7 +9,7 @@ if ! source "${scrDir}/global_fn.sh"; then
 fi
 
 cloneDir="${cloneDir:-$CLONE_DIR}"
-git clone https://github.com/Keyitdev/sddm-astronaut-theme "${cloneDir}"/themes/sddm/
+git clone https://github.com/Keyitdev/sddm-astronaut-theme "${cloneDir}"/themes/sddm/sddm-astronaut-theme
 
 select_sddm_theme(){
     path_to_metadata="/usr/share/sddm/themes/sddm-astronaut-theme/metadata.desktop"
