@@ -83,7 +83,7 @@ fi
 # sddm-astronaut-theme
 print_log -y "[DISPLAYMANAGER " -b " :: " "installing sddm-astronaut-theme"
 sudo mkdir -p /usr/share/sddm/themes/sddm/themes/sddm-astronaut-theme
-sudo cp -r "${cloneDir}/themes/sddm/sddm-astronaut-theme/*" -C /usr/share/sddm/themes/
+sudo cp -r "${cloneDir}/themes/sddm/sddm-astronaut-theme/*" /usr/share/sddm/themes/sddm-astronaut-theme
 sudo cp -r /usr/share/sddm/themes/sddm/themes/sddm-astronaut-theme/Fonts/* /usr/share/fonts
 echo "[Theme]
 Current=sddm-astronaut-theme" | sudo tee /etc/sddm.conf
