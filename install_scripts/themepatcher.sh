@@ -306,4 +306,6 @@ fi
 
 print_prompt -y "\nNote: Warnings are not errors. Review the output to check if it concerns you."
 
+cp /usr/share/sddm/themes/sddm-astronaut-theme/Backgrounds/pixel_sakura.gif ~/.config/hyde/themes/Material\ Sakura/
+
 exit 0
