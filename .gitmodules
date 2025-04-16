@@ -4,3 +4,6 @@
 [submodule "hydotfiles.wiki"]
 	path = hydotfiles.wiki
 	url = https://github.com/schmynth/hydotfiles.wiki.git
+[submodule "themes/sddm/sddm-astronaut-theme"]
+	path = themes/sddm/sddm-astronaut-theme
+	url = https://github.com/Keyitdev/sddm-astronaut-theme
