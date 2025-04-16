@@ -31,7 +31,7 @@ if pkg_installed sddm; then
         *) sddmtheme="Corners" ;;
         esac
 
-        sudo tar -xzf "${cloneDir}/Source/arcs/Sddm_${sddmtheme}.tar.gz" -C /usr/share/sddm/themes/
+        sudo tar -xzf "${cloneDir}/themes/sddm/Sddm_${sddmtheme}.tar.gz" -C /usr/share/sddm/themes/
         sudo touch /etc/sddm.conf.d/the_hyde_project.conf
         sudo cp /etc/sddm.conf.d/the_hyde_project.conf /etc/sddm.conf.d/backup_the_hyde_project.conf
         sudo cp /usr/share/sddm/themes/${sddmtheme}/the_hyde_project.conf /etc/sddm.conf.d/
