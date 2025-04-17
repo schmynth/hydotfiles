@@ -10,6 +10,8 @@ fi
 
 cloneDir="${cloneDir:-$CLONE_DIR}"
 astronautDir="${cloneDir}"/themes/sddm/sddm-astronaut-theme
+echo "astronautDir is: $astronautDir"
+
 if [ -d astronautDir ]; then
 		rm -rf $astronautDir
 fi
