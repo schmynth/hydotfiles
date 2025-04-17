@@ -13,7 +13,7 @@ astronautDir="${cloneDir}/themes/sddm/sddm-astronaut-theme"
 astronautGitUrl="https://github.com/Keyitdev/sddm-astronaut-theme"
 # echo "astronautDir is: $astronautDir"
 
-if [[ -d astronautDir ]]; then
+if [ -d $astronautDir ]; then
 		echo "sddm-astronaut-theme directory found. clearing."
 		rm -rf $astronautDir
 fi
