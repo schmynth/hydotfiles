@@ -13,3 +13,5 @@ echo "#!/bin/sh
 xrandr --output ${monitor} --mode ${mode} --rate ${rate}" > /usr/share/sddm/scripts/Xsetup"
 EOF
 }
+
+set_sddm_resolution
