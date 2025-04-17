@@ -329,8 +329,10 @@ cat <<"EOF"
                
 
 EOF
-	"${scrDir}/install_plugins.sh"
 
+"${scrDir}/install_plugins.sh"
+
+"${scrDir}/sddm_resolution.sh"
 
 
 if [ $flg_Install -eq 1 ]; then
@@ -350,3 +352,4 @@ if [ $flg_Install -eq 1 ] ||
         echo "The system will not reboot"
     fi
 fi
+
