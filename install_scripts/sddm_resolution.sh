@@ -1,5 +1,13 @@
 #!/bin/bash
 
+scrDir="$(dirname "$(realpath "$0")")"
+lstDir="${scrDir}/lists"
+# shellcheck disable=SC1091
+if ! source "${scrDir}/global_fn.sh"; then
+    echo "Error: unable to source global_fn.sh..."
+    exit 1
+fi
+
 set_sddm_resolution(){
 		monitor=$(xrandr | awk '/connected/ {print $1}')
 		mode=$(xrandr | awk 'NR > 2 && NR < 4 {print $1}')
