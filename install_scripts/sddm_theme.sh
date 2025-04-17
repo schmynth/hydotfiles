@@ -9,14 +9,15 @@ if ! source "${scrDir}/global_fn.sh"; then
 fi
 
 cloneDir="${cloneDir:-$CLONE_DIR}"
-astronautDir="${cloneDir}"/themes/sddm/sddm-astronaut-theme
+astronautDir="${cloneDir}/themes/sddm/sddm-astronaut-theme"
+astronautGitUrl="https://github.com/Keyitdev/sddm-astronaut-theme"
 echo "astronautDir is: $astronautDir"
 
 if [[ -d astronautDir ]]; then
 		echo "sddm-astronaut-theme directory found. clearing."
 		rm -rf $astronautDir
 fi
-git clone https://github.com/Keyitdev/sddm-astronaut-theme "$astronautDir" 
+git clone "${astronautGitUrl" "${astronautDir}" 
 
 # copy backgrounds to theme wallpaper dirs
 cp $astronautDir/Backgrounds/pixel_sakura.gif ~/.config/hyde/themes/Material\ Sakura/
