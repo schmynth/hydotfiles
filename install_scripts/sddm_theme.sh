@@ -18,7 +18,7 @@ fi
 git clone https://github.com/Keyitdev/sddm-astronaut-theme "$astronautDir" 
 
 # copy backgrounds to theme wallpaper dirs
-cp /usr/share/sddm/themes/sddm-astronaut-theme/Backgrounds/pixel_sakura.gif ~/.config/hyde/themes/Material\ Sakura/
+cp $astronautDir/Backgrounds/pixel_sakura.gif ~/.config/hyde/themes/Material\ Sakura/
 
 select_sddm_theme(){
     path_to_metadata="/usr/share/sddm/themes/sddm-astronaut-theme/metadata.desktop"
