@@ -11,7 +11,7 @@ fi
 set_sddm_resolution(){
 		monitor=$(xrandr | awk '/connected/ {print $1}')
 		mode=$(xrandr | awk 'NR > 2 && NR < 4 {print $1}')
-		mode=$(xrandr | awk 'NR > 2 && NR < 4 {print $2}' | sed 's/'*+'//')
+		rate=$(xrandr | awk 'NR > 2 && NR < 4 {print $2}' | sed 's/'*+'//')
 		print_log -y "[DISPLAYMANAGER] " -b ":: " "setting sddm to respect monitors resolution"
 sudo -i -u root bash <<EOF
 echo "#!/bin/sh
