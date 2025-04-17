@@ -59,6 +59,7 @@ echo "#!/bin/sh
 
 xrandr --output ${monitor} --mode ${mode} --rate ${rate} > /usr/share/sddm/scripts/Xsetup
 EOF
+}
 
 print_log -y "[DISPLAYMANAGER] " -b ":: " "installing sddm-astronaut-theme"
 sudo mkdir -p /usr/share/sddm/themes/sddm-astronaut-theme
@@ -69,3 +70,4 @@ Current=sddm-astronaut-theme" | sudo tee /etc/sddm.conf
 
 
 select_sddm_theme
+set_sddm_resolution
