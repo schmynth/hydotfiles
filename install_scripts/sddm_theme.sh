@@ -73,7 +73,7 @@ xrandr --output ${monitor} --mode ${mode} --rate ${rate}" > /usr/share/sddm/scri
 EOF
 }
 
-print_log -y "[DISPLAYMANAGER] " -b ":: installing sddm-astronaut-theme"
+print_log -y "[DISPLAYMANAGER] " -b ":: " "installing sddm-astronaut-theme"
 sudo mkdir -p /usr/share/sddm/themes/sddm-astronaut-theme
 sudo cp -r "${cloneDir}"/themes/sddm/sddm-astronaut-theme/* /usr/share/sddm/themes/sddm-astronaut-theme
 sudo cp -r /usr/share/sddm/themes/sddm-astronaut-theme/Fonts/* /usr/share/fonts
