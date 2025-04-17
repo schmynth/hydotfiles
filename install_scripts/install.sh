@@ -313,7 +313,7 @@ EOF
             print_log -y "start" "Service ${serviceChk}"
             if [ $flg_DryRun -ne 1 ]; then
                 sudo systemctl enable "${serviceChk}.service"
-                sudo systemctl start "${serviceChk}.service"
+                # sudo systemctl start "${serviceChk}.service"
             fi
         fi
 
