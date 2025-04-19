@@ -9,7 +9,19 @@ if ! source "${scrDir}/global_fn.sh"; then
 fi
 
 cloneDir="${cloneDir:-$CLONE_DIR}"
-git clone https://github.com/Keyitdev/sddm-astronaut-theme "${cloneDir}"/themes/sddm/sddm-astronaut-theme
+astronautDir="${cloneDir}/themes/sddm/sddm-astronaut-theme"
+astronautGitUrl="https://github.com/Keyitdev/sddm-astronaut-theme"
+# echo "astronautDir is: $astronautDir"
+
+if [ -d $astronautDir ]; then
+		echo "sddm-astronaut-theme directory found. clearing."
+		rm -rf $astronautDir
+fi
+
+git clone "${astronautGitUrl}" "${astronautDir}" 
+
+# copy backgrounds to theme wallpaper dirs
+cp $astronautDir/Backgrounds/pixel_sakura.gif ~/.config/hyde/themes/Material\ Sakura/
 
 select_sddm_theme(){
     path_to_metadata="/usr/share/sddm/themes/sddm-astronaut-theme/metadata.desktop"
@@ -47,11 +59,13 @@ select_sddm_theme(){
     echo -e "${green}[*] Changed: $line -> $modified_line${no_color}"
 }
 
-print_log -y "[DISPLAYMANAGER] " -b " :: " "installing sddm-astronaut-theme"
+
+print_log -y "[DISPLAYMANAGER] " -b ":: " "installing sddm-astronaut-theme"
 sudo mkdir -p /usr/share/sddm/themes/sddm-astronaut-theme
 sudo cp -r "${cloneDir}"/themes/sddm/sddm-astronaut-theme/* /usr/share/sddm/themes/sddm-astronaut-theme
 sudo cp -r /usr/share/sddm/themes/sddm-astronaut-theme/Fonts/* /usr/share/fonts
 echo "[Theme]
 Current=sddm-astronaut-theme" | sudo tee /etc/sddm.conf
+
 
 select_sddm_theme

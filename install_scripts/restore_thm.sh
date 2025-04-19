@@ -47,3 +47,4 @@ if [ "$flg_ThemeInstall" -eq 1 ]; then
     fi
     print_log -y "Be sure to cache the wallpapers!"
 fi
+
