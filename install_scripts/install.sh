@@ -330,10 +330,18 @@ cat <<"EOF"
 
 EOF
 
-"${scrDir}/install_plugins.sh"
+print_log -stat "Log" "Please make sure to run ${scrDir}/install_plugins.sh after rebooting if you wish to install hyprland plugins."
 
+print_log -stat "Log" "setting sddm resolution"
 "${scrDir}/sddm_resolution.sh"
 
+cat <<"EOF"
+
+ _          
+(_ '  ' _ / 
+/ //)/_) /)
+
+EOF
 
 if [ $flg_Install -eq 1 ]; then
     print_log -stat "\nInstallation" "completed"
