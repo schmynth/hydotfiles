@@ -57,16 +57,16 @@ while read -r pkg deps; do
     fi
 
     if pkg_installed "${pkg}"; then
-        print_log -info "Info" -sec "package" -y "[skip] " "${pkg}"
+        print_log -info "Info" -y "[skip] " "${pkg}"
     elif pkg_available "${pkg}"; then
         repo=$(pacman -Si --noconfirm "${pkg}" | awk -F ': ' '/Repository / {print $2}')
-        print_log -info "Info" -sec "package" -b "[queue] " -g "${repo}" -b "::" "${pkg}"
+        print_log -info "Info" -b "[queue] " -g "${repo}" -b "::" "${pkg}"
         archPkg+=("${pkg}")
     elif aur_available "${pkg}"; then
-        print_log -info "Info" -sec "package" -b "[queue] " -g "aur" -b "::" "${pkg}"
+        print_log -info "Info" -b "[queue] " -g "aur" -b "::" "${pkg}"
         aurhPkg+=("${pkg}")
     else
-        print_log -r "[error] " -sec "package" "unknown package ${pkg}..."
+        print_log -err "unknown package ${pkg}..."
     fi
 done < <(cut -d '#' -f 1 "${listPkg}")
 
@@ -74,12 +74,12 @@ IFS=${ofs}
 
 if [ "${flg_DryRun}" -ne 1 ]; then
     if [[ ${#archPkg[@]} -gt 0 ]]; then
-        print_log -info "Info" -sec "package" -b "[install] " "arch packages..."
+        print_log -info "Info" -b "[install] " "arch packages..."
         sudo pacman ${use_default:+"$use_default"} -S --noconfirm "${archPkg[@]}"
     fi
 
     if [[ ${#aurhPkg[@]} -gt 0 ]]; then
-        print_log -info "Info" -sec "package" -b "[install] " "aur packages..."
+        print_log -info "Info" -b "[install] " "aur packages..."
         "${aurhlpr}" ${use_default:+"$use_default"} -S --save --answerdiff None --answerclean None --removemake "${aurhPkg[@]}"
     fi
 fi
