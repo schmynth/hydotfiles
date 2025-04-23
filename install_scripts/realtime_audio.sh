@@ -119,7 +119,7 @@ apply_optimizations () {
 
 print_log -sec "General" -info "Info" "This script optimizes the system for realtime audio processing as proposed in the Arch Linux Wiki."
 print_log -sec "General" -warn "This script is meant for Arch Linux. Do NOT run this on any other distro!"
-print_log -sec "General" -warn "\e[31mTHIS SCRIPT WILL MODIFY SYSTEM FILES AS ROOT! MAKE SURE YOU READ THE SCRIPT BEFORE EXECUTING IT! (install_scripts/realtime_audio.sh)\e[0m"
+print_log -sec "General" -warn "THIS SCRIPT WILL MODIFY SYSTEM FILES AS ROOT! MAKE SURE YOU READ THE SCRIPT BEFORE EXECUTING IT! (install_scripts/realtime_audio.sh)"
 
 read -p "Are you sure you want to apply these realtime optimizations? (yY)" -n 1 -r
 echo 
