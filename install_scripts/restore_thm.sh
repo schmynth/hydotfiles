@@ -32,10 +32,10 @@ if [ "$flg_ThemeInstall" -eq 1 ]; then
             if ! "${scrDir}/themepatcher.sh" "${themeName}" "${themeRepo}" "--skipcaching" "false"; then
                 print_log -r "[THEME] " -crit "error" "importing" "${themeName}"
             else
-                print_log -g "[THEME] " -stat "added" "${themeName}"
+                print_log -g "[THEME] " -info "added" "${themeName}"
             fi
         else
-            print_log -g "[THEME] " -stat "added" "${themeName}"
+            print_log -g "[THEME] " -info "added" "${themeName}"
         fi
 
     done <"$THEME_IMPORT_FILE"

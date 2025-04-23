@@ -139,7 +139,7 @@ print_log() {
                 echo -ne "\e[96m$2\e[0m"
                 shift 2
                 ;; # Neon
-            -stat)
+            -info)
                 echo -ne "\e[30;46m $2 \e[0m :: "
                 shift 2
                 ;; # status

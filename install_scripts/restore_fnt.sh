@@ -68,5 +68,5 @@ extract_archs fonts
 extract_archs cursors
 extract_archs themes
 echo ""
-print_log -stat "rebuild" "font cache"
+print_log -info "rebuild" "font cache"
 [ "${flg_DryRun}" -eq 1 ] || fc-cache -f

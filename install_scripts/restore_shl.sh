@@ -14,7 +14,7 @@ fi
 
 # shellcheck disable=SC2154
 if chk_list "myShell" "${shlList[@]}"; then
-    print_log -sec "SHELL" -stat "detected" "${myShell}"
+    print_log -sec "SHELL" -info "detected" "${myShell}"
 else
     print_log -sec "SHELL" -err "error" "no shell found..."
     exit 1
@@ -25,7 +25,7 @@ if pkg_installed zsh; then
 
     if ! pkg_installed oh-my-zsh-git; then
         if [[ ! -e "$HOME/.oh-my-zsh/oh-my-zsh.sh" ]]; then
-            print_log -sec "SHELL" -stat "cloning" "oh-my-zsh"
+            print_log -sec "SHELL" -info "cloning" "oh-my-zsh"
             if ! sh -c "$(curl -fsSL https://install.ohmyz.sh/)" "" --unattended --keep-zshrc; then
                 print_log -err "oh-my-zsh update failed..." "Please resolve this issue manually LATER ..."
                 print_log -warn "Continuing" "with existing oh-my-zsh..."
@@ -33,7 +33,7 @@ if pkg_installed zsh; then
             fi
 
         else
-            print_log -sec "SHELL" -stat "updating" "oh-my-zsh"
+            print_log -sec "SHELL" -info "updating" "oh-my-zsh"
             zsh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/upgrade.sh)"
         fi
     fi
@@ -71,15 +71,15 @@ if pkg_installed zsh; then
         done < <(cut -d '#' -f 1 "${lstDir}/restore_zsh.lst" | sed 's/ //g')
 
         # update plugin array in zshrc
-        print_log -sec "SHELL" -stat "installing" "plugins (${w_plugin} )"
+        print_log -sec "SHELL" -info "installing" "plugins (${w_plugin} )"
         sed -i "/^hyde_plugins=/c\hyde_plugins=(${w_plugin} )${Fix_Completion}" "${Zsh_rc}"
     fi
 fi
 
 # set shell
 if [[ "$(grep "/${USER}:" /etc/passwd | awk -F '/' '{print $NF}')" != "${myShell}" ]]; then
-    print_log -sec "SHELL" -stat "change" "shell to ${myShell}..."
+    print_log -sec "SHELL" -info "change" "shell to ${myShell}..."
     chsh -s "$(which "${myShell}")"
 else
-    print_log -sec "SHELL" -stat "exist" "${myShell} is already set as shell..."
+    print_log -sec "SHELL" -info "exist" "${myShell} is already set as shell..."
 fi
