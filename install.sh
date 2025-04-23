@@ -63,7 +63,7 @@ while getopts "idrstmnhf" flag; do
   n)
     # shellcheck disable=SC2034
     export flg_Nvidia=0
-    print_log -r "[nvidia] " -b "Ignored :: " "skipping Nvidia actions"
+    print_log -info "Info" -r "[nvidia] " -b "Ignored :: " "skipping Nvidia actions"
     ;;
   h)
     # shellcheck disable=SC2034
@@ -96,7 +96,7 @@ HYDE_LOG="$(date +'%y%m%d_%Hh%Mm%Ss')"
 export flg_DryRun flg_Nvidia flg_Shell flg_Install flg_ThemeInstall HYDE_LOG
 
 if [ "${flg_DryRun}" -eq 1 ]; then
-    print_log -n "[test-run] " -b "enabled :: " "Testing without executing"
+    print_log -info "Info" -n "[test-run] " -b "enabled :: " "Testing without executing"
 elif [ $OPTIND -eq 1 ]; then
     flg_Install=1
     flg_Restore=1
@@ -363,7 +363,7 @@ cat <<"EOF"
 EOF
 
 if [ $flg_Install -eq 1 ]; then
-    print_log -info "\nInstallation" "completed"
+    print_log -info "Info" -sec "[GENERAL]" "Installation completed"
 fi
 
 print_log -info "Log" "View logs at ${cacheDir}/logs/${HYDE_LOG}"
