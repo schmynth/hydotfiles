@@ -345,7 +345,7 @@ EOF
 
   print_log -stat "Log" "installing hyprland plugins"
   
-  ${scrDir}/install_plugins.sh 
+  "${scrDir}/install_plugins.sh"
   
   print_log -stat "Log" "setting sddm resolution"
   "${scrDir}/sddm_resolution.sh"

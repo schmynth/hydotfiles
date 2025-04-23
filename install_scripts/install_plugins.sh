@@ -15,7 +15,7 @@ print_log -g "[Hyprspace]" -b "install :: " "Hyprspace Overview"
 print_log -g "[Hyprpm]" -b "install :: " "dependencies"
 sudo pacman -S --needed cmake meson pkg-config cpio
 hyprpm update
-hyprpm add https://github.com/KZDKM/Hyprspace
-hyprpm enable Hyprspace
+hyprpm add https://github.com/KZDKM/Hyprspace || print_log -warn -g "[Hyprpm]" -r " add :: could not add repo. Already installed?"
+hyprpm enable Hyprspace  || print_log -warn -g "[Hyprpm]" -r " add :: could not enable Hyprspace. Already enabled?"
 hyprpm -v update
 hyprpm reload -nn
