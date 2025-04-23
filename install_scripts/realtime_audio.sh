@@ -64,8 +64,8 @@ EOF
 }
 
 cpupower_user_auth () {
-	print_message info "System" "authorize $USER to run sudo cpupower without password to launch DAW"
-	print_message info "System" "echo \"$USER ALL=(ALL:ALL) NOPASSWD: /usr/bin/cpupower\" > /etc/sudoers.d/20-cpupower"
+	print_log -sec "System" -warn "Warning" "authorize $USER to run sudo cpupower without password to launch DAW"
+	print_log -sec "System" -info "Info" "echo \"$USER ALL=(ALL:ALL) NOPASSWD: /usr/bin/cpupower\" > /etc/sudoers.d/20-cpupower"
 	sudo -i -u root bash <<EOF
 echo "$USER ALL=(ALL:ALL) NOPASSWD: /usr/bin/cpupower" > /etc/sudoers.d/20-cpupower
 EOF
@@ -78,7 +78,7 @@ add_interrupt_service () {
 }
 
 max_user_watches () {
-	print_message info "Config" "setting max_user_watches.conf to 600000"
+	print_log -sec "Config" -info "Info" -b "setting max_user_watches.conf to 600000"
 	
 sudo -i -u root bash << EOF
 echo "fs.inotify.max_user_watches = 600000" > /etc/sysctl.d/90-max_user_watches.conf
@@ -86,7 +86,7 @@ EOF
 }
 
 swappiness () {
-	print_message info "Config" "setting swappiness to 10"
+	print_log -sec "System" -info "Info" -b "setting swappiness to 10"
 	
 sudo -i -u root bash << EOF
 echo "vm.swappiness = 10" > /etc/sysctl.d/90-swappiness.conf
@@ -96,30 +96,30 @@ EOF
 apply_optimizations () {
 	group_exists realtime
 	user_in_realtime_group
-	print_message info Package "installing realtime-privileges"
-	sudo pacman -S realtime-privileges --needed || print_message error Package "installation of realtime-privileges failed."
+	print_log -sec "Package" -info "Info" -b "installing realtime-privileges"
+	sudo pacman -S realtime-privileges --needed || print_log -sec "Package" -err "installation of realtime-privileges failed."
 	
 	max_user_watches	
 	swappiness
-	print_message info "Service" "setting max-user-freq to 2048 at boot"
+	print_log -sec "Service" -info "Info" -g "setting max-user-freq to 2048 at boot"
 	add_interrupt_service	
 	cpupower_user_auth
 	
 	
 	kernel_parameters_list=($(get_kernel_parameters /etc/default/grub))
 	
-	print_message info GRUB "current kernel parameters:"
-	print_message info GRUB "\e[34m${kernel_parameters_list[*]}"
+	print_log -sec "GRUB" -info "Info" "current kernel parameters:"
+	print_log -sec "GRUB" -info "Info" "\e[34m${kernel_parameters_list[*]}"
 	add_kernel_parameter "threadirqs"
-	print_message info GRUB "update GRUB"
+	print_log -sec "GRUB" -info "Info" -b "update GRUB"
 	update_grub
-	print_message info "System" "Be sure to reboot after applying these optimizations."
+	print_log -sec "System" -info "Info" "Be sure to reboot after applying these optimizations."
 }
 # apply_optimization end
 
-print_message info General "This script optimizes the system for realtime audio processing as proposed in the Arch Linux Wiki."
-print_message warning General "This script is meant for Arch Linux. Do NOT run this on any other distro!"
-print_message warning General "\e[31mTHIS SCRIPT WILL MODIFY SYSTEM FILES AS ROOT! MAKE SURE YOU READ THE SCRIPT BEFORE EXECUTING IT! (install_scripts/realtime_audio.sh)\e[0m"
+print_log -sec "General" -info "Info" "This script optimizes the system for realtime audio processing as proposed in the Arch Linux Wiki."
+print_log -sec "General" -warn "This script is meant for Arch Linux. Do NOT run this on any other distro!"
+print_log -sec "General" -warn "\e[31mTHIS SCRIPT WILL MODIFY SYSTEM FILES AS ROOT! MAKE SURE YOU READ THE SCRIPT BEFORE EXECUTING IT! (install_scripts/realtime_audio.sh)\e[0m"
 
 read -p "Are you sure you want to apply these realtime optimizations? (yY)" -n 1 -r
 echo 
@@ -127,6 +127,6 @@ if [[ $REPLY =~ ^[Yy]$ ]]
 then
 		apply_optimizations
 else
-		print_message info Quit "Execution of script cancelled by the user"
+		print_log -sec "Quit" -info "Info" "Execution of script cancelled by the user"
 fi
 
