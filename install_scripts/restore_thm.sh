@@ -2,6 +2,7 @@
 
 scrDir="$(dirname "$(realpath "$0")")"
 lstDir="${scrDir}/lists"
+log_section="theme"
 # shellcheck disable=SC1091
 if ! source "${scrDir}/global_fn.sh"; then
     echo "Error: unable to source global_fn.sh..."
