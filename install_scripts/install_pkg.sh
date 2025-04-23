@@ -75,12 +75,12 @@ IFS=${ofs}
 
 if [ "${flg_DryRun}" -ne 1 ]; then
     if [[ ${#archPkg[@]} -gt 0 ]]; then
-        print_log -b "[install] " "arch packages..."
+        print_log -info "Info" -sec "package" -b "[install] " "arch packages..."
         sudo pacman ${use_default:+"$use_default"} -S --noconfirm "${archPkg[@]}"
     fi
 
     if [[ ${#aurhPkg[@]} -gt 0 ]]; then
-        print_log -b "[install] " "aur packages..."
+        print_log -info "Info" -sec "package" -b "[install] " "aur packages..."
         "${aurhlpr}" ${use_default:+"$use_default"} -S --save --answerdiff None --answerclean None --removemake "${aurhPkg[@]}"
     fi
 fi
