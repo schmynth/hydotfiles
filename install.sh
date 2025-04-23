@@ -72,7 +72,7 @@ while getopts "idrstmnhf" flag; do
     ;;
   t) flg_DryRun=1 ;;
   m) flg_ThemeInstall=0 ;;
-  f) flg_Rebooted=0 ;;
+  f) flg_Rebooted=1 ;;
   *)
     cat <<EOF
 Usage: $0 [options]
