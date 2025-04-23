@@ -101,7 +101,7 @@ deploy_psv() {
             # Call the function pkg_installed with the argument pkg_chk. If the function returns false (the package is not installed), then...
             if ! pkg_installed "${pkg_chk}"; then
                 # Print a message stating that the current configuration is being skipped because a dependency is not installed
-                print_log -warn "missing dependency" -y "[skip]  " -y " :: " "${pth}/${cfg} " -c "missing dependency" "'${pkg_chk}' as dependency"
+                print_log -warn "missing dependency" -y "[skip]" -y " :: " "${pth}/${cfg} " -c "missing dependency" "'${pkg_chk}' as dependency"
                 # Skip the rest of the current loop iteration and proceed to the next iteration
                 continue 2
             fi
