@@ -77,7 +77,7 @@ if ! pkg_installed flatpak; then
     fi
 
 else
-    print_log -y "[FLATPAK]" -b " :: " "flatpak is already installed"
+    print_log -y "[FLATPAK]" -info "Info" -y "[skip]" -b " :: " "flatpak is already installed"
 fi
 
 # install sddm and astronaut theme
