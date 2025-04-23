@@ -138,19 +138,19 @@ deploy_psv() {
                 "O")
                     [ "${flg_DryRun}" -ne 1 ] && mv "${pth}/${cfg_chk}" "${BkpDir}${tgt}"
                     [ "${flg_DryRun}" -ne 1 ] && cp -r "${CfgDir}${tgt}/${cfg_chk}" "${pth}"
-                    print_log -r "[move to backup]" " > " -r "[overwrite]" -b " :: " "${pth}" -r " <--  " "${CfgDir}${tgt}/${cfg_chk}"
+                    print_log -info "Info" -y "[move to backup]" " > " -r "[overwrite]" -b " :: " "${pth}" -r " <--  " "${CfgDir}${tgt}/${cfg_chk}"
                     ;;
                 "S")
                     [ "${flg_DryRun}" -ne 1 ] && cp -r "${pth}/${cfg_chk}" "${BkpDir}${tgt}"
                     [ "${flg_DryRun}" -ne 1 ] && cp -rf "${CfgDir}${tgt}/${cfg_chk}" "${pth}"
-                    print_log -g "[copy to backup]" " > " -y "[sync]" -b " :: " "${pth}" -r " <--  " "${CfgDir}${tgt}/${cfg_chk}"
+                    print_log -info "Info" -b "[copy to backup]" " > " -y "[sync]" -b " :: " "${pth}" -r " <--  " "${CfgDir}${tgt}/${cfg_chk}"
                     ;;
                 "P")
                     [ "${flg_DryRun}" -ne 1 ] && cp -r "${pth}/${cfg_chk}" "${BkpDir}${tgt}"
                     if ! [ "${flg_DryRun}" -ne 1 ] && cp -rn "${CfgDir}${tgt}/${cfg_chk}" "${pth}" 2>/dev/null; then
-                        print_log -g "[copy to backup]" " > " -g "[populate]" -b " :: " "${pth}${tgt}/${cfg_chk}"
+                        print_log -info "Info" -b "[copy to backup]" " > " -g "[populate]" -b " :: " "${pth}${tgt}/${cfg_chk}"
                     else
-                        print_log -g "[copy to backup]" " > " -g "[preserved]" -b " :: " "${pth}" + 208 " <--  " "${CfgDir}${tgt}/${cfg_chk}"
+                        print_log -info "Info" -b "[copy to backup]" " > " -g "[preserved]" -b " :: " "${pth}" + 208 " <--  " "${CfgDir}${tgt}/${cfg_chk}"
                     fi
                     ;;
                 esac
@@ -167,7 +167,7 @@ deploy_psv() {
 }
 
 # shellcheck disable=SC2034
-log_section="deploy"
+log_section="user config"
 flg_DryRun=${flg_DryRun:-0}
 
 scrDir=$(dirname "$(realpath "$0")")
@@ -203,7 +203,7 @@ fi
 
 file_extension="${CfgLst##*.}"
 echo ""
-print_log -g "[file extension]" -b "::" "${file_extension}"
+print_log -info "Info" -g "[file extension]" -b " :: " "${file_extension}"
 case "${file_extension}" in
 "lst")
     deploy_list "${CfgLst}"
