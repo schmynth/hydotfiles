@@ -260,7 +260,7 @@ EOF
     "${scrDir}/restore_fnt.sh"
     "${scrDir}/restore_cfg.sh"
     "${scrDir}/restore_thm.sh"
-    print_log -g "[generate] " "cache ::" "Wallpapers..."
+    print_log -sec "config" -g "[generate] " "cache ::" "Wallpapers..."
     if [ "${flg_DryRun}" -ne 1 ]; then
         "$HOME/.local/lib/hyde/swwwallcache.sh" -t ""
         "$HOME/.local/lib/hyde/themeswitch.sh" -q || true
@@ -316,12 +316,12 @@ _) (-/ \//( (-_)
 
 EOF
 
-    while read -r serviceChk; do
+while read -r serviceChk; do
 
         if [[ $(systemctl list-units --all -t service --full --no-legend "${serviceChk}.service" | sed 's/^\s*//g' | cut -f1 -d' ') == "${serviceChk}.service" ]]; then
-            print_log -y "[skip] " -b "active " "Service ${serviceChk}"
+            print_log -info "Info" -sec "services" -y "[skip] " -b "active " "Service ${serviceChk}"
         else
-            print_log -y "start" "Service ${serviceChk}"
+            print_log -info "Info" -sec "services "-y "start" "Service ${serviceChk}"
             if [ $flg_DryRun -ne 1 ]; then
                 sudo systemctl enable "${serviceChk}.service"
                 # sudo systemctl start "${serviceChk}.service"
@@ -343,11 +343,11 @@ if [ ${flg_Rebooted} -eq 1 ]; then
 
 EOF
 
-  print_log -info "Log" "installing hyprland plugins"
+  print_log -info "Info" -sec "Hyprland" -wt "installing hyprland plugins"
   
   "${scrDir}/install_plugins.sh"
   
-  print_log -info "Log" "setting sddm resolution"
+  print_log -info "Info" -sec "sddm" -wt "setting sddm resolution"
   "${scrDir}/sddm_resolution.sh"
 
 fi
