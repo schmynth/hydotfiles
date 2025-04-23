@@ -27,15 +27,15 @@ EOF
 #--------------------------------#
 
 cloneDir="$(dirname "$(realpath "$0")")"
-lstDir="${scrDir}/lists"
 
 # shellcheck disable=SC1091
-if ! source "${cloneDir}/instal_scripts/global_fn.sh"; then
+if ! source "${cloneDir}/install_scripts/global_fn.sh"; then
     echo "Error: unable to source global_fn.sh..."
     exit 1
 fi
 
 scrDir="${cloneDir}/install_scripts"
+lstDir="${scrDir}/lists"
 
 #------------------#
 # evaluate options #
@@ -329,7 +329,9 @@ EOF
     done <"${lstDir}/system_ctl.lst"
 fi
 
-cat <<"EOF"
+if [ ${flg_Rebooted} -eq 1 ]; then
+
+  cat <<"EOF"
 
                
     /  _ '   _ 
@@ -339,7 +341,9 @@ cat <<"EOF"
 
 EOF
 
-print_log -stat "Log" "Please make sure to run ${scrDir}/install_plugins.sh after rebooting if you wish to install hyprland plugins."
+print_log -stat "Log" "installing hyprland plugins"
+
+${scrDir}/install_plugins.sh 
 
 print_log -stat "Log" "setting sddm resolution"
 "${scrDir}/sddm_resolution.sh"
@@ -359,7 +363,7 @@ print_log -stat "Log" "View logs at ${cacheDir}/logs/${HYDE_LOG}"
 if [ $flg_Install -eq 1 ] ||
     [ $flg_Restore -eq 1 ] ||
     [ $flg_Service -eq 1 ]; then
-    print_log -stat "HyDE" "It is not recommended to use newly installed or upgraded HyDE without rebooting the system. Do you want to reboot the system? (y/N)"
+    print_log -stat "HyDE" "It is not recommended to use newly installed or upgraded HyDE without rebooting the system. After rebooting, make sure to run the install.sh with the -f flag to finish installation. Do you want to reboot the system? (y/N)"
     read -r answer
 
     if [[ "$answer" == [Yy] ]]; then
