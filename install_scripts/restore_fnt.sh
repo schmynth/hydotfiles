@@ -59,7 +59,7 @@ extract_archs(){
 					fi
 				fi
 			fi
-			print_log -info "Info" -b "extracting ${fnt}.tar.gz" -r " --> " "${tgt}... "
+			print_log -info "Info" -b "extract " -wt "${fnt}.tar.gz" -r " --> " "${tgt}... "
 
 	done <"${lstDir}/${archive_class}.lst"
 }
