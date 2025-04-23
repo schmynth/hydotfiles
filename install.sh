@@ -25,7 +25,7 @@ EOF
 #--------------------------------#
 # import variables and functions #
 #--------------------------------#
-scrDir="$(dirname "$(realpath "$0")")"
+scrDir="$(dirname "$(realpath "$0")")/install_scripts"
 lstDir="${scrDir}/lists"
 # shellcheck disable=SC1091
 if ! source "${scrDir}/global_fn.sh"; then
@@ -43,43 +43,46 @@ flg_DryRun=0
 flg_Shell=0
 flg_Nvidia=1
 flg_ThemeInstall=1
+flg_Rebooted=0
 
-while getopts idrstmnh: RunStep; do
-    case $RunStep in
-    i) flg_Install=1 ;;
-    d)
-        flg_Install=1
-        export use_default="--noconfirm"
-        ;;
-    r) flg_Restore=1 ;;
-    s) flg_Service=1 ;;
-    n)
-        # shellcheck disable=SC2034
-        export flg_Nvidia=0
-        print_log -r "[nvidia] " -b "Ignored :: " "skipping Nvidia actions"
-        ;;
-    h)
-        # shellcheck disable=SC2034
-        export flg_Shell=0
-        print_log -r "[shell] " -b "Reevaluate :: " "shell options"
-        ;;
-    t) flg_DryRun=1 ;;
-    m) flg_ThemeInstall=0 ;;
-    *)
-        cat <<EOF
+while getopts "idrstmnhf" flag; do
+  case $flag in
+  i) flg_Install=1 ;;
+  d)
+    flg_Install=1
+    export use_default="--noconfirm"
+    ;;
+  r) flg_Restore=1 ;;
+  s) flg_Service=1 ;;
+  n)
+    # shellcheck disable=SC2034
+    export flg_Nvidia=0
+    print_log -r "[nvidia] " -b "Ignored :: " "skipping Nvidia actions"
+    ;;
+  h)
+    # shellcheck disable=SC2034
+    export flg_Shell=0
+    print_log -r "[shell] " -b "Reevaluate :: " "shell options"
+    ;;
+  t) flg_DryRun=1 ;;
+  m) flg_ThemeInstall=0 ;;
+  f) flg_Rebooted=0 ;;
+  *)
+    cat <<EOF
 Usage: $0 [options]
-            i : [i]nstall hyprland without configs
-            d : install hyprland [d]efaults without configs --noconfirm
-            r : [r]estore config files
-            s : enable system [s]ervices
-            n : ignore/[n]o [n]vidia actions
-            h : re-evaluate S[h]ell
-            m : no the[m]e reinstallations
-            t : [t]est run without executing (-irst to dry run all)
+  i : [i]nstall hyprland without configs
+  d : install hyprland [d]efaults without configs --noconfirm
+  r : [r]estore config files
+  s : enable system [s]ervices
+  n : ignore/[n]o [n]vidia actions
+  h : re-evaluate S[h]ell
+  m : no the[m]e reinstallations
+  t : [t]est run without executing (-irst to dry run all)
+  f : [f]inish installation after reboot
 EOF
-        exit 1
-        ;;
-    esac
+  exit 1
+  ;;
+  esac
 done
 
 # Only export that are used outside this script
@@ -97,7 +100,7 @@ fi
 #--------------------#
 # pre-install script #
 #--------------------#
-if [ ${flg_Install} -eq 1 ] && [ ${flg_Restore} -eq 1 ]; then
+if [ ${flg_Install} -eq 1 ] && [ ${flg_Restore} -eq 1 ] && [ ${flg_Rebooted} -eq 0 ]; then
     cat <<"EOF"
 
                       
@@ -108,9 +111,9 @@ if [ ${flg_Install} -eq 1 ] && [ ${flg_Restore} -eq 1 ]; then
 
 EOF
 
- 	# schmynth:
- 	# pacman gets candy, Color and multilib repo
-	# removed bootloader and chaotic aur related code
+# schmynth:
+# pacman gets candy, Color and multilib repo
+# removed bootloader and chaotic aur related code
 
     "${scrDir}/install_pre.sh"
 fi
@@ -118,7 +121,7 @@ fi
 #------------#
 # installing #
 #------------#
-if [ ${flg_Install} -eq 1 ]; then
+if [ ${flg_Install} -eq 1 ] && [ ${flg_Rebooted} -eq 0 ]; then
     cat <<"EOF"
 
                     
@@ -226,13 +229,13 @@ EOF
     #--------------------------------#
     # install packages from the list #
     #--------------------------------#
-    [ ${flg_DryRun} -eq 1 ] || "${scrDir}/install_pkg.sh" "${lstDir}/install_pkg.lst"
+    [ ${flg_DryRun} -eq 1 ] && [ ${flg_Rebooted} -eq 0 ]|| "${scrDir}/install_pkg.sh" "${lstDir}/install_pkg.lst"
 fi
 
 #---------------------------#
 # restore my custom configs #
 #---------------------------#
-if [ ${flg_Restore} -eq 1 ]; then
+if [ ${flg_Restore} -eq 1 ] && [ ${flg_Rebooted} -eq 0 ]; then
     cat <<"EOF"
 
 
@@ -244,7 +247,7 @@ if [ ${flg_Restore} -eq 1 ]; then
 
 EOF
 
-    if [ "${flg_DryRun}" -ne 1 ] && [ -n "$HYPRLAND_INSTANCE_SIGNATURE" ]; then
+    if [ "${flg_DryRun}" -ne 1 ] && [ -n "$HYPRLAND_INSTANCE_SIGNATURE" ] && [ ${flg_Rebooted} -eq 0 ]; then
         hyprctl keyword misc:disable_autoreload 1 -q
     fi
 
@@ -263,7 +266,7 @@ fi
 #---------------------#
 # post-install script #
 #---------------------#
-if [ ${flg_Install} -eq 1 ] && [ ${flg_Restore} -eq 1 ]; then
+if [ ${flg_Install} -eq 1 ] && [ ${flg_Restore} -eq 1 ] && [ ${flg_Rebooted} -eq 0 ]; then
     cat <<"EOF"
 
                         
@@ -281,7 +284,8 @@ fi
 # realtime audio      #
 #---------------------#
 
-cat <<"EOF"
+if [ ${flg_Install} -eq 1 ] && [ ${flg_Restore} -eq 1 ] && [ ${flg_Rebooted} -eq 0 ]; then
+  cat <<"EOF"
 
                                    
  _   _/'      _/'_  '_  __/'     _ 
@@ -291,11 +295,12 @@ cat <<"EOF"
 
 EOF
 	   "${scrDir}/realtime_audio.sh"
+fi
 
 #------------------------#
 # enable system services #
 #------------------------#
-if [ ${flg_Service} -eq 1 ]; then
+if [ ${flg_Service} -eq 1 ] && [ ${flg_Rebooted} -eq 0 ]; then
     cat <<"EOF"
 
                   
