@@ -37,6 +37,8 @@ fi
 scrDir="${cloneDir}/install_scripts"
 lstDir="${scrDir}/lists"
 
+export cloneDir
+
 #------------------#
 # evaluate options #
 #------------------#
