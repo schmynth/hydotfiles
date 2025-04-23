@@ -21,7 +21,7 @@ if [ ! -f "$THEME_IMPORT_FILE" ] || [ -z "$THEME_IMPORT_FILE" ]; then
 fi
 
 if [ "$flg_ThemeInstall" -eq 1 ]; then
-    print_log -g "[THEME] " -warn "imports" "from List $THEME_IMPORT_FILE"
+    print_log -warn "import source" "importing from List $THEME_IMPORT_FILE"
     while IFS='"' read -r _ themeName _ themeRepo; do
         themeNameQ+=("${themeName//\"/}")
         themeRepoQ+=("${themeRepo//\"/}")
