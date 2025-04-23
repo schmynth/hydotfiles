@@ -343,12 +343,16 @@ if [ ${flg_Rebooted} -eq 1 ]; then
 
 EOF
 
-print_log -stat "Log" "installing hyprland plugins"
+  print_log -stat "Log" "installing hyprland plugins"
+  
+  ${scrDir}/install_plugins.sh 
+  
+  print_log -stat "Log" "setting sddm resolution"
+  "${scrDir}/sddm_resolution.sh"
 
-${scrDir}/install_plugins.sh 
+fi
 
-print_log -stat "Log" "setting sddm resolution"
-"${scrDir}/sddm_resolution.sh"
+# finish
 
 cat <<"EOF"
 
@@ -361,10 +365,10 @@ EOF
 if [ $flg_Install -eq 1 ]; then
     print_log -stat "\nInstallation" "completed"
 fi
+
 print_log -stat "Log" "View logs at ${cacheDir}/logs/${HYDE_LOG}"
-if [ $flg_Install -eq 1 ] ||
-    [ $flg_Restore -eq 1 ] ||
-    [ $flg_Service -eq 1 ]; then
+
+if [ $flg_Install -eq 1 ] || [ $flg_Restore -eq 1 ] || [ $flg_Service -eq 1 ]; then
     print_log -stat "HyDE" "It is not recommended to use newly installed or upgraded HyDE without rebooting the system. After rebooting, make sure to run the install.sh with the -f flag to finish installation. Do you want to reboot the system? (y/N)"
     read -r answer
 
