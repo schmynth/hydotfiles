@@ -64,7 +64,7 @@ EOF
 }
 
 cpupower_user_auth () {
-	print_log -sec "System" -warn "Warning" "authorize $USER to run sudo cpupower without password to launch DAW"
+	print_log -sec "System" -warn "sudo" "authorize $USER to run sudo cpupower without password to launch DAW"
 	print_log -sec "System" -info "Info" "echo \"$USER ALL=(ALL:ALL) NOPASSWD: /usr/bin/cpupower\" > /etc/sudoers.d/20-cpupower"
 	sudo -i -u root bash <<EOF
 echo "$USER ALL=(ALL:ALL) NOPASSWD: /usr/bin/cpupower" > /etc/sudoers.d/20-cpupower
@@ -118,8 +118,8 @@ apply_optimizations () {
 # apply_optimization end
 
 print_log -sec "General" -info "Info" "This script optimizes the system for realtime audio processing as proposed in the Arch Linux Wiki."
-print_log -sec "General" -warn "This script is meant for Arch Linux. Do NOT run this on any other distro!"
-print_log -sec "General" -warn "\e[1;31mTHIS SCRIPT WILL MODIFY SYSTEM FILES AS ROOT! MAKE SURE YOU READ THE SCRIPT BEFORE EXECUTING IT! (install_scripts/realtime_audio.sh)\e[0m"
+print_log -sec "General" -warn "Distro" "This script is meant for Arch Linux. Do NOT run this on any other distro!"
+print_log -sec "General" -warn "System Files" "\e[1;31mTHIS SCRIPT WILL MODIFY SYSTEM FILES AS ROOT! MAKE SURE YOU READ THE SCRIPT BEFORE EXECUTING IT! (install_scripts/realtime_audio.sh)\e[0m"
 
 read -p "Are you sure you want to apply these realtime optimizations? (yY)" -n 1 -r
 echo 
