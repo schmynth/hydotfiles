@@ -22,7 +22,6 @@ archPkg=()
 aurhPkg=()
 ofs=$IFS
 IFS='|'
-section="packages"
 
 #-----------------------------#
 # remove blacklisted packages #

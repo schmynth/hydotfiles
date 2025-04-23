@@ -148,7 +148,7 @@ print_log() {
                 shift 2
                 ;; # critical
             -warn)
-                echo -ne "WARNING :: \e[97;43m $2 \e[0m :: "
+                echo -ne "\e[0;30;43m WARNING \e[0m :: \e[97;43m $2 \e[0m :: "
                 shift 2
                 ;; # warning
             +)
