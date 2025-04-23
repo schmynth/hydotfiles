@@ -17,7 +17,7 @@ cloneDir="${cloneDir:-$CLONE_DIR}"
 
 # sddm
 if pkg_installed sddm; then
-    print_log -c "[DISPLAYMANAGER] " -b "detected :: " "sddm"
+    print_log -c "[DISPLAYMANAGER] " -info "Info" -g "detected :: " "sddm"
     if [ ! -d /etc/sddm.conf.d ]; then
         sudo mkdir -p /etc/sddm.conf.d
     fi
@@ -50,9 +50,9 @@ fi
 
 # dolphin
 if pkg_installed dolphin && pkg_installed xdg-utils; then
-    print_log -c "[FILEMANAGER] " -b "detected :: " "dolphin"
+    print_log -c "[FILEMANAGER]" -info "Info" -g "detected :: " "dolphin"
     xdg-mime default org.kde.dolphin.desktop inode/directory
-    print_log -g "[FILEMANAGER] " -b " :: " "setting $(xdg-mime query default "inode/directory") as default file explorer..."
+    print_log -g "[FILEMANAGER] " -b " :: " -b "setting $(xdg-mime query default "inode/directory") as default file explorer..."
 
 else
     print_log -y "[FILEMANAGER] " -b " :: " "dolphin is not installed..."
