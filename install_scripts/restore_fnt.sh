@@ -10,7 +10,7 @@ flg_DryRun=${flg_DryRun:-0}
 scrDir=$(dirname "$(realpath "$0")")
 lstDir="${scrDir}/lists"
 
-export log_section="extract"
+export log_section="font"
 # shellcheck disable=SC1091
 if ! source "${scrDir}/global_fn.sh"; then
     echo -e "\e[31mError: unable to source global_fn.sh...\e[0m"
@@ -59,7 +59,7 @@ extract_archs(){
 					fi
 				fi
 			fi
-			print_log "${fnt}.tar.gz" -r " --> " "${tgt}... "
+			print_log -info "Info" -b "extracting ${fnt}.tar.gz" -r " --> " "${tgt}... "
 
 	done <"${lstDir}/${archive_class}.lst"
 }
