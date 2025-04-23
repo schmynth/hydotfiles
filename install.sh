@@ -25,7 +25,8 @@ EOF
 #--------------------------------#
 # import variables and functions #
 #--------------------------------#
-scrDir="$(dirname "$(realpath "$0")")/install_scripts"
+CloneDir="$(dirname "$(realpath "$0")")"
+scrDir="${CloneDir}/install_scripts"
 lstDir="${scrDir}/lists"
 # shellcheck disable=SC1091
 if ! source "${scrDir}/global_fn.sh"; then
