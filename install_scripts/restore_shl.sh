@@ -6,6 +6,8 @@
 
 scrDir=$(dirname "$(realpath "$0")")
 lstDir="${scrDir}/lists"
+log_section="SHELL"
+
 # shellcheck disable=SC1091
 if ! source "${scrDir}/global_fn.sh"; then
     echo "Error: unable to source global_fn.sh..."
@@ -14,9 +16,9 @@ fi
 
 # shellcheck disable=SC2154
 if chk_list "myShell" "${shlList[@]}"; then
-    print_log -sec "SHELL" -info "detected" "${myShell}"
+    print_log -info "Info" -g "detected :: " "${myShell}"
 else
-    print_log -sec "SHELL" -err "error" "no shell found..."
+    print_log -err "error" "no shell found..."
     exit 1
 fi
 
@@ -25,7 +27,7 @@ if pkg_installed zsh; then
 
     if ! pkg_installed oh-my-zsh-git; then
         if [[ ! -e "$HOME/.oh-my-zsh/oh-my-zsh.sh" ]]; then
-            print_log -sec "SHELL" -info "cloning" "oh-my-zsh"
+            print_log -info "Info" -b "clone" "oh-my-zsh"
             if ! sh -c "$(curl -fsSL https://install.ohmyz.sh/)" "" --unattended --keep-zshrc; then
                 print_log -err "oh-my-zsh update failed..." "Please resolve this issue manually LATER ..."
                 print_log -warn "Continuing" "with existing oh-my-zsh..."
@@ -33,7 +35,7 @@ if pkg_installed zsh; then
             fi
 
         else
-            print_log -sec "SHELL" -info "updating" "oh-my-zsh"
+            print_log -info "Info" -b "update" "oh-my-zsh"
             zsh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/upgrade.sh)"
         fi
     fi
