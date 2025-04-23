@@ -98,7 +98,7 @@ bitwarden
 # coolercontrold
 cpupower
 cpupower-gui
-ddcui                                                 # GUI to control brightness for external monitors
+# ddcui                                                 # GUI to control brightness for external monitors
 deja-dup
 libinput-gestures                                    # actions touchpad gestures using libinput
 ncdu
@@ -116,13 +116,13 @@ reflector
 
 # --------------------------------------------------- // Productivity
 # anki
-bitwig-studio
+# bitwig-studio
 blender
 darktable
 gimp
 kicad
 newsflash
-onlyoffice-bin
+# onlyoffice-bin
 # renoise
 sfizz
 
@@ -146,8 +146,8 @@ yabridge
 
 # --------------------------------------------------- // Music
 # cava                                                   # audio visualizer
-spotify                                                # proprietary music streaming service
-spicetify-cli                                          # cli to customize spotify client
+# spotify                                                # proprietary music streaming service
+# spicetify-cli                                          # cli to customize spotify client
 
 # --------------------------------------------------- // Apps
 # neovim                                               # vim based text editor

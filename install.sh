@@ -25,14 +25,17 @@ EOF
 #--------------------------------#
 # import variables and functions #
 #--------------------------------#
-CloneDir="$(dirname "$(realpath "$0")")"
-scrDir="${CloneDir}/install_scripts"
+
+cloneDir="$(dirname "$(realpath "$0")")"
 lstDir="${scrDir}/lists"
+
 # shellcheck disable=SC1091
-if ! source "${scrDir}/global_fn.sh"; then
+if ! source "${cloneDir}/instal_scripts/global_fn.sh"; then
     echo "Error: unable to source global_fn.sh..."
     exit 1
 fi
+
+scrDir="${cloneDir}/install_scripts"
 
 #------------------#
 # evaluate options #
