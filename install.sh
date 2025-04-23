@@ -187,7 +187,7 @@ EOF
             ;;
         *)
             print_log -sec "AUR" -warn "Defaulting to yay-bin"
-            print_log -sec "AUR" -stat "default" "yay-bin"
+            print_log -sec "AUR" -info "default" "yay-bin"
             export getAur="yay-bin"
             ;;
         esac
@@ -216,14 +216,14 @@ EOF
             export myShell="zsh"
             ;;
         esac
-        print_log -sec "shell" -stat "Added as shell" "${myShell}"
+        print_log -sec "shell" -info "Added as shell" "${myShell}"
         echo "${myShell}" >>"${lstDir}/install_pkg.lst"
 
         if [[ -z "$myShell" ]]; then
             print_log -sec "shell" -crit "No shell found..." "Log file at ${cacheDir}/logs/${HYDE_LOG}"
             exit 1
         else
-            print_log -sec "shell" -stat "detected :: " "${myShell}"
+            print_log -sec "shell" -info "detected :: " "${myShell}"
         fi
     fi
 
@@ -343,11 +343,11 @@ if [ ${flg_Rebooted} -eq 1 ]; then
 
 EOF
 
-  print_log -stat "Log" "installing hyprland plugins"
+  print_log -info "Log" "installing hyprland plugins"
   
   "${scrDir}/install_plugins.sh"
   
-  print_log -stat "Log" "setting sddm resolution"
+  print_log -info "Log" "setting sddm resolution"
   "${scrDir}/sddm_resolution.sh"
 
 fi
@@ -363,13 +363,13 @@ cat <<"EOF"
 EOF
 
 if [ $flg_Install -eq 1 ]; then
-    print_log -stat "\nInstallation" "completed"
+    print_log -info "\nInstallation" "completed"
 fi
 
-print_log -stat "Log" "View logs at ${cacheDir}/logs/${HYDE_LOG}"
+print_log -info "Log" "View logs at ${cacheDir}/logs/${HYDE_LOG}"
 
 if [ $flg_Install -eq 1 ] || [ $flg_Restore -eq 1 ] || [ $flg_Service -eq 1 ]; then
-    print_log -stat "HyDE" "It is not recommended to use newly installed or upgraded HyDE without rebooting the system. After rebooting, make sure to run the install.sh with the -f flag to finish installation. Do you want to reboot the system? (y/N)"
+    print_log -info "HyDE" "It is not recommended to use newly installed or upgraded HyDE without rebooting the system. After rebooting, make sure to run the install.sh with the -f flag to finish installation. Do you want to reboot the system? (y/N)"
     read -r answer
 
     if [[ "$answer" == [Yy] ]]; then
