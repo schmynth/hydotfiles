@@ -7,10 +7,6 @@ if ! source "${scrDir}/global_fn.sh"; then
     exit 1
 fi
 
-if ! source "${scrDir}/pretty_print.sh"; then
-	printf "\e[0;30;41m ERROR \e[0m :: \e[1;31m pretty_print.sh (needed for logging) not found!\e[0m"
-	exit 1
-fi
 # find full path of script:
 SCRIPT_PATH="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 tabs 40
@@ -24,15 +20,15 @@ get_kernel_parameters () {
 
 add_kernel_parameter ()  {
 	if [[ ! " ${kernel_parameters_list[*]} " =~ $1 ]]; then
-			print_message info GRUB "${1} kernel parameter not found"
-			print_message info GRUB "add ${1} kernel parameter to grub config"
+			print_log -sec "GRUB" -info "Info" "${1} kernel parameter not found"
+			print_log -sec "GRUB" -info "Info" -b "add ${1} kernel parameter to grub config"
 	
 sudo -i -u root bash <<EOF
 sed -i "6s/.$/ $1\"/" /etc/default/grub
 EOF
 	
 	else
-			print_message info GRUB "kernel parameter ${1} already in place"
+			print_log -sec "GRUB" -info "Info" "kernel parameter ${1} already in place"
 	fi
 }
 
@@ -45,9 +41,9 @@ EOF
 group_exists () {
 		if grep -q $1 /etc/group
 		then
-			print_message info "System" "Group $1 exists"
+			print_log -sec "System" -info "Info" "Group $1 exists"
 		else
-			print_message info "System" "Group $1 does not exist. Create group $1"
+			print_log -sec "System" -info "Info" -b "Group $1 does not exist. Create group $1"
 sudo -i -u root bash <<EOF
 groupadd $1
 EOF
@@ -57,9 +53,9 @@ EOF
 
 user_in_realtime_group () {
 	if id -nG "$USER" | grep -qw realtime; then
-		print_message info "System" "User already in realtime group"	
+		print_log -sec "System" -info "Info" "User already in realtime group"	
 	else
-		print_message info "System" "User not in realtime group. Add user to it"
+		print_log -sec "System" -info "Info" "User not in realtime group. Add user to it"
 sudo -i -u root bash <<EOF
 usermod -a -G realtime $USER
 EOF
