@@ -96,7 +96,7 @@ HYDE_LOG="$(date +'%y%m%d_%Hh%Mm%Ss')"
 export flg_DryRun flg_Nvidia flg_Shell flg_Install flg_ThemeInstall HYDE_LOG
 
 if [ "${flg_DryRun}" -eq 1 ]; then
-    print_log -info "Info" -n "[test-run] " -b "enabled :: " "Testing without executing"
+    print_log -sec "GENERAL" -info "Info" -n "[test-run] " -b "enabled :: " "Testing without executing"
 elif [ $OPTIND -eq 1 ]; then
     flg_Install=1
     flg_Restore=1
@@ -319,9 +319,9 @@ EOF
 while read -r serviceChk; do
 
         if [[ $(systemctl list-units --all -t service --full --no-legend "${serviceChk}.service" | sed 's/^\s*//g' | cut -f1 -d' ') == "${serviceChk}.service" ]]; then
-            print_log -info "Info" -sec "services" -y "[skip] " -b "active " "Service ${serviceChk}"
+            print_log -sec "services" -info "Info" -y "[skip] " -b "active " "Service ${serviceChk}"
         else
-            print_log -info "Info" -sec "services" -b "[start] " "Service ${serviceChk}"
+            print_log -sec "services" -info "Info" -b "[start] " "Service ${serviceChk}"
             if [ $flg_DryRun -ne 1 ]; then
                 sudo systemctl enable "${serviceChk}.service"
                 # sudo systemctl start "${serviceChk}.service"
@@ -343,11 +343,11 @@ if [ ${flg_Rebooted} -eq 1 ]; then
 
 EOF
 
-  print_log -info "Info" -sec "Hyprland" -wt "installing hyprland plugins"
+  print_log -sec "Hyprland" -info "Info" -wt "installing hyprland plugins"
   
   "${scrDir}/install_plugins.sh"
   
-  print_log -info "Info" -sec "sddm" -wt "setting sddm resolution"
+  print_log -sec "sddm" -info "Info" -wt "setting sddm resolution"
   "${scrDir}/sddm_resolution.sh"
 
 fi
@@ -363,13 +363,13 @@ cat <<"EOF"
 EOF
 
 if [ $flg_Install -eq 1 ]; then
-    print_log -info "Info" -sec "GENERAL" "Installation completed"
+    print_log -sec "GENERAL" -info "Info" "Installation completed"
 fi
 
-print_log -info "Log" "View logs at ${cacheDir}/logs/${HYDE_LOG}"
+print_log -sec "GENERAL" -info "Log" "View logs at ${cacheDir}/logs/${HYDE_LOG}"
 
 if [ $flg_Install -eq 1 ] || [ $flg_Restore -eq 1 ] || [ $flg_Service -eq 1 ]; then
-    print_log -info "HyDE" "It is not recommended to use newly installed or upgraded HyDE without rebooting the system. After rebooting, make sure to run the install.sh with the -f flag to finish installation. Do you want to reboot the system? (y/N)"
+    print_log -sec "GENERAL" -info "HyDE" "It is not recommended to use newly installed or upgraded HyDE without rebooting the system. After rebooting, make sure to run the install.sh with the -f flag to finish installation. Do you want to reboot the system? (y/N)"
     read -r answer
 
     if [[ "$answer" == [Yy] ]]; then
