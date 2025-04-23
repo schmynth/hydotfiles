@@ -58,16 +58,16 @@ while read -r pkg deps; do
     fi
 
     if pkg_installed "${pkg}"; then
-        print_log -info "Info" -y "[skip] " "${pkg}"
+        print_log -info "Info" -sec "package" -y "[skip] " "${pkg}"
     elif pkg_available "${pkg}"; then
         repo=$(pacman -Si --noconfirm "${pkg}" | awk -F ': ' '/Repository / {print $2}')
-        print_log -b "[queue] " -g "${repo}" -b "::" "${pkg}"
+        print_log -info "Info" -sec "package" -b "[queue] " -g "${repo}" -b "::" "${pkg}"
         archPkg+=("${pkg}")
     elif aur_available "${pkg}"; then
-        print_log -b "[queue] " -g "aur" -b "::" "${pkg}"
+        print_log -info "Info" -sec "package" -b "[queue] " -g "aur" -b "::" "${pkg}"
         aurhPkg+=("${pkg}")
     else
-        print_log -r "[error] " "unknown package ${pkg}..."
+        print_log -r "[error] " -sec "package" "unknown package ${pkg}..."
     fi
 done < <(cut -d '#' -f 1 "${listPkg}")
 
