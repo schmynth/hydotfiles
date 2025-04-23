@@ -22,6 +22,7 @@ archPkg=()
 aurhPkg=()
 ofs=$IFS
 IFS='|'
+section="packages"
 
 #-----------------------------#
 # remove blacklisted packages #
@@ -51,13 +52,13 @@ while read -r pkg deps; do
         done < <(xargs -n1 <<<"${deps}")
 
         if [[ ${pass} -ne 1 ]]; then
-            print_log -warn "missing" "dependency [ ${deps} ] for ${pkg}..."
+            print_log -warn "Warning " -sec "${section} :: " "missing dependency [ ${deps} ] for ${pkg}..."
             continue
         fi
     fi
 
     if pkg_installed "${pkg}"; then
-        print_log -y "[skip] " "${pkg}"
+        print_log -info "Info" -y "[skip] " "${pkg}"
     elif pkg_available "${pkg}"; then
         repo=$(pacman -Si --noconfirm "${pkg}" | awk -F ': ' '/Repository / {print $2}')
         print_log -b "[queue] " -g "${repo}" -b "::" "${pkg}"
