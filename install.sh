@@ -321,7 +321,7 @@ while read -r serviceChk; do
         if [[ $(systemctl list-units --all -t service --full --no-legend "${serviceChk}.service" | sed 's/^\s*//g' | cut -f1 -d' ') == "${serviceChk}.service" ]]; then
             print_log -info "Info" -sec "services" -y "[skip] " -b "active " "Service ${serviceChk}"
         else
-            print_log -info "Info" -sec "services" -y "start" "Service ${serviceChk}"
+            print_log -info "Info" -sec "services" -b "[start] " "Service ${serviceChk}"
             if [ $flg_DryRun -ne 1 ]; then
                 sudo systemctl enable "${serviceChk}.service"
                 # sudo systemctl start "${serviceChk}.service"
@@ -363,7 +363,7 @@ cat <<"EOF"
 EOF
 
 if [ $flg_Install -eq 1 ]; then
-    print_log -info "Info" -sec "[GENERAL]" "Installation completed"
+    print_log -info "Info" -sec "GENERAL" "Installation completed"
 fi
 
 print_log -info "Log" "View logs at ${cacheDir}/logs/${HYDE_LOG}"
