@@ -42,6 +42,9 @@ p | power)
 	r_mode="rofi-power-menu"
     rofi_config="${ROFI_LAUNCH_POWER_STYLE:-$rofi_config}"
 	;;
+c | --combi)
+	r_mode="combi"
+	;;
 h | --help)
     echo -e "$(basename "${0}") [action]"
     echo "d :  drun mode"
@@ -49,6 +52,7 @@ h | --help)
     echo "f :  filebrowser mode,"
     echo "r :  run mode"
 	echo "p :  power mode"
+	echo "c :  combi mode"
     exit 0
     ;;
 *)
