@@ -17,6 +17,12 @@ git clone https://github.con/schmynth/hydotfiles
 cd hydotfiles/
 install.sh
 ```
+After rebooting, run
+```
+cd hydotfiles/
+./install.sh -f
+```
+
 
 ## why is it public
 
