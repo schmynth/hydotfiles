@@ -12,9 +12,11 @@ As the name suggests, this is my fork of the great [HyDE](https://github.com/HyD
 ## Installation
 
 run the following commands:
-```git clone https://github.con/schmynth/hydotfiles```\
-```cd hydotfiles/```\
-```./install.sh```\
+```
+git clone https://github.con/schmynth/hydotfiles
+cd hydotfiles/
+install.sh
+```
 
 ## why is it public
 
