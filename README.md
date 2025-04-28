@@ -9,6 +9,13 @@ As the name suggests, this is my fork of the great [HyDE](https://github.com/HyD
 > These dotfiles are heavily personalized. Do **not** install them on your system unless you [know what you are doing.](hydotfiles.wiki/Guide.md)
 > You have been warned.
 
+## Installation
+
+run the following commands:
+```git clone https://github.con/schmynth/hydotfiles
+cd hydotfiles/
+./install.sh```
+
 ## why is it public
 
 
