@@ -17,6 +17,7 @@ configuration {
     display-run:                 " ";
     display-filebrowser:         " ";
     display-window:              " ";
+    display-combi:				 "󰣩 ";
     drun-display-format:         "{name}";
     window-format:               "{w}{t}";
     font:                        "JetBrainsMono Nerd Font 10";
