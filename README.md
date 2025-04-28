@@ -15,7 +15,7 @@ run the following commands:
 ```
 git clone https://github.con/schmynth/hydotfiles
 cd hydotfiles/
-install.sh
+./install.sh
 ```
 After rebooting, run
 ```
