@@ -16,7 +16,7 @@ hypr_border=${hypr_border:-"$(hyprctl -j getoption decoration:rounding | jq '.in
 
 #// scale for monitor
 mon_data=$(hyprctl -j monitors)
-mon_x_res=$(jq '.[] | select(.focused==true) | .width' <<<"${mon_data}")
+mon_x_res=$(jq '.[] | select(.focused==true) | if (.transform % 2 == 0) then .width else .height end' <<<"${mon_data}")
 mon_scale=$(jq '.[] | select(.focused==true) | .scale' <<<"${mon_data}" | sed "s/\.//")
 mon_x_res=$((mon_x_res * 100 / mon_scale))
 
@@ -133,13 +133,13 @@ case "$1" in
         ROFI_THEME_STYLE="selector"
         ;;
     1 | "square") # default to style 1
-        elm_width=$(((12 + 3) * font_scale * 2))
+        elm_width=$(((23 + 12 + 1) * font_scale * 2))
         max_avail=$((mon_x_res - (4 * font_scale)))
         col_count=$((max_avail / elm_width))
         r_override="window{width:100%;} 
                             listview{columns:${col_count};} 
                             element{border-radius:${elem_border}px;padding:0.5em;} 
-                            element-icon{size:5em;border-radius:${icon_border}px;}"
+                            element-icon{size:23em;border-radius:${icon_border}px;}"
         thmbExtn="sqre"
         ROFI_THEME_STYLE="selector"
         ;;
@@ -166,7 +166,7 @@ rofiSel=$(
 #// apply theme
 
 if [ -n "${rofiSel}" ]; then
-    "${LIB_DIR}/hyde/themeswitch.sh" -s "${rofiSel}"
+    "${LIB_DIR}/hyde/theme.switch.sh" -s "${rofiSel}"
     # shellcheck disable=SC2154
     notify-send -a "HyDE Alert" -i "${iconsDir}/Wallbash-Icon/hyde.png" " ${rofiSel}"
 fi
