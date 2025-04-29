@@ -1,5 +1,5 @@
 configuration {
-	combi-modi: "drun,rofi-power-menu,filebrowser,window";
+	combi-modi: "rofi-power-menu,drun,filebrowser,recursivebrowser,window";
 	timeout {
 		action: "kb-cancel";
 		delay: 0;
@@ -8,6 +8,8 @@ configuration {
 		directories-first: true;
 		sorting-method: "name";
 	}
+	combi-hide-mode-prefix: true;
+	
 }
 
 
