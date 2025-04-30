@@ -161,7 +161,8 @@ yabridge
 # vscodium                                              # Full oss text editor
 # vscodium-marketplace|vscodium                         # VSCodium marketplace
 # code-marketplace|code                                 # Code-Oss marketplace
-visual-studio-code-bin                                # MS  text editor
+# visual-studio-code-bin                                # MS  text editor
+
 
 # --------------------------------------------------- // Backends
 #electron                                              # electron backend
