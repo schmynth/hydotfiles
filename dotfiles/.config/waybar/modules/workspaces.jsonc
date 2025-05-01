@@ -31,6 +31,7 @@
         "class<vlc>": "",
         "class<thunar>": "",
         "class<org.gnome.Nautilus>": "",
+        "class<LibreWolf>": "",
         "class<org.kde.dolphin>": "",
         "class<org.kde.kate>": "",
         "class<libreoffice-draw>": "",
