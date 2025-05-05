@@ -169,8 +169,12 @@ deploy_psv() {
 }
 
 install_vundle() {
-	git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
-	print_log -info "Info" -g "[vim]" -b " :: " "install vundle"
+	if [ -d "~/.vim/bundle" ]; then
+		print_log -err "vundle installation failed" "directory already exists. Is vundle installed alread?"
+	else
+		print_log -info "Info" -g "[vim]" -b " :: " "install vundle"
+		git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
+	fi
 }
 
 # shellcheck disable=SC2034
