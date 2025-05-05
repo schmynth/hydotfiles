@@ -35,7 +35,7 @@ set encoding=utf-8
 set t_Co=256
 syntax on
 
-colorscheme atom-dark-256
+"colorscheme atom-dark-256
 
 " Folding:
 set foldmethod=indent
