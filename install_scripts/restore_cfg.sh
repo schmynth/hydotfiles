@@ -168,8 +168,8 @@ deploy_psv() {
     done <"${1}"
 }
 
-install_vundle() {
-	if [ -d "~/.vim/bundle" ]; then
+vim_setup() {
+	if [ -d "${HOME}/.vim/bundle" ]; then
 		print_log -err "vundle installation failed" "directory already exists. Is vundle installed alread?"
 	else
 		print_log -info "Info" -g "[vim]" -b " :: " "install vundle"
@@ -227,4 +227,4 @@ json)
     ;;
 esac
 
-install_vundle
+vim_setup
