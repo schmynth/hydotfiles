@@ -6,6 +6,8 @@
 #|-/ /--| Prasanth Rangan                |-/ /--|#
 #|/ /---+--------------------------------+/ /---|#
 
+# This script installs all the configuration files
+# It also installs vim plugins and vundle plugin manager for vim
 
 deploy_list() {
 
@@ -166,6 +168,11 @@ deploy_psv() {
     done <"${1}"
 }
 
+install_vundle() {
+	git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
+	print_log -info "Info" -g "[vim]" -b " :: " "install vundle"
+}
+
 # shellcheck disable=SC2034
 log_section="user config"
 flg_DryRun=${flg_DryRun:-0}
@@ -215,3 +222,5 @@ json)
     deploy_json "${CfgLst}"
     ;;
 esac
+
+install_vundle
