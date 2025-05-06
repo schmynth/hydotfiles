@@ -125,13 +125,14 @@ gimp
 kicad
 newsflash
 onlyoffice-bin
-renoise
+# renoise
 
 
 # --------------------------------------------------- // Audio Plugins
 sfizz
 zl-equalizer-bin
 surge-xt
+decent-sampler-bin
 
 # --------------------------------------------------- // Misc
 xdg-desktop-portal-gtk                                 # xdg desktop portal using gtk
