@@ -80,6 +80,7 @@ if [ "${flg_DryRun}" -ne 1 ]; then
 
     if [[ ${#aurhPkg[@]} -gt 0 ]]; then
         print_log -info "Info" -b "[install] " "aur packages..."
-        "${aurhlpr}" ${use_default:+"$use_default"} -S --save --answerdiff None --answerclean None --removemake "${aurhPkg[@]}"
+        "${aurhlpr}" ${use_default:+"$use_default"} -S --save --answerdiff None --answerclean None --removemake "${aurhPkg[@]}" || print_log -err "installation failed" -r "Could not install ${aurhPkg}"
+
     fi
 fi
