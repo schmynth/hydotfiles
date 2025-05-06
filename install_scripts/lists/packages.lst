@@ -91,6 +91,7 @@ fastfetch                                              # system information fetc
 # --------------------------------------------------- // HyDE
 # hyde-cli-git                                           # cli tool to manage hyde \\ Deprecated for HyDE
 hypridle                                               # idle daemon
+
 # --------------------------------------------------- // System
 # downgrade                                            # downgrade packages
 # trash-cli-git                                        # cli to manage trash files
@@ -117,7 +118,7 @@ reflector
 
 # --------------------------------------------------- // Productivity
 # anki
-# bitwig-studio
+bitwig-studio
 blender
 darktable
 gimp
@@ -125,7 +126,12 @@ kicad
 newsflash
 # onlyoffice-bin
 # renoise
+
+
+# --------------------------------------------------- // Audio Plugins
 sfizz
+zl-equalizer-bin
+surge-xt
 
 # --------------------------------------------------- // Misc
 xdg-desktop-portal-gtk                                 # xdg desktop portal using gtk
@@ -147,7 +153,7 @@ yabridge
 
 # --------------------------------------------------- // Music
 # cava                                                   # audio visualizer
-# spotify                                                # proprietary music streaming service
+spotify                                                # proprietary music streaming service
 # spicetify-cli                                          # cli to customize spotify client
 
 # --------------------------------------------------- // Apps
@@ -161,7 +167,7 @@ yabridge
 # vscodium                                              # Full oss text editor
 # vscodium-marketplace|vscodium                         # VSCodium marketplace
 # code-marketplace|code                                 # Code-Oss marketplace
-# visual-studio-code-bin                                # MS  text editor
+visual-studio-code-bin                                # MS  text editor
 
 
 # --------------------------------------------------- // Backends
