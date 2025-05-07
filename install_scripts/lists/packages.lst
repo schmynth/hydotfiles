@@ -130,6 +130,7 @@ renoise
 
 # --------------------------------------------------- // Audio Plugins
 carla													# audio plugin host (lv2 in bitwig etc)
+lsp-plugins-clap										# Linux studio plugins (clap format)
 calf													# calf studio plugin suite (extra)
 sfizz													# sampler 
 zl-equalizer-bin										# Dynamic EQ
