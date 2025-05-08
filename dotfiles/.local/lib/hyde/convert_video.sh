@@ -23,11 +23,11 @@ total="$( ls -A $media_in_dir | wc -l )"
 # icon_error="folder-cat-mocha-peach-video.svg"
 
 notify_success() {
-  notify-send -i $icons_dir/$icon_success "$1" "$2"
+  notify-send -i $icons_dir/$icon_success "$1"
 }
 
 notify_error() {
-  notify-send -u critical $icons_dir/$icon_error "$1" "$2"
+  notify-send -i $icons_dir/$icon_error "$1"
 }
 
 # Main Menu
@@ -87,7 +87,7 @@ choose_input_codec() {
       out_format="mov"
       ;;
     2) # AVI
-      video_enc="-c:v libsvtav1 -preset 6 -crf 23 -pix_fmt yuv422p10le"
+      video_enc="-c:v libsvtav1 -preset 6 -crf 23 -pix_fmt yuv420p10le"
       out_format="mp4"
       ;;
     3) # MPEG-4 part 2
@@ -149,9 +149,9 @@ encode() {
     # set variables for each video file
     file_name="$(cut -c $((${#media_in_dir} +2))- <<< "$file")"
     container_format="$(cut -c 7- <<< "$(file -b --mime-type $file)")"
-    video_codec="$(ffprobe -v error -show_entrie stream=codec_name -select_streams v:0 -of default=noprint_wrappers=1:nokey=1 $file)"
-    video_codec="$(ffprobe -v error -show_entrie stream=codec_name -select_streams a:0 -of default=noprint_wrappers=1:nokey=1 $file)"
-    frame_rate"$(cut -c -2 <<< "$(ffprobe -v error -show_entries stream=avg_frame_rate -select_streams v:0 -of default=noprint_wrappers=1:nokey=1 $file)")"
+    video_codec="$(ffprobe -v error -show_entries stream=codec_name -select_streams v:0 -of default=noprint_wrappers=1:nokey=1 $file)"
+    audio_codec="$(ffprobe -v error -show_entries stream=codec_name -select_streams a:0 -of default=noprint_wrappers=1:nokey=1 $file)"
+    frame_rate="$(cut -c -2 <<< "$(ffprobe -v error -show_entries stream=avg_frame_rate -select_streams v:0 -of default=noprint_wrappers=1:nokey=1 $file)")"
     keyframe_interval="$(($frame_rate * 10))"
       
     # update ffmpeg arguments for AV1 encoder based on a video's framerate
@@ -181,7 +181,7 @@ encode() {
     if [[ "${input_codecs[*]}" =~ "$video_codec" ]]; then
       file_index=$(( $file_index + 1 ))
       notify_success "Converting... $file_index/$total"
-      $TERM ffmpeg -i $file $video_enc $audio_enc $media_out_dir/$(basename $file_name $file_ext).$out_format
+      ffmpeg -i $file $video_enc $audio_enc $media_out_dir/$(basename $file_name $file_ext).$out_format
     fi
   done
 
