@@ -22,6 +22,7 @@ After rebooting, run
 cd hydotfiles/
 ./install.sh -f
 ```
+in order to finish the installation.
 
 
 ## why is it public

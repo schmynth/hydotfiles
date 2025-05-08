@@ -25,7 +25,7 @@ sddm                                                   # display manager for KDE
 qt5-quickcontrols                                      # for sddm theme ui elements
 qt5-quickcontrols2                                     # for sddm theme ui elements
 qt5-graphicaleffects                                   # for sddm theme effects
-spice-vdagent   										# only needed in VM!
+spice-vdagent                                          # only needed in VM!
 
 # --------------------------------------------------- // Window Manager
 hyprland                                               # wlroots-based wayland compositor
@@ -76,20 +76,20 @@ dolphin                                                # kde file manager
 ark                                                    # kde file archiver
 unzip                                                  # extracting zip files
 vim                                                    # terminal text editor
-#code                                                   # ide text editor
+#code                                                  # ide text editor
 nwg-displays                                           # monitor management utility
 
 # --------------------------------------------------- // Shell
 eza|zsh                                                # file lister for zsh
 # oh-my-zsh-git|zsh                                    #  plugin manager for zsh (Optional) // Moved to pkg_extra.lst
 zsh-theme-powerlevel10k-git|zsh                        # theme for zsh
-pokego-bin|zsh                                        # display pokemon sprites in terminal (written GO)
-# eza|fish                                               # file lister for fish
-# starship|fish                                          # customizable shell prompt
+pokego-bin|zsh                                         # display pokemon sprites in terminal (written GO)
+# eza|fish                                             # file lister for fish
+# starship|fish                                        # customizable shell prompt
 fastfetch                                              # system information fetch tool
 
 # --------------------------------------------------- // HyDE
-# hyde-cli-git                                           # cli tool to manage hyde \\ Deprecated for HyDE
+# hyde-cli-git                                         # cli tool to manage hyde \\ Deprecated for HyDE
 hypridle                                               # idle daemon
 
 # --------------------------------------------------- // System
@@ -100,11 +100,11 @@ bitwarden
 # coolercontrold
 cpupower
 cpupower-gui
-# ddcui                                                 # GUI to control brightness for external monitors
+# ddcui                                                # GUI to control brightness for external monitors
 deja-dup
-libinput-gestures                                    # actions touchpad gestures using libinput
+libinput-gestures                                      # actions touchpad gestures using libinput
 ncdu
-gestures                                             # gui for libinput-gestures
+gestures                                               # gui for libinput-gestures
 opencl-amd
 realtime-privileges
 reflector
@@ -129,13 +129,13 @@ renoise
 
 
 # --------------------------------------------------- // Audio Plugins
-carla													# audio plugin host (lv2 in bitwig etc)
-lsp-plugins-clap  										# Linux studio plugins (clap format)
-calf   													# calf studio plugin suite (extra)
-sfizz  													# sampler 
-zl-equalizer-bin      									# Dynamic EQ
-surge-xt    											# Synthesizer
-decent-sampler-bin    									# Sampler 
+carla                                                    # audio plugin host (lv2 in bitwig etc)
+lsp-plugins-clap                                         # Linux studio plugins (clap format)
+calf                                                     # calf studio plugin suite (extra)
+sfizz                                                    # sampler 
+zl-equalizer-bin                                         # Dynamic EQ
+surge-xt                                                 # Synthesizer
+decent-sampler-bin                                       # Sampler 
 
 # --------------------------------------------------- // Misc
 xdg-desktop-portal-gtk                                 # xdg desktop portal using gtk
