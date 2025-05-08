@@ -19,7 +19,7 @@ if ! pkg_installed flatpak; then
 fi
 
 flatpak remote-add --user --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
-flats=$(awk -F '#' '{print $1}' "${lstDir}/lists/flatpak.lst" | sed 's/ //g' | xargs)
+flats=$(awk -F '#' '{print $1}' "${lstDir}/flatpak.lst" | sed 's/ //g' | xargs)
 
 flatpak install --user -y flathub ${flats}
 flatpak remove --unused
