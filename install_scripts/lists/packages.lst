@@ -25,7 +25,7 @@ sddm                                                   # display manager for KDE
 qt5-quickcontrols                                      # for sddm theme ui elements
 qt5-quickcontrols2                                     # for sddm theme ui elements
 qt5-graphicaleffects                                   # for sddm theme effects
-spice-vdagent											# only needed in VM!
+spice-vdagent   										# only needed in VM!
 
 # --------------------------------------------------- // Window Manager
 hyprland                                               # wlroots-based wayland compositor
@@ -130,12 +130,12 @@ renoise
 
 # --------------------------------------------------- // Audio Plugins
 carla													# audio plugin host (lv2 in bitwig etc)
-lsp-plugins-clap										# Linux studio plugins (clap format)
-calf													# calf studio plugin suite (extra)
-sfizz													# sampler 
-zl-equalizer-bin										# Dynamic EQ
-surge-xt												# Synthesizer
-decent-sampler-bin										# Sampler 
+lsp-plugins-clap  										# Linux studio plugins (clap format)
+calf   													# calf studio plugin suite (extra)
+sfizz  													# sampler 
+zl-equalizer-bin      									# Dynamic EQ
+surge-xt    											# Synthesizer
+decent-sampler-bin    									# Sampler 
 
 # --------------------------------------------------- // Misc
 xdg-desktop-portal-gtk                                 # xdg desktop portal using gtk
