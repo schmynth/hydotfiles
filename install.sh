@@ -352,6 +352,9 @@ EOF
 
 fi
 
+print_log -sec "VS Code" -info "Info" -wt " installing VS Code extensions"
+"${scrDir}/install_code_ext.sh"
+
 # finish
 
 cat <<"EOF"
