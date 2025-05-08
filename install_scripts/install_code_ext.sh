@@ -13,5 +13,5 @@ log_section="VS Code Extensions"
 
 while read -r line; do
   print_log -info "Info" -b " [install] :: " "${line}"
-  code --install-extension ${line} 2>&1 | stderr2log || print_log -err "installation of ${line} failed"
+  code --install-extension ${line} 2>&1 | stderr2log || 2>&1 | stderr2log && print_log -err "installation of ${line} failed"
 done < ${scrDir}/lists/code-extensions.lst
