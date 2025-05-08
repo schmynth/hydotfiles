@@ -57,6 +57,15 @@ au BufNewFile,BufRead *.py
     \ set autoindent|
     \ set fileformat=unix
 
+" bash indentation:
+au BufNewFile,BufRead *.sh
+    \ set tabstop=2 |
+    \ set softtabstop=4 |
+    \ set shiftwidth=4|
+    \ set textwidth=79|
+    \ set expandtab|
+    \ set autoindent|
+    \ set fileformat=unix
 set tabstop=4
 "
 " set vim highlight groups transparent:
