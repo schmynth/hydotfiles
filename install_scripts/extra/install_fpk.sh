@@ -6,6 +6,7 @@
 
 baseDir=$(dirname "$(realpath "$0")")
 scrDir=$(dirname "$(dirname "$(realpath "$0")")")
+lstDir="$scrDir/lists"
 
 source "${scrDir}/global_fn.sh"
 if [ $? -ne 0 ]; then
@@ -18,7 +19,7 @@ if ! pkg_installed flatpak; then
 fi
 
 flatpak remote-add --user --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
-flats=$(awk -F '#' '{print $1}' "${scrDir}/lists/flatpak.lst" | sed 's/ //g' | xargs)
+flats=$(awk -F '#' '{print $1}' "${lstDir}/lists/flatpak.lst" | sed 's/ //g' | xargs)
 
 flatpak install --user -y flathub ${flats}
 flatpak remove --unused
