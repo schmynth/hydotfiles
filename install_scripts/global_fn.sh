@@ -180,6 +180,7 @@ print_log() {
 stderr2log() {
   # redirects in stream to log file
   # usage: command 2>&1 | stderr2log
+  local logFile="${cacheDir}/logs/${HYDE_LOG}/${executable}"
   read IN
   echo $IN >> $logFile
 }
