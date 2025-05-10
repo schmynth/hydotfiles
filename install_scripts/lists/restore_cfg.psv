@@ -98,6 +98,7 @@ S|${HOME}/.config|dunst|dunst
  Productivity 
 P|${HOME}/.local/share/applications|com.bitwig.BitwigStudio.desktop|bitwig-studio
 P|${HOME}/.local/share/applications|org.kicad.kicad.desktop|kicad
+P|${HOME}/.local/share/applications|DaVinci-Resolve.desktop|
 
  Gaming 
 S|${HOME}/.config|MangoHud|mangohud
