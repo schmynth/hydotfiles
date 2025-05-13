@@ -52,8 +52,12 @@ input_codec_menu_prompt() {
 --------------------------
 Select output codec for queued videos
 --------------------------
-1) DNHXR HQX
+1) DNxHR HQX
 2) AV1
+3) MPEG-4 part 2
+
+4) display help
+5) Exit
 EOF
 }
 
@@ -70,6 +74,23 @@ Select output codec for rendering
 --------------------------
 EOF
 }
+
+display_codec_help() {
+  cat <<EOF
+DNxHR:
++great quality, fast encoding, smooth editing
+-huge files
+
+AV1:
++great quality, small files
+-very slow encoding, choppy editing
+
+MPEG-4 part 2:
++very fast encoding, medium file size
+-obsolete, inferior quality
+EOF
+}
+
 
 
 
@@ -94,7 +115,10 @@ choose_input_codec() {
       video_enc="-c:v mpeg4 -q:v 2"
       out_format="mov"
       ;;
-    4) echo "Exiting..." ; exit 0
+    4) # show help
+      display_codec_help
+      ;;
+    5) echo "Exiting..." ; exit 0
       ;;
     *)
       notify_error "wrong option"
