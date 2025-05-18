@@ -28,8 +28,9 @@
         "title<.*steam.*>": "", // Windows whose titles contain "steam"
         "title<.*lutris.*>": "󱎓", // Windows whose titles contain "lutris"
         "class<thunderbird>": "",
-        "class<vlc>": "",
+        "class<vlc>": "",
         "class<thunar>": "",
+		"class<davinci-resolve>":"",
         "class<org.gnome.Nautilus>": "",
         "class<LibreWolf>": "",
         "class<org.kde.dolphin>": "",
