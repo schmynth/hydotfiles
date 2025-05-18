@@ -22,6 +22,9 @@ _) ( /)//)(//)//) /)(/(/(-  //)_)/(/((  _) ( / //)/
 
 EOF
 
+# ASCII font is "Italic"
+# http://patorjk.com/software/taag/#p=display&f=Italic&t=finish%0A%0A
+
 #--------------------------------#
 # import variables and functions #
 #--------------------------------#
