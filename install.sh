@@ -346,9 +346,9 @@ if [ ${flg_Rebooted} -eq 1 ]; then
 
 EOF
 
-  print_log -sec "Hyprland" -info "Info" -wt "installing hyprland plugins"
+#  print_log -sec "Hyprland" -info "Info" -wt "installing hyprland plugins"
   
-  "${scrDir}/install_plugins.sh"
+#  "${scrDir}/install_plugins.sh"
   
   print_log -sec "sddm" -info "Info" -wt "setting sddm resolution"
   "${scrDir}/sddm_resolution.sh"
