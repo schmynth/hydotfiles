@@ -1,9 +1,10 @@
 #!/bin/bash
-source global_fn.sh
 # find full path of script:
 SCRIPT_PATH="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+hydeLibDir="$(dirname $SCRIPT_PATH)/hyde"
 
-source $SCRIPT_PATH/pretty_print.sh
+source $hydeLibDir/pretty_print.sh
+source $hydeLibDir/global_fn.sh
 
 errors=0
 album_name="$1"
@@ -22,6 +23,16 @@ RAW_dest="${cwd}/rawdestination/${album_name}/"
 JPG_dest="${cwd}/jpgdestination/${album_name}/"
 
 print_message -w "General" "This script will move files from specified album to respective destination."
+
+if [[ -z $1 ]]; then
+  print_message -e "Error" "No album as been specified. Please provide an album (foldername) to deploy as argument."
+  exit 0
+fi
+
+print_message -w "Directories" "The following directories will be used:"
+print_message -w "Directories" "JPG destination: $JPG_dest"
+print_message -w "Directories" "RAW destination: $RAW_dest"
+
 print_message -w "General" "Are you sure you want to run this script?"
 read -p "y/n:" choice
 

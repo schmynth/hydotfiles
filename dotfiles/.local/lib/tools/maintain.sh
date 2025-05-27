@@ -1,8 +1,10 @@
 #!/bin/bash
 
 scrDir="$(dirname "$(realpath "$0")")"
+hydeLibDir="$(dirname ${srcDir})/hyde"
+
 # shellcheck disable=SC1091
-source "${scrDir}/globalcontrol.sh"
+source "${hydeLibDir}/globalcontrol.sh"
 
 # Delete cache not modified for 20 days
 print_log -sec "cache" -stat "Info" " Deleting cache not modified for 20 days"
