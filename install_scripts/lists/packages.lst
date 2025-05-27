@@ -89,8 +89,8 @@ hypridle                                               # idle daemon
 # --------------------------------------------------- // System
 # trash-cli-git                                        # cli to manage trash files
 bitwarden
-coolercontrol
-coolercontrold
+# coolercontrol
+# coolercontrold
 cpupower
 cpupower-gui
 ddcui                                                # GUI to control brightness for external monitors
