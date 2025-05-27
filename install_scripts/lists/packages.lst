@@ -35,8 +35,6 @@ rofi-wayland                                           # application launcher
 waybar                                                 # system bar
 swww                                                   # wallpaper
 hyprlock                                               # lock screen
-wlogout                                                # logout menu
-# grimblast-git                                        # screenshot tool # DEPRECATED! We will ship our own version to avoid breaking changes
 grim                                                   # screenshot tool
 hyprpicker                                             # color picker
 slurp                                                  # region select for screenshot/screenshare
@@ -70,7 +68,6 @@ qt5-wayland                                            # wayland support in qt5
 qt6-wayland                                            # wayland support in qt6
 
 # --------------------------------------------------- // Applications
-#firefox                                                # browser
 librewolf-bin
 kitty                                                  # terminal
 dolphin                                                # kde file manager
@@ -82,26 +79,21 @@ nwg-displays                                           # monitor management util
 
 # --------------------------------------------------- // Shell
 eza|zsh                                                # file lister for zsh
-# oh-my-zsh-git|zsh                                    #  plugin manager for zsh (Optional) // Moved to pkg_extra.lst
 zsh-theme-powerlevel10k-git|zsh                        # theme for zsh
 pokego-bin|zsh                                         # display pokemon sprites in terminal (written GO)
-# eza|fish                                             # file lister for fish
-# starship|fish                                        # customizable shell prompt
 fastfetch                                              # system information fetch tool
 
 # --------------------------------------------------- // HyDE
-# hyde-cli-git                                         # cli tool to manage hyde \\ Deprecated for HyDE
 hypridle                                               # idle daemon
 
 # --------------------------------------------------- // System
-# downgrade                                            # downgrade packages
 # trash-cli-git                                        # cli to manage trash files
 bitwarden
-# coolercontrol
-# coolercontrold
+coolercontrol
+coolercontrold
 cpupower
 cpupower-gui
-# ddcui                                                # GUI to control brightness for external monitors
+ddcui                                                # GUI to control brightness for external monitors
 deja-dup
 libinput-gestures                                      # actions touchpad gestures using libinput
 ncdu
@@ -111,14 +103,12 @@ realtime-privileges
 reflector
 # wttrbar                                                # for weather
 # python-requests|wttrbar                                # script dependency
-# hyprgui-bin                                          # GUI for hyprland configuration // might mess your userprefs but convenient // Just disappeared
 
 # --------------------------------------------------- // Shell
-# oh-my-zsh-git|zsh                                      # Optional plugin manager for zsh // already installed locally
 
 
 # --------------------------------------------------- // Productivity
-# anki
+anki
 bitwig-studio
 blender
 darktable
@@ -126,7 +116,7 @@ gimp
 kicad
 newsflash
 onlyoffice-bin
-renoise
+# renoise
 
 
 # --------------------------------------------------- // Audio Plugins
@@ -158,7 +148,6 @@ winetricks
 yabridge
 
 # --------------------------------------------------- // Music
-# cava                                                   # audio visualizer
 spotify                                                # proprietary music streaming service
 # spicetify-cli                                          # cli to customize spotify client
 
