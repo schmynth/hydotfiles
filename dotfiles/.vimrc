@@ -47,6 +47,7 @@ set hlsearch
 " keymaps
 nnoremap <space> za
 nnoremap gf :tabedit <cfile><CR>
+inoremap kj <ESC>
 
 
 " python indentation:
