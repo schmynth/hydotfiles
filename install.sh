@@ -353,10 +353,10 @@ EOF
   print_log -sec "sddm" -info "Info" -wt "setting sddm resolution"
   "${scrDir}/sddm_resolution.sh"
 
+  print_log -sec "VS Code" -info "Info" -wt " installing VS Code extensions"
+  "${scrDir}/install_code_ext.sh"
 fi
 
-print_log -sec "VS Code" -info "Info" -wt " installing VS Code extensions"
-"${scrDir}/install_code_ext.sh"
 
 # finish
 
