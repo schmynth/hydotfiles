@@ -1,3 +1,4 @@
+# DO NOT USE TABS TO SEPARATE PACKAGE NAMES FROM COMMENTS!
 # --------------------------------------------------- // System
 pipewire                                               # audio/video server
 pipewire-alsa                                          # pipewire alsa client
