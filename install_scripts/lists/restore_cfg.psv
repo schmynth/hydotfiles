@@ -51,6 +51,7 @@ S|${HOME}/.config/hypr|animations|hyprland
 
 O|${HOME}/.local/share|hyde|hyprland
 O|${HOME}/.local/lib|hyde|hyprland
+O|${HOME}/.local/lib|tools|hyprland
 
  Editor 
 P|${HOME}/.config/Code/User|settings.json|visual-studio-code-bin
