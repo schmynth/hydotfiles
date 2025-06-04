@@ -21,7 +21,7 @@ fi
 flatpak remote-add --user --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
 flats=$(awk -F '#' '{print $1}' "${lstDir}/flatpak.lst" | sed 's/ //g' | xargs)
 
-flatpak install --user -y flathub ${flats} || print_log -r "flatpak" -err "failed" "installation failed..."
+flatpak install --user -y flathub ${flats} || print_log -r "flatpak" -err "failed" "installation failed. Rerun install_scripts/install_fpk.sh after checking your package list."
 flatpak remove --unused
 
 gtkTheme=$(gsettings get org.gnome.desktop.interface gtk-theme | sed "s/'//g")
