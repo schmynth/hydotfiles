@@ -8,7 +8,7 @@ io.missioncenter.MissionCenter                 # MissionCenter
 io.github.dimtpap.coppwr                     # Coppwr
 
 # ------------------------------------------- // Browser
-# com.brave.Browser                              # Brave
+com.brave.Browser                              # Brave
 # org.torproject.torbrowser-launcher           # Tor
 
 # ------------------------------------------- // Social
@@ -21,7 +21,6 @@ io.github.dimtpap.coppwr                     # Coppwr
 net.ankiweb.Anki								# Anki Flashcards
 # md.obsidian.Obsidian                         # Obsidian
 ch.protonmail.protonmail-bridge
-com.brave.browser
 # org.mozilla.Thunderbird                      # Thunderbird
 # io.github.alainm23.planify                   # Planify
 
