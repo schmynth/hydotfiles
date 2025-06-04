@@ -1,5 +1,9 @@
 #!/usr/bin/env bash
 
+# original lockscreen script of hyde
+# replaced by lock_with_layout.sh
+# for ensuring german kb layout is used
+
 scrDir="$(dirname "$(realpath "$0")")"
 # shellcheck source=$HOME/.local/lib/hyde/globalcontrol.sh
 # shellcheck disable=SC1091
