@@ -38,7 +38,7 @@ icons[shutdown]="\Uf0425 "
 icons[cancel]="\Uf0156 "
 
 declare -A actions
-actions[lockscreen]="hyprlock"
+actions[lockscreen]="lock_with_layout.sh"
 #actions[switchuser]="???"
 actions[logout]="kill -9 -1"
 actions[suspend]="systemctl suspend"
