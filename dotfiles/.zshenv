@@ -8,7 +8,7 @@
 #!     ░▒▒░░▓▓   ▓▓   \__  |____/ |____/    ▀█ █▀ █░█
 #!       ░▒▓▓   ▓▓  //____/                █▄ ▄█ █▀█
 
-# HyDE's ZSH env configuration
+# schmynth's hyde zsh env configuration
 # This file is sourced by ZSH on startup
 # And ensures that we have an obstruction free ~/.zshrc file
 # This also ensures that the proper HyDE $ENVs are loaded
@@ -165,9 +165,9 @@ XDG_DESKTOP_DIR="${XDG_DESKTOP_DIR:-$HOME/Desktop}"
 XDG_DOWNLOAD_DIR="${XDG_DOWNLOAD_DIR:-$HOME/Downloads}"
 XDG_TEMPLATES_DIR="${XDG_TEMPLATES_DIR:-$HOME/Templates}"
 XDG_PUBLICSHARE_DIR="${XDG_PUBLICSHARE_DIR:-$HOME/Public}"
-XDG_DOCUMENTS_DIR="${XDG_DOCUMENTS_DIR:-$HOME/Documents}"
-XDG_MUSIC_DIR="${XDG_MUSIC_DIR:-$HOME/Music}"
-XDG_PICTURES_DIR="${XDG_PICTURES_DIR:-$HOME/Pictures}"
+XDG_DOCUMENTS_DIR="${XDG_DOCUMENTS_DIR:-$HOME/Dokumente}"
+XDG_MUSIC_DIR="${XDG_MUSIC_DIR:-$HOME/Musik}"
+XDG_PICTURES_DIR="${XDG_PICTURES_DIR:-$HOME/Bilder}"
 XDG_VIDEOS_DIR="${XDG_VIDEOS_DIR:-$HOME/Videos}"
 LESSHISTFILE=${LESSHISTFILE:-/tmp/less-hist}
 PARALLEL_HOME="$XDG_CONFIG_HOME"/parallel
