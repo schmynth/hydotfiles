@@ -4,6 +4,7 @@ bluez                                                  # bluetooth protocol stac
 bluez-utils                                            # bluetooth utility cli
 blueman                                                # bluetooth manager gui
 brightnessctl                                          # screen brightness control
+btop                                                   # system monitor and process manager
 cmake
 cpio
 gst-plugin-pipewire                                    # pipewire gstreamer client
