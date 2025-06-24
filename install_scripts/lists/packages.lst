@@ -27,7 +27,7 @@ sddm                                                   # display manager for KDE
 qt5-quickcontrols                                      # for sddm theme ui elements
 qt5-quickcontrols2                                     # for sddm theme ui elements
 qt5-graphicaleffects                                   # for sddm theme effects
-spice-vdagent                                          # only needed in VM!
+# spice-vdagent                                          # only needed in VM!
 
 # --------------------------------------------------- // Window Manager
 hyprland                                               # wlroots-based wayland compositor
@@ -57,7 +57,7 @@ ffmpegthumbs                                           # for dolphin video thumb
 kde-cli-tools                                          # for dolphin file type defaults
 libnotify                                              # for notifications
 noto-fonts-emoji                                       # emoji font
-ranger
+# ranger
 
 # --------------------------------------------------- // Theming
 nwg-look                                               # gtk configuration tool
@@ -77,6 +77,7 @@ unzip                                                  # extracting zip files
 vim                                                    # terminal text editor
 #code                                                  # ide text editor
 nwg-displays                                           # monitor management utility
+superfile
 
 # --------------------------------------------------- // Shell
 eza|zsh                                                # file lister for zsh
