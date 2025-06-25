@@ -12,6 +12,7 @@ call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
 Plugin 'dense-analysis/ale'
 Plugin 'vim-language-dept/css-syntax.vim'
+Plugin 'chrisbra/Colorizer'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -34,6 +35,8 @@ set encoding=utf-8
 " Colors:
 set t_Co=256
 syntax on
+autocmd BufReadPost * ColorHighlight
+
 
 "colorscheme atom-dark-256
 
