@@ -168,8 +168,11 @@ EOF
         fi
     fi
     nvidia_detect --verbose
-
-    print_log -info "Info" -r "[VM] " -b "Virtual Machine :: " "installing packages for Virtual Machines"
+    
+    if [ ${flg_VirtualMachine} -eq 1 ]; then
+      print_log -info "Info" -r "[VM] " -b "Virtual Machine :: " "installing packages for Virtual Machines"
+      sudo pacman -Syu --needed spice spice-gtk spice-protocol spice-vdagent gvfs-dnssd
+    fi
 
     #----------------#
     # get user prefs #
