@@ -14,6 +14,7 @@ options:
                       in the same parent directory.
 --pull-all-branches: pulls all branches
 --push-all-branches: pushes all branches. IMPORTANT: provide a commit message as argument!
+                      This will also `git add .`, so remove unnecessary files first!
 --set-remote: sets remote url to given url.
 EOF
 }
@@ -51,6 +52,7 @@ case $1 in
     cd $BASE_DIR
     for dir in */; do
       cd $dir
+      git add .
       git commit -m "$2" || echo "ERROR: commit failed"
       git push || echo "ERROR: push failed"
       cd ..
