@@ -53,8 +53,9 @@ flg_Shell=0
 flg_Nvidia=1
 flg_ThemeInstall=1
 flg_Rebooted=0
+flg_VirtualMachine=0
 
-while getopts "idrstmnhf" flag; do
+while getopts "idrstmnhvf" flag; do
   case $flag in
   i) flg_Install=1 ;;
   d)
@@ -75,6 +76,7 @@ while getopts "idrstmnhf" flag; do
     ;;
   t) flg_DryRun=1 ;;
   m) flg_ThemeInstall=0 ;;
+  v) flg_VirtualMachine=1 ;;
   f) flg_Rebooted=1 ;;
   *)
     cat <<EOF
@@ -87,6 +89,7 @@ Usage: $0 [options]
   h : re-evaluate S[h]ell
   m : no the[m]e reinstallations
   t : [t]est run without executing (-irst to dry run all)
+  v : this is a virtual machine
   f : [f]inish installation after reboot
 EOF
   exit 1
@@ -165,6 +168,8 @@ EOF
         fi
     fi
     nvidia_detect --verbose
+
+    print_log -info "Info" -r "[VM] " -b "Virtual Machine :: " "installing packages for Virtual Machines"
 
     #----------------#
     # get user prefs #
