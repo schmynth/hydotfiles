@@ -182,6 +182,8 @@ EOF
     export getAur="yay"
     export myShell="zsh"
 
+    echo "${myShell}" >>"${lstDir}/install_pkg.lst"
+    
     if ! grep -q "^#user packages" "${lstDir}/install_pkg.lst"; then
         print_log -sec "pkg" -crit "No user packages found..." "Log file at ${cacheDir}/logs/${HYDE_LOG}/install.sh"
         exit 1
