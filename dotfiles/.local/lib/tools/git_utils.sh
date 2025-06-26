@@ -53,7 +53,7 @@ case $1 in
     for dir in */; do
       cd $dir
       git add .
-      git commit -m "$2" || echo "ERROR: commit failed"
+      git commit -m "$3" || echo "ERROR: commit failed"
       git push || echo "ERROR: push failed"
       cd ..
     done
