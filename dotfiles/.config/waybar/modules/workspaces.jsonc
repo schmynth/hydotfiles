@@ -11,14 +11,17 @@
     		},
             "window-rewrite-default": "",
         "window-rewrite": {
+        "class<spotify>": "",
+		//Internet
         "title<.*youtube.*>": "", // Windows whose titles contain "youtube"
         "class<firefox>": "", // Windows whose classes are "firefox"
         "class<firefox> title<.*github.*>": "", // Windows whose class is "firefox" and title contains "github"
         "class<firefox> title<.*twitch|youtube.*>": "",
-        "class<spotify>": "",
+        "class<Org.chromium.Chromium>": "",
         "class<google-chrome>": "",
         "class<google-chrome> title<.*github.*>": "",
         "class<google-chrome> title<.*twitch|youtube.*>": "",
+		//Terminal
         "class<Alacritty>": "",
         "class<kitty>": "",
         "class<org.kde.konsole>": "",
