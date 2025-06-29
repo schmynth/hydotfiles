@@ -1,7 +1,7 @@
 #!/bin/bash
 
 scrDir="$(dirname "$(realpath "$0")")"
-hydeLibDir="$(dirname ${srcDir})/hyde"
+hydeLibDir="$HOME/.local/lib/hyde"
 
 # shellcheck disable=SC1091
 source "${hydeLibDir}/globalcontrol.sh"
