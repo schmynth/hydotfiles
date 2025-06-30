@@ -14,7 +14,7 @@ options:
                       in the same parent directory.
 --pull-all-branches: pulls all branches
 --push-all-branches: pushes all branches. IMPORTANT: provide a commit message as argument!
-                      This will also `git add .`, so remove unnecessary files first!
+                      This will also \`git add .\`, so remove unnecessary files first!
 --set-remote: sets remote url to given url.
 EOF
 }
