@@ -80,5 +80,10 @@ else
     print_log -y "[FLATPAK] " -info "Info" -y "[skip]" -b " :: " "flatpak is already installed"
 fi
 
+# vim plugins
+
+print_log -y "[vim] " -info "Info" -b "[plugins]" -b " :: " "installing vim plugins"
+vim -c 'PluginInstall' -c 'qa!'
+
 # install sddm and astronaut theme
 "${scrDir}/sddm_theme.sh"
