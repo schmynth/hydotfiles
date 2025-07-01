@@ -17,30 +17,16 @@ cloneDir="${cloneDir:-$CLONE_DIR}"
 
 # sddm
 if pkg_installed sddm; then
+    SDDM_ICON_PATH="/var/lib/AccountsService/icons"
+
     print_log -c "[DISPLAYMANAGER] " -info "Info" -g "detected :: " "sddm"
     if [ ! -d /etc/sddm.conf.d ]; then
         sudo mkdir -p /etc/sddm.conf.d
     fi
-#     if [ ! -f /etc/sddm.conf.d/backup_the_hyde_project.conf ] || [ "${HYDE_INSTALL_SDDM}" = true ]; then
-#         print_log -g "[DISPLAYMANAGER] " -b " :: " "configuring sddm..."
-#         print_log -g "[DISPLAYMANAGER] " -b " :: " "Select sddm theme:" -r "\n[1]" -b " Candy" -r "\n[2]" -b " Corners"
-#         read -p " :: Enter option number : " -r sddmopt
-# 
-#         case $sddmopt in
-#         1) sddmtheme="Candy" ;;
-#         *) sddmtheme="Corners" ;;
-#         esac
-# 
-#         sudo tar -xzf "${cloneDir}/themes/sddm/Sddm_${sddmtheme}.tar.gz" -C /usr/share/sddm/themes/
-#         sudo touch /etc/sddm.conf.d/the_hyde_project.conf
-#         sudo cp /etc/sddm.conf.d/the_hyde_project.conf /etc/sddm.conf.d/backup_the_hyde_project.conf
-#         sudo cp /usr/share/sddm/themes/${sddmtheme}/the_hyde_project.conf /etc/sddm.conf.d/
-#     else
-#         print_log -y "[DISPLAYMANAGER] " -b " :: " "sddm is already configured..."
-#     fi
 
-    if [ ! -f "/usr/share/sddm/faces/${USER}.face.icon" ] && [ -f "${cloneDir}/Source/misc/${USER}.face.icon" ]; then
-        sudo cp "${cloneDir}/Source/misc/${USER}.face.icon" /usr/share/sddm/faces/
+
+    if [ ! -f "${SDDM_ICON_PATH}/${USER}" ] && [ -f "${cloneDir}/.icon" ]; then
+        sudo cp "${cloneDir}/.icon" "${SDDM_ICON_PATH}/${USER}"
         print_log -g "[DISPLAYMANAGER] " -b " :: " "avatar set for ${USER}..."
     fi
 
