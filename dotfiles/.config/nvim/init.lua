@@ -46,6 +46,8 @@ local opts = {}
 
 require("lazy").setup(plugins, opts)
 
+-- harpoon setup
+
 local builtin = require("telescope.builtin")
 local harpoon = require("harpoon")
 
@@ -53,10 +55,39 @@ harpoon:setup()
 -- set keymaps
 local ui = require("harpoon.ui")
 
-vim.keymap.set("n", "<leader>a", function() harpoon:list():add() end)
+local header = harpoon:list("header")
+local implementation = harpoon:list("implementation")
 
+-- adding files to 
+-- Lists
+vim.keymap.set("n", "<leader>a", function() harpoon:list():add() end)
+vim.keymap.set("n", "<leader>ah", function() harpoon:list("header"):add() end)
+vim.keymap.set("n", "<leader>ai", function() harpoon:list("implementation"):add() end)
+vim.keymap.set("n", "<leader>ad", function() harpoon:list("documentation"):add() end)
+
+-- general menu
 vim.keymap.set("n", "<leader>fh", function() harpoon.ui:toggle_quick_menu(harpoon:list()) end)
 
+-- specific menus
+
+vim.keymap.set("n", "<leader>hh<M-1>", function() harpoon:list("header"):select(1) end)
+vim.keymap.set("n", "<leader>hh<M-2>", function() harpoon:list("header"):select(2) end)
+vim.keymap.set("n", "<leader>hh<M-3>", function() harpoon:list("header"):select(3) end)
+vim.keymap.set("n", "<leader>hh<M-4>", function() harpoon:list("header"):select(4) end)
+vim.keymap.set("n", "<leader>hh<M-5>", function() harpoon:list("header"):select(5) end)
+vim.keymap.set("n", "<leader>hh<M-6>", function() harpoon:list("header"):select(6) end)
+vim.keymap.set("n", "<leader>hi<M-1>", function() harpoon:list("implementation"):select(1) end)
+vim.keymap.set("n", "<leader>hi<M-2>", function() harpoon:list("implementation"):select(2) end)
+vim.keymap.set("n", "<leader>hi<M-3>", function() harpoon:list("implementation"):select(3) end)
+vim.keymap.set("n", "<leader>hi<M-4>", function() harpoon:list("implementation"):select(4) end)
+vim.keymap.set("n", "<leader>hi<M-5>", function() harpoon:list("implementation"):select(5) end)
+vim.keymap.set("n", "<leader>hi<M-6>", function() harpoon:list("implementation"):select(6) end)
+vim.keymap.set("n", "<leader>hd<M-1>", function() harpoon:list("documentation"):select(1) end)
+vim.keymap.set("n", "<leader>hd<M-2>", function() harpoon:list("documentation"):select(2) end)
+vim.keymap.set("n", "<leader>hd<M-3>", function() harpoon:list("documentation"):select(3) end)
+vim.keymap.set("n", "<leader>hd<M-4>", function() harpoon:list("documentation"):select(4) end)
+vim.keymap.set("n", "<leader>hd<M-5>", function() harpoon:list("documentation"):select(5) end)
+vim.keymap.set("n", "<leader>hd<M-6>", function() harpoon:list("documentation"):select(6) end)
 vim.keymap.set("n", "<M-1>", function() harpoon:list():select(1) end)
 vim.keymap.set("n", "<M-2>", function() harpoon:list():select(2) end)
 vim.keymap.set("n", "<M-3>", function() harpoon:list():select(3) end)
@@ -66,6 +97,20 @@ vim.keymap.set("n", "<M-6>", function() harpoon:list():select(6) end)
 
 vim.keymap.set("n", "<C-S-P>", function() harpoon:list():prev() end)
 vim.keymap.set("n", "<C-S-P>", function() harpoon:list():next() end)
+
+-- for named UI:
+local function open_named_ui(group_name)
+  local list = require("harpoon"):list(group_name)
+
+
+  require("harpoon").ui:toggle_quick_menu(list, {
+  title = "📁 Harpoon Group: " .. group_name
+  })
+end
+
+vim.keymap.set("n", "<leader>hh", function() open_named_ui("header") end)
+vim.keymap.set("n", "<leader>hi", function() open_named_ui("implementation") end)
+vim.keymap.set("n", "<leader>hd", function() open_named_ui("documentation") end)
 
 -- find files
 vim.keymap.set('n', '<leader>ff', builtin.find_files, {})
@@ -101,13 +146,19 @@ local Terminal = require("toggleterm.terminal").Terminal
 -- This will be your bottom terminal
 local bottom_term = Terminal:new({
   direction = "horizontal",
-  hidden = true
+  hidden = true,
+  close_on_exit = false,
+  on_open = function(term)
+  vim.api.nvim_buf_set_keymap(term.bufnr, "t", "<C-t>", "<cmd>lua _toggle_bottom_term()<CR>", { noremap = true, silent = true })
+  end,
 })
 
--- Toggle terminal with <C-t>
-vim.keymap.set("n", "<C-t>", function()
+function _toggle_bottom_term()
   bottom_term:toggle()
-end, { desc = "Toggle bottom terminal" })
+end
+
+-- Toggle terminal with <C-t>
+vim.keymap.set({"n", "t"}, "<C-t>", _toggle_bottom_term, { desc = "Toggle bottom terminal" })
 
 -- Run ./build.sh in the same terminal with <leader>b
 vim.keymap.set("n", "<F5>", function()
