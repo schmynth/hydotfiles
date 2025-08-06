@@ -39,6 +39,8 @@ vim.keymap.set('n', '<leader>u', ':UndotreeToggle<CR>', { desc = "Toggle Undotre
 -- nvim-tree
 vim.keymap.set('n', '<C-h>', ':NvimTreeToggle<CR>', { desc = "Toggle Explorer SideBar"})
 
+vim.keymap.set('n', '<leader>ca', vim.lsp.buf.code_action, { noremap = true, silent = true, desc = "show code action" })
+
 
 local config = require("nvim-treesitter.configs")
 config.setup({

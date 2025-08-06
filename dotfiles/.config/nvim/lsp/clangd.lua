@@ -1,5 +1,5 @@
 return {
-	cmd = { 'clangd', '--background-index'},
+	cmd = { 'clangd', '--background-index', '--compile-commands-dir=build' },
 	filetypes = { 'cpp', 'h', 'c'},
 	root_markers = { '.git', 'buildAndLaunch.sh' }
 	}
