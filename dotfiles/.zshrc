@@ -10,6 +10,7 @@
 #  Aliases 
 # Add aliases here
 alias maintain="maintain.sh"
+alias nvim="nvim --listen /tmp/nvimsocket"
 
 #  This is your file 
 # Add your configurations here
