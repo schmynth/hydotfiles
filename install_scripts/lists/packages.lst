@@ -75,6 +75,8 @@ dolphin                                                # kde file manager
 ark                                                    # kde file archiver
 unzip                                                  # extracting zip files
 vim                                                    # terminal text editor
+neovim
+neovim-remote
 #code                                                  # ide text editor
 nwg-displays                                           # monitor management utility
 superfile
