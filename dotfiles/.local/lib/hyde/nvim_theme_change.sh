@@ -7,7 +7,7 @@ if [ -z "$THEME" ]; then
   exit 0
 fi
 
-NVIM_SOCKET="/tmp/nvim"
+NVIM_SOCKET="/tmp/nvimsocket"
 
 nvr --server-name "$NVIM_SOCKET" --remote-send "<ESC>:colorscheme $THEME<CR>"
 nvr --server-name "$NVIM_SOCKET" --remote-send "<ESC>:TransparentEnable<CR>"
