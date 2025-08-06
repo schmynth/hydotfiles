@@ -11,3 +11,6 @@ NVIM_SOCKET="/tmp/nvimsocket"
 
 nvr --server-name "$NVIM_SOCKET" --remote-send "<ESC>:colorscheme $THEME<CR>"
 nvr --server-name "$NVIM_SOCKET" --remote-send "<ESC>:TransparentEnable<CR>"
+
+nvr --servername "$NVIM_SOCKET" --remote-send \
+":lua pcall(function() vim.cmd('colorscheme $THEME'); vim.notify('🌈 Theme set to $THEME', vim.log.levels.INFO) end)<CR>"
