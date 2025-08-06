@@ -16,13 +16,42 @@ end
 
 vim.opt.rtp:prepend(lazypath)
 
+local plugins = {}
+
+vim.list_extend(plugins, require("sebastian.themes"))
 -- installed plugins
-local plugins = {
-  { "catppuccin/nvim", name= "catppuccin", priority = 1000 },
-  { 
-	  'nvim-telescope/telescope.nvim', tag = '0.1.5',
-    dependencies = { 'nvim-lua/plenary.nvim' }
-	},
+vim.list_extend(plugins, {
+  { "xiyaowong/transparent.nvim" },
+  {"nvim-tree/nvim-tree.lua",
+  version = "*",
+  lazy = false,
+  dependencies = {
+    "nvim-tree/nvim-web-devicons",
+  },
+  config = function()
+    require("nvim-tree").setup {}
+  end,},
+  { "nvim-telescope/telescope.nvim", tag = '0.1.5',
+    dependencies = { 'nvim-lua/plenary.nvim' },
+    config = function ()
+      require("telescope").setup({
+      pickers = {
+        find_files = {
+          hidden = true,
+        },
+        live_grep = {
+          additional_args = function ()
+            return { "--hidden" }
+          end
+        }
+      }
+	    })
+      end
+  },
+  {
+    "nvim-telescope/telescope-file-browser.nvim",
+    dependencies = { "nvim-telescope/telescope.nvim", "nvim-lua/plenary.nvim" }
+  },
   { "nvim-treesitter/nvim-treesitter", build = ":TSUpdate" },
   { "ThePrimeagen/harpoon", branch = "harpoon2",
     dependencies = { "nvim-lua/plenary.nvim" }
@@ -31,13 +60,12 @@ local plugins = {
   {"mbbill/undotree", cmd = "UndotreeToggle", },
   {"neovim/nvim-lspconfig",
     config = function() require("lspconfig").clangd.setup({}) end,},
-  {
-  "hrsh7th/nvim-cmp",
-  dependencies = {
+  { "hrsh7th/nvim-cmp",
+    dependencies = {
     "hrsh7th/cmp-nvim-lsp",
     "neovim/nvim-lspconfig",
-  },
-  config = function()
+    },
+    config = function()
     local cmp = require("cmp")
     cmp.setup({
       sources = {
@@ -54,8 +82,8 @@ local plugins = {
       capabilities = capabilities,
     })
   end,
-}
-}
+    }
+})
 
 local opts = {}
 

@@ -9,8 +9,6 @@ local harpoon = require("harpoon")
 -- harpoon setup
 
 local builtin = require("telescope.builtin")
-local harpoon = require("harpoon")
-
 harpoon:setup()
 
 -- for named UI:
