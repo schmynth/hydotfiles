@@ -8,7 +8,7 @@ local harpoon = require("harpoon")
 
 -- harpoon setup
 
-local builtin = require("telescope.builtin")
+-- local builtin = require("telescope.builtin")
 harpoon:setup()
 
 -- for named UI:
@@ -24,13 +24,8 @@ end
 function M.setup_keymaps()
 
   -- set keymaps
-  local ui = require("harpoon.ui")
 
-  local header = harpoon:list("header")
-  local implementation = harpoon:list("implementation")
-
-  -- adding files to 
-  -- Lists
+  -- adding files to Lists
   vim.keymap.set("n", "<leader>ag", function() harpoon:list("global"):add() end)
   vim.keymap.set("n", "<leader>ah", function() harpoon:list("header"):add() end)
   vim.keymap.set("n", "<leader>ai", function() harpoon:list("implementation"):add() end)
