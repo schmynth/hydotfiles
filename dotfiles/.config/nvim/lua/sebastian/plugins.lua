@@ -85,18 +85,33 @@ vim.list_extend(plugins, {
     "nvim-telescope/telescope-file-browser.nvim",
     dependencies = { "nvim-telescope/telescope.nvim", "nvim-lua/plenary.nvim" }
   },
-
+  -- with mason we can manage all lsps from within nvim
   {
     "mason-org/mason.nvim",
     opts = {
       ensure_installed = {
         "clangd",
         "clang_format",
+        "pyright"
       }
     }
   },
 
-  { "nvim-treesitter/nvim-treesitter", build = ":TSUpdate" },
+  {
+    "nvim-treesitter/nvim-treesitter",
+    build = ":TSUpdate",
+    config = function()
+      require("nvim-treesitter.configs").setup({
+        ensure_installed = {
+          "lua", "python", "cpp", "c", -- add any other languages you use
+        },
+        highlight = { enable = true },
+        indent = { enable = true },
+        -- required for folding
+        fold = { enable = true },
+      })
+    end,
+  },
 
   {
     "ThePrimeagen/harpoon",
@@ -104,9 +119,9 @@ vim.list_extend(plugins, {
     dependencies = { "nvim-lua/plenary.nvim" }
   },
 
-  { 'akinsho/toggleterm.nvim', version = "*",          config = true },
+  { 'akinsho/toggleterm.nvim',   version = "*",          config = true },
 
-  { "mbbill/undotree",         cmd = "UndotreeToggle", },
+  { "mbbill/undotree",           cmd = "UndotreeToggle", },
 
   {
     "neovim/nvim-lspconfig",

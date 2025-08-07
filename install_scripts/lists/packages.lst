@@ -81,6 +81,9 @@ neovim-remote
 #code                                                  # ide text editor
 nwg-displays                                           # monitor management utility
 superfile
+# --------------------------------------------------- // Development
+python-lsp-server                                      # python language server
+clang                                                  # c/c++ language server
 
 # --------------------------------------------------- // Shell
 eza|zsh                                                # file lister for zsh

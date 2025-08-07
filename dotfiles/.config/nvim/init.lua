@@ -10,6 +10,11 @@ vim.cmd("set shiftwidth=2")
 vim.opt.expandtab = true
 vim.opt.clipboard = "unnamedplus"
 
+-- folding: Enable Tree-sitter folding
+vim.opt.foldmethod = "expr"
+vim.opt.foldexpr = "nvim_treesitter#foldexpr()"
+vim.opt.foldenable = false -- don’t auto-fold by default
+
 -- show line numbers
 vim.cmd("set number")
 
@@ -25,26 +30,11 @@ toggleterm.setup_keymaps()
 local myHarpoon = require("sebastian.harpoon")
 myHarpoon.setup_keymaps()
 
-local builtin = require("telescope.builtin")
-
-
-
--- find files
-vim.keymap.set('n', '<leader>ff', builtin.find_files, {})
-vim.keymap.set('n', '<space>fb', ':Telescope file_browser<CR>')
--- grep files
-vim.keymap.set('n', '<leader>fg', builtin.live_grep, {})
--- undotree
-vim.keymap.set('n', '<leader>u', ':UndotreeToggle<CR>', { desc = "Toggle Undotree"})
--- nvim-tree
-vim.keymap.set('n', '<C-h>', ':NvimTreeToggle<CR>', { desc = "Toggle Explorer SideBar"})
-
-vim.keymap.set('n', '<leader>ca', vim.lsp.buf.code_action, { noremap = true, silent = true, desc = "show code action" })
-
+require("sebastian.keymaps")
 
 local config = require("nvim-treesitter.configs")
 config.setup({
-  ensure_installed = {"cpp", "lua", "python", "hyprlang", "css", "csv", "c", "bash"},
+  ensure_installed = { "cpp", "lua", "python", "hyprlang", "css", "csv", "c", "bash" },
   highlight = { enable = true },
   indent = { enable = true },
 })
@@ -52,7 +42,7 @@ config.setup({
 require("catppuccin").setup()
 vim.cmd.colorscheme "catppuccin"
 
-vim.lsp.enable({'clangd', 'lua_ls'})
+vim.lsp.enable({ 'clangd', 'lua_ls', 'pylsp' })
 
 require("nvim-tree").setup({
   sort = {
