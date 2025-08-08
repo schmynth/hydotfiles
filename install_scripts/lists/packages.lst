@@ -76,14 +76,16 @@ dolphin                                                # kde file manager
 ark                                                    # kde file archiver
 unzip                                                  # extracting zip files
 vim                                                    # terminal text editor
-neovim
-neovim-remote
-#code                                                  # ide text editor
 nwg-displays                                           # monitor management utility
 superfile
 # --------------------------------------------------- // Development
+#code                                                  # ide text editor
+neovim
+neovim-remote
 python-lsp-server                                      # python language server
 clang                                                  # c/c++ language server
+stylua                                                 # lua formatter
+lua-language-server                                    # lua language server
 
 # --------------------------------------------------- // Shell
 eza|zsh                                                # file lister for zsh
@@ -160,7 +162,6 @@ spotify                                                # proprietary music strea
 # spicetify-cli                                          # cli to customize spotify client
 
 # --------------------------------------------------- // Apps
-# neovim                                               # vim based text editor
 
 # --------------------------------------------------- // Shell
 # oh-my-zsh-git|zsh                                      # Optional plugin manager for zsh
@@ -170,7 +171,7 @@ spotify                                                # proprietary music strea
 # vscodium                                              # Full oss text editor
 # vscodium-marketplace|vscodium                         # VSCodium marketplace
 # code-marketplace|code                                 # Code-Oss marketplace
-visual-studio-code-bin                                # MS  text editor
+# visual-studio-code-bin                                # MS  text editor
 
 
 # --------------------------------------------------- // Backends
