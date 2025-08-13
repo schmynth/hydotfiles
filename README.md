@@ -47,3 +47,7 @@ This could easily be edited to work with any daw.
 ## who might be interested
 
 If you, like me, are using Bitwig to make music on Arch Linux and like Project HyDE dotfiles, this repo might be for you.
+
+## TODO
+
+- [ ] update theme wallpapers in theme repos as on pc
