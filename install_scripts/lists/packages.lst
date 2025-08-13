@@ -86,6 +86,8 @@ python-lsp-server                                      # python language server
 clang                                                  # c/c++ language server
 stylua                                                 # lua formatter
 lua-language-server                                    # lua language server
+bash-language-server                                  
+shfmt                                                  # bash formatter
 
 # --------------------------------------------------- // Shell
 eza|zsh                                                # file lister for zsh
