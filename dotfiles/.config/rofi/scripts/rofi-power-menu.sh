@@ -22,7 +22,7 @@ declare -A texts
 texts[lockscreen]="lock screen"
 texts[switchuser]="switch user"
 texts[logout]="log out"
-texts[suspend]="suspend"
+texts[suspend]="suspend.sh"
 texts[hibernate]="hibernate"
 texts[reboot]="reboot"
 texts[shutdown]="shut down"
