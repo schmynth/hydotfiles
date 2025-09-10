@@ -1,0 +1,1 @@
+- [ ] add switchxkblayout to lockscreen.sh as on main machine
