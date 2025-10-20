@@ -113,7 +113,6 @@ P|${HOME}/.local/share/themes|adw-gtk3 adw-gtk3-dark|kicad
 
  Launcher 
 P|${HOME}/.config|rofi|rofi
-S|${HOME}/.config|wlogout|wlogout
 
  Lock Screen 
 P|${HOME}/.config/hypr|hyprlock.conf|hyprlock
