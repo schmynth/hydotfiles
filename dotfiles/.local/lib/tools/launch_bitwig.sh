@@ -16,6 +16,18 @@ set_performance() {
   notify-send "set cpu governor to performance and quantum to 128"
 }
 
+enable_smt() {
+  # enable simultaneous multithreading
+  echo on | sudo tee /sys/devices/system/cpu/smt/control
+  notify-send "enable smt"
+}
+
+disable_smt() {
+  # disable simultaneous multithreading
+  echo off | sudo tee /sys/devices/system/cpu/smt/control
+  notify-send "disable smt"
+}
+
 set_performance
 bitwig-studio
-trap "set_powersave" EXIT
+trap "set_powersave; disable_smt" EXIT
