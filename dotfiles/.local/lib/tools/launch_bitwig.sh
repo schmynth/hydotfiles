@@ -1,5 +1,7 @@
 #!/bin/bash
 
+# for this script to work the user has to be authorized to run /usr/bin/tee and /usr/bin/cpupower without password
+
 enable_smt() {
   # enable simultaneous multithreading
   echo on | sudo tee /sys/devices/system/cpu/smt/control
