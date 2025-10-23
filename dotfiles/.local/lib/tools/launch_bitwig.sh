@@ -28,4 +28,10 @@ set_performance() {
 
 set_performance
 bitwig-studio
+
+# this makes sure trap function is not triggered prematurely
+while pgrep -x bitwig-studio >/dev/null; do
+  sleep 2
+done
+
 trap "set_powersave" EXIT
