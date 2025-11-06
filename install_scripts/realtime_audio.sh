@@ -107,7 +107,8 @@ apply_optimizations() {
   print_log -sec "GRUB" -info "Info" "current kernel parameters:"
   print_log -sec "GRUB" -info "Info" "\e[34m${kernel_parameters_list[*]}"
   add_kernel_parameter "threadirqs"
-  add_kernel_parameter "usbcore.autosuspend=-1"
+  # removed as it might cause kernel panics:
+  # add_kernel_parameter "usbcore.autosuspend=-1"
   print_log -sec "GRUB" -info "Info" -b "update GRUB"
   update_grub
   print_log -sec "System" -info "Info" "Be sure to reboot after applying these optimizations."
