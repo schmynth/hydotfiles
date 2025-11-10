@@ -18,6 +18,7 @@
         "class<firefox> title<.*github.*>": "", // Windows whose class is "firefox" and title contains "github"
         "class<firefox> title<.*twitch|youtube.*>": "",
         "class<Org.chromium.Chromium>": "",
+        "class<brave-browser>": "",
         "class<Chromium>": "",
         "class<google-chrome>": "",
         "class<google-chrome> title<.*github.*>": "",
@@ -31,6 +32,7 @@
         "title<.*darktable.*>": "", // Windows whose titles contain "darktable"
         "title<.*steam.*>": "", // Windows whose titles contain "steam"
         "title<.*lutris.*>": "󱎓", // Windows whose titles contain "lutris"
+        "title<.*shadps4.*>": "", // Windows whose titles contain "lutris"
         "class<thunderbird>": "",
         "class<vlc>": "",
         "class<thunar>": "",
