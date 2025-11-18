@@ -24,6 +24,7 @@ Modify '$XDG_CONFIG_HOME/hyde/config.toml'  to set options.
 EOF
 }
 
+
 is_laptop() { # Check if the system is a laptop
     if grep -q "Battery" /sys/class/power_supply/BAT*/type; then
         return 0 # It's a laptop

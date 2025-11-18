@@ -20,7 +20,7 @@ post_cmd() {
 }
 
 if [ -z "$XDG_PICTURES_DIR" ]; then
-	XDG_PICTURES_DIR="$HOME/Pictures"
+	XDG_PICTURES_DIR="$HOME/Bilder"
 fi
 
 # shellcheck source=$HOME/.local/bin/hyde-shell
