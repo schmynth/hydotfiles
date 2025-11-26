@@ -101,6 +101,7 @@ hypridle                                               # idle daemon
 
 # --------------------------------------------------- // System
 # trash-cli-git                                        # cli to manage trash files
+i2c-tools
 bitwarden
 # coolercontrol
 # coolercontrold
@@ -109,7 +110,7 @@ cpupower-gui
 ddcui                                                # GUI to control brightness for external monitors
 deja-dup
 libinput-gestures                                      # actions touchpad gestures using libinput
-ncdu
+ncdu                                                   # find large files
 gestures                                               # gui for libinput-gestures
 opencl-amd
 realtime-privileges
@@ -150,7 +151,6 @@ xdg-desktop-portal-gtk                                 # xdg desktop portal usin
 steam                                                  # gaming platform
 gamemode                                               # daemon and library for game optimizations
 gamescope                                            # micro-compositor for gaming
-gamemode
 lib32-gamemode
 lib32-mesa
 lib32-vulkan-radeon
@@ -161,7 +161,7 @@ winetricks
 yabridge
 
 # --------------------------------------------------- // Music
-spotify                                                # proprietary music streaming service
+# spotify                                                # proprietary music streaming service
 # spicetify-cli                                          # cli to customize spotify client
 
 # --------------------------------------------------- // Apps
