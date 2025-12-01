@@ -7,10 +7,26 @@ if [ -z "$THEME" ]; then
   exit 0
 fi
 
-NVIM_SOCKET="/tmp/nvimsocket"
+# Match all sockets like: /tmp/nvim_socketXXXX.sock
+SOCKETS=$(find /tmp -maxdepth 1 -type s -name "nvim_socket*")
 
-nvr --server-name "$NVIM_SOCKET" --remote-send "<ESC>:colorscheme $THEME<CR>"
-nvr --server-name "$NVIM_SOCKET" --remote-send "<ESC>:TransparentEnable<CR>"
+if [ -z "$SOCKETS" ]; then
+  echo "No nvim sockets found matching /tmp/nvim_socket*"
+  exit 0
+fi
 
-nvr --servername "$NVIM_SOCKET" --remote-send \
-":lua pcall(function() vim.cmd('colorscheme $THEME'); vim.notify('🌈 Theme set to $THEME', vim.log.levels.INFO) end)<CR>"
+for SOCKET in $SOCKETS; do
+  echo "→ Updating theme on $SOCKET"
+
+  # Basic colorscheme command
+  nvr --servername "$SOCKET" \
+    --remote-send "<ESC>:colorscheme $THEME<CR>"
+
+  # Enable Transparent if you want this for all instances
+  nvr --servername "$SOCKET" \
+    --remote-send "<ESC>:TransparentEnable<CR>"
+
+  # Lua wrapper with notify
+  nvr --servername "$SOCKET" --remote-send \
+    ":lua pcall(function() vim.cmd('colorscheme $THEME'); vim.notify('🌈 Theme set to $THEME', vim.log.levels.INFO) end)<CR>"
+done
