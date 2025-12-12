@@ -7,6 +7,8 @@ if [ -z "$THEME" ]; then
   exit 0
 fi
 
+echo "$THEME" >~/.config/nvim/.current_theme
+
 # Match all sockets like: /tmp/nvim_socketXXXX.sock
 SOCKETS=$(find /tmp -maxdepth 1 -type s -name "nvim_socket*")
 
