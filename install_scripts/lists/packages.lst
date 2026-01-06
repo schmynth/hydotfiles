@@ -89,6 +89,7 @@ stylua                                                 # lua formatter
 lua-language-server                                    # lua language server
 bash-language-server                                  
 shfmt                                                  # bash formatter
+ripgrep                                                # search tool (needed for live grep in nvim)
 
 # --------------------------------------------------- // Shell
 eza|zsh                                                # file lister for zsh
