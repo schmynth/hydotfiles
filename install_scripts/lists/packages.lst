@@ -35,7 +35,7 @@ dunst                                                  # notification daemon
 #rofi-wayland                                           # application launcher
 rofi                                                   # replaced rofi-wayland as it is now just rofi
 waybar                                                 # system bar
-swww                                                   # wallpaper
+awww                                                   # wallpaper
 hyprlock                                               # lock screen
 grim                                                   # screenshot tool
 hyprpicker                                             # color picker
