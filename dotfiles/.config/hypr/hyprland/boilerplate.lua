@@ -1,7 +1,7 @@
 -- // █░█ █▄█ █▀▄ █▀▀
 -- // █▀█ ░█░ █▄▀ ██▄
 
-require(variables)
+require("variables")
 
 local scrPath = os.getenv("HOME") .. "/.local/lib/hyde"   -- set scripts path
 local toolPath = os.getenv("HOME") .. "/.local/lib/tools" -- set tools path

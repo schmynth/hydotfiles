@@ -30,7 +30,7 @@
 -- local EDITOR = "code"
 -- local EXPLORER = "dolphin"
 --
-require(variables)
+require("variables")
 
 local BROWSER = "flatpak run com.brave.Browser"
 local wm = "Window Management"
