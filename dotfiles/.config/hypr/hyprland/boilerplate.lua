@@ -1,7 +1,9 @@
 -- // █░█ █▄█ █▀▄ █▀▀
 -- // █▀█ ░█░ █▄▀ ██▄
 
-local scrPath = os.getenv("HOME") .. "/.local/lib/hyde" -- set scripts path
+require(variables)
+
+local scrPath = os.getenv("HOME") .. "/.local/lib/hyde"   -- set scripts path
 local toolPath = os.getenv("HOME") .. "/.local/lib/tools" -- set tools path
 
 -- Main modifier
@@ -31,8 +33,9 @@ local IDLE = default.IDLE
 
 local start = {}
 start.XDG_PORTAL_RESET = scrPath .. "/resetxdgportal.sh"
-start.DBUS_SHARE_PICKER = "dbus-update-activation-environment --systemd --all" -- for XDPH
-start.SYSTEMD_SHARE_PICKER = "systemctl --user import-environment QT_QPA_PLATFORMTHEME WAYLAND_DISPLAY XDG_CURRENT_DESKTOP" -- for XDPH
+start.DBUS_SHARE_PICKER = "dbus-update-activation-environment --systemd --all"                  -- for XDPH
+start.SYSTEMD_SHARE_PICKER =
+"systemctl --user import-environment QT_QPA_PLATFORMTHEME WAYLAND_DISPLAY XDG_CURRENT_DESKTOP"  -- for XDPH
 start.BAR = "waybar"
 start.DOCK = scrPath .. "/dockstylegen.sh"
 start.NOTIFICATIONS = "dunst"
@@ -54,8 +57,10 @@ start.IDLE_DAEMON = IDLE
 local env = {}
 env.GDK_BACKEND = "wayland,x11,*" -- GTK: Use wayland if available. If not: try x11, then any other GDK backend.
 -- env.QT_QPA_PLATFORM = "wayland;xcb" -- Qt: Use wayland if available, fall back to x11 if not.
-env.SDL_VIDEODRIVER = "wayland" -- Run SDL2 applications on Wayland. Remove or set to x11 if games that provide older versions of SDL cause compatibility issues
-env.CLUTTER_BACKEND = "wayland" -- Clutter package already has wayland enabled, this variable will force Clutter applications to try and use the Wayland backend
+env.SDL_VIDEODRIVER =
+"wayland"                         -- Run SDL2 applications on Wayland. Remove or set to x11 if games that provide older versions of SDL cause compatibility issues
+env.CLUTTER_BACKEND =
+"wayland"                         -- Clutter package already has wayland enabled, this variable will force Clutter applications to try and use the Wayland backend
 
 -- XDG Specifications - https://wiki.hyprland.org/Configuring/Environment-variables/#xdg-specifications
 env.XDG_CURRENT_DESKTOP = "Hyprland"
@@ -63,15 +68,17 @@ env.XDG_SESSION_TYPE = "wayland"
 env.XDG_SESSION_DESKTOP = "Hyprland"
 
 -- Qt Variables - https://wiki.hyprland.org/Configuring/Environment-variables/#qt-variables
-env.QT_AUTO_SCREEN_SCALE_FACTOR = "1" -- (From the Qt documentation) enables automatic scaling, based on the monitor's pixel density
-env.QT_QPA_PLATFORM = "wayland;xcb" -- Tell Qt applications to use the Wayland backend, and fall back to x11 if Wayland is unavailable
+env.QT_AUTO_SCREEN_SCALE_FACTOR =
+"1"                                           -- (From the Qt documentation) enables automatic scaling, based on the monitor's pixel density
+env.QT_QPA_PLATFORM =
+"wayland;xcb"                                 -- Tell Qt applications to use the Wayland backend, and fall back to x11 if Wayland is unavailable
 env.QT_WAYLAND_DISABLE_WINDOWDECORATION = "1" -- Disables window decorations on Qt applications
-env.QT_QPA_PLATFORMTHEME = "qt6ct" -- Tells Qt based applications to pick your theme from qt5ct, use with Kvantum.
+env.QT_QPA_PLATFORMTHEME = "qt6ct"            -- Tells Qt based applications to pick your theme from qt5ct, use with Kvantum.
 
 -- HyDE Environment Variables
 env.PATH = ""
-env.MOZ_ENABLE_WAYLAND = "1" -- Enable Wayland for Firefox
-env.GDK_SCALE = "1" -- Set GDK scale to 1 // For Xwayland on HiDPI
+env.MOZ_ENABLE_WAYLAND = "1"              -- Enable Wayland for Firefox
+env.GDK_SCALE = "1"                       -- Set GDK scale to 1 // For Xwayland on HiDPI
 env.ELECTRON_OZONE_PLATFORM_HINT = "auto" -- Set Electron Ozone Platform Hint to auto // For Electron apps on Wayland
 
 -- XDG-DIRS
@@ -137,6 +144,8 @@ local FONT_HINTING = default_fonts.FONT_HINTING
 
 -- // █▀ █▀█ █▀▀ █▀▀ █ ▄▀█ █░░
 -- // ▄█ █▀▀ ██▄ █▄▄ █ █▀█ █▄▄
+
+local config = {}
 
 config.decoration = {
     dim_special = 0.3,
@@ -213,14 +222,14 @@ config.animations = {
         liner = "1, 1, 1, 1",
     },
     animation = {
-        { "windows", 1, 6, "wind", "slide" },
-        { "windowsIn", 1, 6, "winIn", "slide" },
-        { "windowsOut", 1, 5, "winOut", "slide" },
-        { "windowsMove", 1, 5, "wind", "slide" },
-        { "border", 1, 1, "liner" },
-        { "borderangle", 1, 30, "liner", "once" },
-        { "fade", 1, 10, "default" },
-        { "workspaces", 1, 5, "wind" },
+        { "windows",     1, 6,  "wind",   "slide" },
+        { "windowsIn",   1, 6,  "winIn",  "slide" },
+        { "windowsOut",  1, 5,  "winOut", "slide" },
+        { "windowsMove", 1, 5,  "wind",   "slide" },
+        { "border",      1, 1,  "liner" },
+        { "borderangle", 1, 30, "liner",  "once" },
+        { "fade",        1, 10, "default" },
+        { "workspaces",  1, 5,  "wind" },
     },
 }
 
