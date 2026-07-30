@@ -1,1 +1,1 @@
-local scrPath = os.getenv("HOME") .. "/.local/lib/hyde" -- set scripts path
+scrPath = os.getenv("HOME") .. "/.local/lib/hyde" -- set scripts path
