@@ -30,47 +30,40 @@ B = Backup - Backup the target
  System config 
 P|${HOME}/.config/yay|config.json|yay
 
- Hyde core files 
-P|${HOME}/.config/hyde|config.toml|hyprland
-P|${HOME}/.config/hypr|hyde.conf animations.conf windowrules.conf keybindings.conf userprefs.conf monitors.conf|hyprland
-P|${HOME}/.config/hypr/themes|theme.conf wallbash.conf colors.conf|hyprland
-P|${HOME}/.local/state|hyde|hyprland
+ schmynth noctalia hyprland core files 
+P|${HOME}/.config/hypr|hyprland.lua windowrules.lua keybindings.lua noctalia.lua |hyprland
+P|${HOME}/.local/state|noctalia|noctalia
+P|${HOME}/.local/state|noctalia|noctalia
 # P|${HOME}/.config/hypr|nvidia.conf|hyprland nvidia-utils
 
-S|${HOME}/.config/hypr|hyprland.conf|hyprland
-S|${HOME}/.local|bin|hyprland
-S|${HOME}/.config|gtk-3.0|nwg-look
-S|${HOME}/.config|nwg-look|nwg-look
-S|${HOME}/.config|xsettingsd|nwg-look
-S|${HOME}|.gtkrc-2.0|nwg-look
-S|${HOME}/.config|Kvantum|kvantum
-S|${HOME}/.config|qt5ct|qt5ct
-S|${HOME}/.config|qt6ct|qt6ct
-S|${HOME}/.config/hyde|wallbash|hyprland
-S|${HOME}/.config/hypr|animations|hyprland  
+# S|${HOME}/.local|bin|hyprland
+# S|${HOME}/.config|gtk-3.0|nwg-look
+# S|${HOME}/.config|nwg-look|nwg-look
+# S|${HOME}/.config|xsettingsd|nwg-look
+# S|${HOME}|.gtkrc-2.0|nwg-look
+# S|${HOME}/.config|Kvantum|kvantum
+# S|${HOME}/.config|qt5ct|qt5ct
+# S|${HOME}/.config|qt6ct|qt6ct
+# S|${HOME}/.config/hyde|wallbash|hyprland
+# S|${HOME}/.config/hypr|animations|hyprland  
 
-O|${HOME}/.local/share|hyde|hyprland
+# O|${HOME}/.local/share|hyde|hyprland
 O|${HOME}/.local/lib|hyde|hyprland
 O|${HOME}/.local/lib|tools|hyprland
 
  Editor 
 P|${HOME}/.config/Code/User|settings.json|visual-studio-code-bin
 # P|${HOME}/.config/VSCodium/User|settings.json|vscodium
-P|${HOME}/|.vimrc|vim
-P|${HOME}/.config|nvim|nvim
-
- Bar 
-P|${HOME}/.config/waybar|config.ctl|waybar
-S|${HOME}/.config/waybar|modules config.jsonc theme.css style.css|waybar
-S|${HOME}/.config/nwg-dock-hyprland|theme theme.css style.css|nwg-dock-hyprland
+# P|${HOME}/|.vimrc|vim
+# P|${HOME}/.config|nvim|nvim
 
  Terminal 
 S|${HOME}/.config|fastfetch|fastfetch
 S|${HOME}/.config/kitty|hyde.conf theme.conf|kitty
 P|${HOME}/.config/kitty|kitty.conf|kitty
-P|${HOME}/.config/ranger|rc.conf|ranger
-S|${HOME}/.config/btop|btop.conf|btop  
-S|${HOME}/.config|superfile|superfile
+# P|${HOME}/.config/ranger|rc.conf|ranger
+# S|${HOME}/.config/btop|btop.conf|btop  
+# S|${HOME}/.config|superfile|superfile
 
 
  Shell 
@@ -78,46 +71,46 @@ P|${HOME}|.zshrc .hyde.zshrc .p10k.zsh|zsh zsh-theme-powerlevel10k pokego-bin
 S|${HOME}|.zshenv|zsh zsh-theme-powerlevel10k
 
  File Explorer 
-P|${HOME}/.local/state|dolphinstaterc|dolphin
-P|${HOME}/.config|baloofilerc|dolphin
-S|${HOME}/.config/menus|applications.menu|dolphin
-S|${HOME}/.config|dolphinrc|dolphin
-S|${HOME}/.config|kdeglobals|dolphin
-S|${HOME}/.local/share/kio/servicemenus|hydewallpaper.desktop|dolphin
-S|${HOME}/.local/share/kxmlgui5|dolphin|dolphin
-S|${HOME}/.local/share|dolphin|dolphin
+# P|${HOME}/.local/state|dolphinstaterc|dolphin
+# P|${HOME}/.config|baloofilerc|dolphin
+# S|${HOME}/.config/menus|applications.menu|dolphin
+# S|${HOME}/.config|dolphinrc|dolphin
+# S|${HOME}/.config|kdeglobals|dolphin
+# S|${HOME}/.local/share/kio/servicemenus|hydewallpaper.desktop|dolphin
+# S|${HOME}/.local/share/kxmlgui5|dolphin|dolphin
+# S|${HOME}/.local/share|dolphin|dolphin
 
  Input 
-P|${HOME}/.config|libinput-gestures.conf|libinput-gestures
+# P|${HOME}/.config|libinput-gestures.conf|libinput-gestures
 
  Wayland 
-P|${HOME}/.config|spotify-flags.conf|spotify
+# P|${HOME}/.config|spotify-flags.conf|spotify
 # P|${HOME}/.config|code-flags.conf|code
 # P|${HOME}/.config|code-flags.conf|visual-studio-code-bin
 # P|${HOME}/.config|vscodium-flags.conf|vscodium
 # P|${HOME}/.config|electron-flags.conf|electron
 
  Notifications 
-S|${HOME}/.config|dunst|dunst
+# S|${HOME}/.config|dunst|dunst
 
  Productivity 
-P|${HOME}/.local/share/applications|com.bitwig.BitwigStudio.desktop|bitwig-studio
-P|${HOME}/.local/share/applications|org.kicad.kicad.desktop|kicad
-P|${HOME}/.local/share/applications|DaVinci-Resolve.desktop|
+# P|${HOME}/.local/share/applications|com.bitwig.BitwigStudio.desktop|bitwig-studio
+# P|${HOME}/.local/share/applications|org.kicad.kicad.desktop|kicad
+# P|${HOME}/.local/share/applications|DaVinci-Resolve.desktop|
 
  Gaming 
 S|${HOME}/.config|MangoHud|mangohud
 
  Themeing 
-P|${HOME}/.local/share/themes|adw-gtk3 adw-gtk3-dark|kicad
+# P|${HOME}/.local/share/themes|adw-gtk3 adw-gtk3-dark|kicad
 
  Launcher 
-P|${HOME}/.config|rofi|rofi
+# P|${HOME}/.config|rofi|rofi
 
  Lock Screen 
-P|${HOME}/.config/hypr|hyprlock.conf|hyprlock
-S|${HOME}/.config/hypr|hyprlock|hyprlock
+# P|${HOME}/.config/hypr|hyprlock.conf|hyprlock
+# S|${HOME}/.config/hypr|hyprlock|hyprlock
 # S|${HOME}/.config|swaylock|swaylock-effects
 
  Idle daemon 
-P|${HOME}/.config/hypr|hypridle.conf|hypridle
+# P|${HOME}/.config/hypr|hypridle.conf|hypridle

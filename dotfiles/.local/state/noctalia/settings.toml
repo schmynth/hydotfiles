@@ -1,0 +1,184 @@
+config_version = 14
+
+[bar.default]
+background_opacity = 0.25999999418854713
+capsule = true
+capsule_thickness = 0.65999998897314072
+center = [ "date", "clock" ]
+concave_edge_corners = false
+end = [
+    "media",
+    "tray",
+    "notifications",
+    "clipboard",
+    "network",
+    "bluetooth",
+    "volume",
+    "brightness",
+    "battery",
+    "control-center",
+    "session",
+    "nightlight"
+]
+margin_edge = 3
+radius = 9
+scale = 0.85000000521540642
+shadow = false
+start = [
+    "launcher",
+    "wallpaper",
+    "workspaces",
+    "spacer_2",
+    "sysmon_cpu",
+    "sysmon_cpu_temp",
+    "sysmon_gpu",
+    "sysmon_gpu_temp",
+    "spacer_3",
+    "keyboard_layout"
+]
+thickness = 27
+
+    [bar.default.dead_zone.actions]
+    middle = "annotate"
+
+[control_center]
+width = 870
+
+[dock]
+background_opacity = 0.58999998681247234
+concave_edge_corners = false
+enabled = true
+icon_size = 32
+inactive_opacity = 0.78999998234212399
+inactive_scale = 0.95000001415610313
+item_spacing = 4
+magnification = false
+margin_edge = 8
+pinned = [ "com.brave.Browser", "dev.noctalia.Noctalia", "kitty", "org.gnome.Terminal", "steam" ]
+shadow = false
+
+[hooks]
+colors_changed = "~/.local/lib/tools/noctalia_theme_change.sh"
+theme_mode_changed = "~/.local/lib/tools/noctalia_theme_change.sh"
+
+[lockscreen_widgets]
+enabled = false
+schema_version = 2
+widget_order = [ "lockscreen-login-box@DP-1" ]
+
+    [lockscreen_widgets.grid]
+    cell_size = 16
+    major_interval = 4
+    visible = true
+
+    [lockscreen_widgets.widget."lockscreen-login-box@DP-1"]
+    box_height = 196.0
+    box_width = 810.0
+    cx = 1024.0
+    cy = 1006.4000244140625
+    output = "DP-1"
+    placement_height = 1152.0
+    placement_width = 2048.0
+    rotation = 0.0
+    type = "login_box"
+
+        [lockscreen_widgets.widget."lockscreen-login-box@DP-1".settings]
+        background_color = "surface_variant"
+        background_opacity = 0.88
+        background_radius = 12.0
+        center_password_text = false
+        input_opacity = 1.0
+        input_radius = 6.0
+        layout = "regular"
+        show_caps_lock = true
+        show_keyboard_layout = true
+        show_login_button = true
+        show_media = true
+        show_session_buttons = true
+        show_unlock_hint = true
+        show_weather = true
+
+[nightlight]
+enabled = true
+force = true
+temperature_day = 10000
+temperature_night = 4400
+
+[shell]
+app_icon_color = "primary"
+app_icon_colorize = true
+font_family = "CaskaydiaCove Nerd Font Mono"
+
+    [shell.keyboard_layout.custom_labels]
+    "English (US)" = "US"
+    German = "deutsch"
+    "Russian (phonetic)" = "русский"
+
+    [shell.panel]
+    floating_layer = "top"
+    transparency_mode = "soft"
+
+[theme]
+builtin = "Catppuccin"
+community_palette = "Cyberpunk"
+mode = "dark"
+source = "builtin"
+wallpaper_scheme = "m3-content"
+
+    [theme.templates]
+    builtin_ids = [ "btop", "gtk3", "gtk4", "hyprland", "kcolorscheme", "kitty", "qt" ]
+    community_ids = [ "brave", "blender", "darktable" ]
+
+[wallpaper]
+directory = "/home/sebastian/Bilder/wallpapers"
+directory_dark = "/home/sebastian/Bilder/wallpapers/dark"
+directory_light = "/home/sebastian/Bilder/wallpapers/light"
+
+    [wallpaper.default]
+    path = "/home/sebastian/Bilder/wallpapers/dark/dark-waves.jpg"
+
+    [wallpaper.last]
+    path = "/home/sebastian/Bilder/wallpapers/dark/dark-waves.jpg"
+
+    [wallpaper.monitors.DP-1]
+    path = "/home/sebastian/Bilder/wallpapers/dark/dark-waves.jpg"
+
+[widget.date]
+format = "{: %d %b}"
+
+[widget.keyboard_layout]
+display = "full"
+
+[widget.launcher]
+enabled = false
+
+[widget.media]
+hide_when_no_media = true
+max_length = 229
+
+[widget.spacer_2]
+scale = 2.5
+type = "spacer"
+
+[widget.spacer_3]
+scale = 2.5
+type = "spacer"
+
+[widget.sysmon_cpu]
+stat = "cpu_usage"
+type = "sysmon"
+
+[widget.sysmon_cpu_temp]
+stat = "cpu_temp"
+type = "sysmon"
+
+[widget.sysmon_gpu]
+stat = "gpu_usage"
+type = "sysmon"
+
+[widget.sysmon_gpu_temp]
+stat = "gpu_temp"
+type = "sysmon"
+
+[widget.wallpaper]
+enabled = false
